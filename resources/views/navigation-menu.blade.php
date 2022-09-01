@@ -1,4 +1,4 @@
-<nav class="bg-gray-900 border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
+<nav class="bg-gray-900 border-gray-200 px-2 sm:px-4 py-2.5">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
         <!-- Logo -->
         {{-- For Admins --}}
@@ -113,7 +113,7 @@
         {{-- Main Nav Bar Non responsive --}}
         <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
             <ul
-                class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                class="flex flex-col p-4 mt-4 rounded-lg border md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-gray-900  border-gray-700">
                 {{-- For Admins --}}
                 @if (Auth::user()->role == '1')
                     <x-jet-nav-link style="color: white;" href="/redirects" :active="request()->routeIs('/redirects')">
