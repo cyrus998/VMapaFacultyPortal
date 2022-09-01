@@ -2,7 +2,7 @@
 
 <body id="main" class="text-gray-700 bg-white" style="font-family: 'Source Sans Pro', sans-serif">
     <!--Nav-->
-    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
+    <nav class="bg-gray-900 border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
 
             <div class="shrink-0 flex items-center">
@@ -43,8 +43,8 @@
                       {{ __('About') }}
                   </a>
 
-                    <a href="/" style="color: white;" href="" :active="request() - > routeIs('/')">
-                        {{ __('Job Openings') }}
+                    <a href="/announcements" style="color: white;" href="" :active="request() - > routeIs('/announcements')">
+                        {{ __('News and Announcements') }}
                     </a>
 
                     <a href="/portal" style="color: white;" href="" :active="request() - > routeIs('/')">
