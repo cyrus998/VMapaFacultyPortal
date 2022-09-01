@@ -40,7 +40,8 @@ class AnnouncementController extends Controller
         $request->validate([
             'date' => 'required',
             'title' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'photourl' => 'required'
         ]);
  
         $announcement = new Announcement;
@@ -48,6 +49,8 @@ class AnnouncementController extends Controller
         $announcement->date = $request->date;
         $announcement->title = $request->title;
         $announcement->description = $request->description;
+        $announcement->photourl = $request->photourl;
+
  
  
         $announcement->save();
@@ -92,6 +95,7 @@ class AnnouncementController extends Controller
             'date' => 'required',
             'title' => 'required',
             'description' => 'required',
+            'photourl' => 'required',
         ]);
          
         $announcement = Announcement::find($id);
@@ -99,6 +103,7 @@ class AnnouncementController extends Controller
         $announcement->date = $request->date;
         $announcement->title = $request->title;
         $announcement->description = $request->description;
+        $announcement->photourl = $request->photourl;
  
         $announcement->save();
      

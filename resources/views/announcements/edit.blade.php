@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Announcement Form - Laravel 9 CRUD Tutorial</title>
+    <title>Edit Announcement Form</title>
  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
 </head>
@@ -55,6 +55,15 @@
                     <strong>Announcement Description:</strong>
                     <input type="text" name="description" value="{{ $announcement->description }}" class="form-control" placeholder="Announcement Description">
                     @error('description')
+                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Photo URL:</strong>
+                    <input type="text" name="photourl" value="{{ $announcement->photourl }}" class="form-control" placeholder="Photo URL">
+                    @error('photourl')
                      <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                 </div>

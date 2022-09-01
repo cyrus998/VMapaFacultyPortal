@@ -87,7 +87,7 @@
                         <a href="">
                             <div class="flex-shrink-0">
                                 <img class="object-cover w-full h-52 rounded-lg"
-                                    src="https://i.ytimg.com/vi/mtoeTzYKyaQ/maxresdefault.jpg" alt="">
+                                    src="{{ $announcement->photourl }}" alt="">
                             </div>
                         </a>
                         <div class="flex flex-col justify-between flex-1 p-3">
