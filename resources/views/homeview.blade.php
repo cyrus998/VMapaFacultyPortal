@@ -43,7 +43,7 @@
                         {{ __('About') }}
                     </a>
 
-                    <a href="/" style="color: white;" href="" :active="request() - > routeIs('/')">
+                    <a href="/announcements" style="color: white;" href="" :active="request() - > routeIs('/')">
                         {{ __('News and Announcements') }}
                     </a>
 
