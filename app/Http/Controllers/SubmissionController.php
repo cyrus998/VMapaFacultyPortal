@@ -101,16 +101,26 @@ class SubmissionController extends Controller
         $request->validate([
             'name' => 'required',
             'detail' => 'required',
+            'image' => 'required',
             'form137' => 'required'
         ]);
 
         $input = $request->all();
 
         if ($image = $request->file('image')) {
-            $destinationPath = 'images/';
+            $destinationPath = 'uploads/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";
+        } else {
+            unset($input['image']);
+        }
+
+        if ($form137 = $request->file('form137')) {
+            $destinationPath = 'uploads/';
+            $profileImage = date('YmdHis') . "." . $form137->getClientOriginalExtension();
+            $form137->move($destinationPath, $profileImage);
+            $input['form137'] = "$profileImage";
         } else {
             unset($input['image']);
         }

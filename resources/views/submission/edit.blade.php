@@ -1,16 +1,9 @@
-@extends('submission.layout')
 
+@extends('nonusernav')
 @section('content')
-    <div class="row" style="margin-top: 20px;">
-        <div class="col-lg-12 margin-tb">
-            <div style="text-align: center;">
-                <h4>Edit Submission</h4>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('submissions.index') }}"> Back</a>
-            </div>
-        </div>
-    </div>
+<section class="relative flex flex-wrap lg:h-screen lg:items-center">
+    <div class="w-full px-4 lg:w-1/2 sm:px-6 lg:px-8 sm:py-16 lg:py-24"> 
+        
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -23,47 +16,60 @@
         </div>
     @endif
 
-    <form action="{{ route('submissions.update', $submission->id) }}" method="POST" enctype="multipart/form-data"
-        style="margin-top: 20px;">
+        <div class="max-w-lg mx-auto text-center">
+            <h1 class="text-2xl font-bold sm:text-3xl">Edit Submission</h1>
+            <p class="mt-4 text-gray-500"> Here are the following requirements needed to enroll in this institution, and please do provide the correct and accurate details for the following: </p>
+        </div>
+        <form action="{{ route('submissions.update', $submission->id) }}" method="POST" enctype="multipart/form-data" class="max-w-md mx-auto mt-8 mb-0 space-y-4"> @csrf <div>
+              
         @csrf
         @method('PUT')
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Name:</strong>
-                    <input type="text" name="name" value="{{ $submission->name }}" class="form-control" placeholder="Name">
+        
+        <h1 class="text-zinc-500">Name</h1>
+                <div class="relative">
+                    <input type="text" name="name"  value="{{ $submission->name }}" class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm" placeholder="Enter Name" />
+                    <span class="absolute inset-y-0 inline-flex items-center right-4">
+                        <img src="https://media.discordapp.net/attachments/971130306751000636/981174821494849556/unknown.png" width="24" alt="">
+                    </span>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Detail:</strong>
-                    <textarea class="form-control" style="height:150px" name="detail"
-                        placeholder="Detail">{{ $submission->detail }}</textarea>
+            <div>
+                <h1 class="text-zinc-500">Detail</h1>
+                <div class="relative">
+                    <input type="text" name="detail" value="{{ $submission->detail }}" class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm" placeholder="Enter Detail" />
+                    <span class="absolute inset-y-0 inline-flex items-center right-4">
+                        <img src="https://media.discordapp.net/attachments/971130306751000636/981174821494849556/unknown.png" width="24" alt="">
+                    </span>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Image:</strong>
-                    <input type="file" name="image" class="form-control" placeholder="image">
-                    <br>
-                    <img src="/images/{{ $submission->image }}" width="100px">
+            <div>
+                <h1 class="text-zinc-500">Enter Image</h1>
+                <label for="password" class="sr-only">Image</label>
+                <div class="relative">
+                    <input type="file" name="image" class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm" placeholder="Enter password" />
+                  
+                    <span class="absolute inset-y-0 inline-flex items-center right-4">
+                        <img src="https://media.discordapp.net/attachments/971130306751000636/981174821494849556/unknown.png" width="24" alt="">
+                    </span>
                 </div>
             </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Form 137:</strong>
-                    <input type="file" name="form137" class="form-control" placeholder="form137">
-                    <br>
-                    <img src="/images/{{ $submission->form137 }}" width="100px">
+            <div>
+                <h1 class="text-zinc-500">Submit Form 137</h1>
+                <div class="relative">
+                    <input type="file" name="form137" class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm" placeholder="Enter form137" />
+                    <span class="absolute inset-y-0 inline-flex items-center right-4">
+                        <img src="https://media.discordapp.net/attachments/971130306751000636/981174821494849556/unknown.png" width="24" alt="">
+                    </span>
                 </div>
             </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 20px;">
-                <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="flex items-center justify-between">
+                <p class="text-sm text-gray-500"></p>
+                <button type="submit" class="inline-block px-5 py-3 ml-3 text-sm font-medium text-white bg-blue-500 rounded-lg"> Add New Submission </button>
             </div>
-        </div>
+        </form>
+    </div>
+    <div class="relative w-full h-64 sm:h-96 lg:w-1/2 lg:h-full">
+        <img class="absolute inset-0 object-cover w-full h-full" src="https://www.hyperui.dev/photos/team-1.jpeg" alt="" />
+    </div>
+    @endsection
 
-    </form>
-@endsection

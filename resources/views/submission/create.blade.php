@@ -1,9 +1,18 @@
-
 @extends('nonusernav')
 @section('content')
 
+@if(Auth::check())
+@if (Auth::user()->role == '1')
+<a href="/submissions">
+    <button type="submit" class="mt-3   inline-block px-5 py-3 ml-3 text-sm font-medium text-white bg-blue-500 rounded-lg"> ADMIN: View all Submissions </button></a>
+@endif
+@endif
+
+
 <section class="relative flex flex-wrap lg:h-screen lg:items-center">
-    <div class="w-full px-4 lg:w-1/2 sm:px-6 lg:px-8 sm:py-16 lg:py-24"> @if ($errors->any()) <div class="flex items-center justify-between p-4 border rounded text-sky-700 bg-sky-50 border-sky-900/10" role="alert">
+    <div class="w-full px-4 lg:w-1/2 sm:px-6 lg:px-8 sm:py-16 lg:py-24">
+        @if ($errors->any())
+        <div class="flex items-center justify-between p-4 border rounded text-sky-700 bg-sky-50 border-sky-900/10" role="alert">
             <ul>
                 @foreach ($errors->all() as $error) <li>
                     <strong class="text-sm font-medium">{{ $error }}</strong>
