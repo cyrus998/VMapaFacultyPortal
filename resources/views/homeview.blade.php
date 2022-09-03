@@ -35,7 +35,7 @@
                         {{ __('Vision and Mission') }}
                     </a>
 
-                    <a href="/" style="color: white;" href="" :active="request() - > routeIs('/')">
+                    <a href="/submissions/create" style="color: white;" href="" :active="request() - > routeIs('/')">
                         {{ __('Admission / Submission of Requirements') }}
                     </a>
 

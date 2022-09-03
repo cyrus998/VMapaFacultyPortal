@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnnouncementController;
- 
+use App\Http\Controllers\SubmissionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,8 @@ use App\Http\Controllers\AnnouncementController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('submissions', SubmissionController::class);
+
 Route::resource('announcements', AnnouncementController::class);
 
 Route::view('/home','home')->middleware(['auth','verified']);
