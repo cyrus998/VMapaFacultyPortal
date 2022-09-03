@@ -19,12 +19,12 @@ Route::resource('announcements', AnnouncementController::class);
 Route::view('/home','home')->middleware(['auth','verified']);
 
 
+
 Route::get('redirects', 'App\Http\Controllers\HomeController@index')->middleware(['auth','verified']);
 
 Route::get('/portal', function () {
     return view('welcome');
 });
-
 
 Route::get('/', function () {
     return view('homeview');
@@ -39,4 +39,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/portfolio', function () {
+        return view('portfolio');
+    })->name('portfolio');
 });
