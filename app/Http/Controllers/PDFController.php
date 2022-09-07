@@ -16,7 +16,7 @@ class PDFController extends Controller
     public function index()
     {
         $data = [
-            'title' => 'My Portfolio    ',
+            'title' => 'My Portfolio',
             'date' => date('m/d/Y')
         ];
            
