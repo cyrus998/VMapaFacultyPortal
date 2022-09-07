@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\SubmissionController;
+use App\Http\Controllers\PDFController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ Route::resource('announcements', AnnouncementController::class);
 
 Route::view('/home','home')->middleware(['auth','verified']);
 
-
+Route::get('create', [PDFController::class, 'index']);
 
 Route::get('redirects', 'App\Http\Controllers\HomeController@index')->middleware(['auth','verified']);
 
