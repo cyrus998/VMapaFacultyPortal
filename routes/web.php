@@ -21,7 +21,7 @@ Route::resource('announcements', AnnouncementController::class);
 
 Route::view('/home','home')->middleware(['auth','verified']);
 
-Route::get('create', [PDFController::class, 'index']);
+Route::get('export', [PDFController::class, 'CreatePDF']);
 
 Route::get('redirects', 'App\Http\Controllers\HomeController@index')->middleware(['auth','verified']);
 

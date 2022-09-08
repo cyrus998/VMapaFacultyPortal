@@ -13,15 +13,22 @@ class PDFController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    
+    public function getPortfolio()
     {
-        $data = [
-            'title' => 'My Portfolio',
-            'date' => date('m/d/Y')
-        ];
-           
-        $pdf = PDF::loadView('sample-portfolio', $data);
-     
-        return $pdf->download('portfolio.pdf');
+        return view('portfolio');
     }
+
+    public function createPDF(Request $request)
+{
+    $pdf = PDF::loadView('sample-portfolio', [
+        'fullname' => $request->input('fullname'),
+        'email' => $request->input('email'),
+        'address' => $request->input('address'),
+        'about' => $request->input('about'),
+    ]);
+
+    return $pdf->download('portfolio.pdf');
+}
+
 }
