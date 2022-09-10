@@ -31,7 +31,7 @@
                         {{ __('Home') }}
                     </a>
 
-                    <a href="/" style="color: white;" href="" :active="request() - > routeIs('/')">
+                    <a href="/missionandvision" style="color: white;" href="" :active="request() - > routeIs('/')">
                         {{ __('Vision and Mission') }}
                     </a>
 
@@ -39,7 +39,7 @@
                         {{ __('Admission / Submission of Requirements') }}
                     </a>
 
-                    <a href="/" style="color: white;" href="" :active="request() - > routeIs('/')">
+                    <a href="/aboutview" style="color: white;" href="" :active="request() - > routeIs('/')">
                         {{ __('About') }}
                     </a>
 

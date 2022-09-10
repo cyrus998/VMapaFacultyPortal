@@ -1,4 +1,4 @@
-@extends('nonusernav')
+@extends('nonuserlayout')
 
 
 @section('content')

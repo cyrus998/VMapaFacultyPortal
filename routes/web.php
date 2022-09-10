@@ -33,6 +33,10 @@ Route::get('/missionandvision', function () {
     return view('missionandvision');
 });
 
+Route::get('/aboutview', function () {
+    return view('aboutview');
+});
+
 
 Route::get('/', function () {
     return view('homeview');

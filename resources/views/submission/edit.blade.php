@@ -1,5 +1,5 @@
 
-@extends('nonusernav')
+@extends('nonuserlayout')
 @section('content')
 <section class="relative flex flex-wrap lg:h-screen lg:items-center">
     <div class="w-full px-4 lg:w-1/2 sm:px-6 lg:px-8 sm:py-16 lg:py-24"> 
