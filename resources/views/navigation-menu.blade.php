@@ -125,7 +125,7 @@
 
                 @if (Auth::user()->role == '0')
                     <x-jet-nav-link style="color: white;" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('To Do') }}
                     </x-jet-nav-link>
 
                     <x-jet-nav-link style="color: white;" href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">

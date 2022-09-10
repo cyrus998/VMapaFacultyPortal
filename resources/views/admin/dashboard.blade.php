@@ -51,7 +51,7 @@
                     {{ auth()->user()->role }}
                 </td>
                 <td class="py-4 px-6">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Create</a>
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
                 </td>
