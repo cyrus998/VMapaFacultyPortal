@@ -29,6 +29,11 @@ Route::get('/portal', function () {
     return view('welcome');
 });
 
+Route::get('/missionandvision', function () {
+    return view('missionandvision');
+});
+
+
 Route::get('/', function () {
     return view('homeview');
 });
