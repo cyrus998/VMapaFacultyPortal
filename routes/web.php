@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\SubmissionController;
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,17 @@ use App\Http\Controllers\PDFController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::controller(UserController::class)->group(function () {
+    Route::get('/users', 'index')->name('user.index');
+    Route::get('/user/create', 'create')->name('user.create');
+    Route::post('/user/store', 'store')->name('user.store');
+    Route::get('/user/{user}', 'show')->name('user.show');
+    Route::get('/user/{user}/edit', 'edit')->name('user.edit');
+    Route::put('/user/{user}/update', 'update')->name('user.update');
+    Route::delete('/user/{user}/delete', 'delete')->name('user.delete');
+});
+
+
 Route::resource('submissions', SubmissionController::class);
 
 Route::resource('announcements', AnnouncementController::class);

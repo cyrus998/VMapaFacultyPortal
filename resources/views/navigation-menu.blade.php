@@ -73,6 +73,12 @@
                                 <x-jet-responsive-nav-link href="/redirects" :active="request()->routeIs('redirects')">
                                     {{ __('Admin Dashboard') }}
                                 </x-jet-responsive-nav-link>
+
+                                <x-jet-responsive-nav-link href="/users" :active="request()->routeIs('users')">
+                                    {{ __('Manage Users and Roles') }}
+                                </x-jet-responsive-nav-link>
+
+
                             </div>
                         @endif
 
@@ -119,6 +125,12 @@
                     <x-jet-nav-link style="color: white;" href="/redirects" :active="request()->routeIs('/redirects')">
                         {{ __('Admin Dashboard') }}
                     </x-jet-nav-link>
+
+                    <x-jet-nav-link style="color: white;" href="/users" :active="request()->routeIs('/users')">
+                        {{ __('Manage Users and Roles') }}
+                    </x-jet-nav-link>
+
+
                 @endif
 
                 {{-- For regular users --}}
