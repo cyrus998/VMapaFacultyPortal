@@ -34,5 +34,15 @@ class UserSeeder extends Seeder
             'email_verified_at' => '2022-09-03 16:30:32',
             'password' => '$2y$10$h45XBUUIwz/mARvOZrtYIOvCV8tz6oRlxKzSxTs/7CiawU2axPRdG',
         ]);
+
+        User::create([
+            'name' => 'Ira Llabres',
+            'email' => 'ilorenzollabres@gmail.com',
+            'role' => '1',
+            'facultyNumber' => '1910414',
+            'created_at' => '2022-02-23 11:12:05',
+            'email_verified_at' => '2022-09-03 16:30:32',
+            'password' => '$2y$10$h45XBUUIwz/mARvOZrtYIOvCV8tz6oRlxKzSxTs/7CiawU2axPRdG',
+        ]);
     }
 }
