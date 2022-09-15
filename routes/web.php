@@ -26,6 +26,7 @@ Route::controller(UserController::class)->group(function () {
     Route::delete('/user/{user}/delete', 'delete')->name('user.delete');
 });
 
+Route::resource('contact', ContactController::class);
 
 Route::resource('submissions', SubmissionController::class);
 
