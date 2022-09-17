@@ -45,7 +45,7 @@
                         {{ __('Admission / Submission of Requirements') }}
                     </a>
 
-                    <a href="/aboutview" style="color: white;" href="" :active="request() - > routeIs('/')">
+                    <a href="/contact" style="color: white;" href="" :active="request() - > routeIs('/')">
                         {{ __('About') }}
                     </a>
 

@@ -102,6 +102,28 @@ content starts here -->
   </div>
 
     <form action="{{ route('contact.store') }}" method="POST" enctype="multipart/form-data"> @csrf <div>
+
+    @if ($message = Session::get('success'))
+        <div class="flex items-center justify-between mt-5 p-4 border rounded gap-4 text-sky-700 border-sky-900/10 bg-sky-50" role="alert">
+            <div class="flex items-center gap-4">
+                <span class="p-2 text-white rounded-full bg-sky-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </span>
+
+                <p>
+                    <strong class="text-sm font-medium"> Info! </strong>
+
+                    <span class="block text-xs opacity-90">
+                        {{ $message }}
+                    </span>
+                </p>
+            </div>
+            </button>
+        </div>
+    @endif
+    
         <div class="container px-5 py-24 mx-auto flex">
             <div class="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
             <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Inquire</h2>
@@ -119,6 +141,7 @@ content starts here -->
             </div>
         </div>
     </form>
+    
 
 </section>
 @endsection

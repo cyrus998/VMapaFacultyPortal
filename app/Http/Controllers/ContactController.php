@@ -30,7 +30,6 @@ class ContactController extends Controller
 
         Contact::create($input);
 
-        // return redirect()->route('aboutview')
-        //     ->with('success', 'Submission created successfully.');
+        return view('aboutview');
     }
 }
