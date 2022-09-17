@@ -9,10 +9,12 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Kayandra\Hashidable\Hashidable;
 
 class User extends Authenticatable implements MustVerifyEmail
 
 {
+    use Hashidable;
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;

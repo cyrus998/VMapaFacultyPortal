@@ -72,14 +72,14 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required',
             'facultyNumber' => 'required',
-            'password' => 'required',
+            // 'password' => 'required',
             'role' => 'required'
         ]);
 
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password,
+            // 'password' => $request->password,
             'facultyNumber' => $request->facultyNumber,
             'role' => $request->role
         ]);

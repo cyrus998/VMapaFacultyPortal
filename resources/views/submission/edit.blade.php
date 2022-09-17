@@ -20,7 +20,7 @@
             <h1 class="text-2xl font-bold sm:text-3xl">Edit Submission</h1>
             <p class="mt-4 text-gray-500"> Here are the following requirements needed to enroll in this institution, and please do provide the correct and accurate details for the following: </p>
         </div>
-        <form action="{{ route('submissions.update', $submission->id) }}" method="POST" enctype="multipart/form-data" class="max-w-md mx-auto mt-8 mb-0 space-y-4"> @csrf <div>
+        <form action="{{ route('submissions.update', $submission->hashid) }}" method="POST" enctype="multipart/form-data" class="max-w-md mx-auto mt-8 mb-0 space-y-4"> @csrf <div>
               
         @csrf
         @method('PUT')

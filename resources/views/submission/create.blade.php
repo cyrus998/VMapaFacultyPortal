@@ -4,7 +4,7 @@
 @if(Auth::check())
 @if (Auth::user()->role == '1')
 <a href="/submissions">
-    <button type="submit" class="mt-3   inline-block px-5 py-3 ml-3 text-sm font-medium text-white bg-blue-500 rounded-lg"> ADMIN: View all Submissions </button></a>
+    <button style="float:left" type="submit" class="mt-3   inline-block px-5 py-3 ml-3 text-sm font-medium text-white bg-blue-500 rounded-lg"> ADMIN: View all Submissions </button></a>
 @endif
 @endif
 
@@ -87,7 +87,7 @@
         </form>
     </div>
     <div class="relative w-full h-64 sm:h-96 lg:w-1/2 lg:h-full">
-        <img class="absolute inset-0 object-cover w-full h-full" src="https://www.hyperui.dev/photos/team-1.jpeg" alt="" />
+        <img class="absolute inset-0 object-cover w-full h-full" src="https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="" />
     </div>
 </section>
 @endsection

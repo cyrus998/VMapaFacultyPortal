@@ -58,9 +58,9 @@
                         </div>
                         @if (Auth::check())
                             @if (Auth::user()->role == '1')
-                                <form action="{{ route('announcements.destroy', $announcement->id) }}" method="Post" class="mb-5 mt-3 m-3">
+                                <form action="{{ route('announcements.destroy', $announcement->hashid) }}" method="Post" class="mb-5 mt-3 m-3">
                                     <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                                        href="{{ route('announcements.edit', $announcement->id) }}">Edit</a>
+                                        href="{{ route('announcements.edit', $announcement->hashid) }}">Edit</a>
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Delete</button>

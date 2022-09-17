@@ -84,9 +84,9 @@
                 </td>
                 <td class="py-4 px-6">
 
-                    <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="{{ route('user.show',$user->id) }}">Show</a>
-                    <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="{{ route('user.edit',$user->id) }}">Edit</a>
-                    <form action="{{ route('user.delete',$user->id) }}" method="POST">
+                    <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="{{ route('user.show',$user->hashid) }}">Show</a>
+                    <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="{{ route('user.edit',$user->hashid) }}">Edit</a>
+                    <form action="{{ route('user.delete',$user->hashid) }}" method="POST">
                         @csrf
                         @method('delete')
                         <button type="submit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</button>

@@ -89,9 +89,9 @@
                                     </span>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-left">
-                                    <form action="{{ route('submissions.destroy', $submission->id) }}" method="POST">
-                                        <a href="{{ route('submissions.edit', $submission->id) }}" class="text-indigo-600 hover:text-indigo-900 mr-5"> Edit </a>
-                                        <!-- <a href="{{ route('submissions.show', $submission->id) }}" class="text-indigo-600 hover:text-indigo-900"> Show </a>  -->
+                                    <form action="{{ route('submissions.destroy', $submission->hashid) }}" method="POST">
+                                        <a href="{{ route('submissions.edit', $submission->hashid) }}" class="text-indigo-600 hover:text-indigo-900 mr-5"> Edit </a>
+                                        <!-- <a href="{{ route('submissions.show', $submission->hashid) }}" class="text-indigo-600 hover:text-indigo-900"> Show </a>  -->
                                         @csrf @method('DELETE') <button type="submit" class="text-indigo-600 hover:text-indigo-900">Delete</button>
                                     </form>
                                 </td>
