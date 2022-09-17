@@ -1,9 +1,10 @@
 @extends('master')
 
 @section('content')
+
 <div class="mt-24 flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
     <div class="hidden bg-cover lg:block lg:w-1/2" style="background-image: url('https://images.unsplash.com/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=696&q=80');"></div>
-
+    
     <div class="w-full px-6 py-8 md:px-8 lg:w-1/2">
         <h2 class="text-2xl font-semibold text-center text-gray-700 dark:text-white">
             User Account
@@ -59,21 +60,6 @@
         </div>
         </form>
 
-    </div>
-</div>
-
-
-
-
-
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Add New User</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('user.index') }}"> Back</a>
-        </div>
     </div>
 </div>
 

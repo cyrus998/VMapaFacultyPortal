@@ -70,9 +70,6 @@
                         {{-- For Admins --}}
                         @if (Auth::user()->role == '1')
                             <div class="pt-2 pb-3 space-y-1">
-                                <x-jet-responsive-nav-link href="/redirects" :active="request()->routeIs('redirects')">
-                                    {{ __('Admin Dashboard') }}
-                                </x-jet-responsive-nav-link>
 
                                 <x-jet-responsive-nav-link href="/users" :active="request()->routeIs('users')">
                                     {{ __('Manage Users and Roles') }}
@@ -122,9 +119,6 @@
                 class="flex flex-col p-4 mt-4 rounded-lg border md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-gray-900  border-gray-700">
                 {{-- For Admins --}}
                 @if (Auth::user()->role == '1')
-                    <x-jet-nav-link style="color: white;" href="/redirects" :active="request()->routeIs('/redirects')">
-                        {{ __('Admin Dashboard') }}
-                    </x-jet-nav-link>
 
                     <x-jet-nav-link style="color: white;" href="/users" :active="request()->routeIs('/users')">
                         {{ __('Manage Users and Roles') }}

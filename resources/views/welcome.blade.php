@@ -21,10 +21,20 @@
             @if (Route::has('login'))
                 <div class="flex flex-wrap gap-4 mt-8 text-center">
                     @auth
+                        @if(Auth::check())
+                        @if (Auth::user()->role == '1')
+                        <a class="block w-full px-12 py-3 text-sm font-medium text-white rounded shadow bg-rose-600 sm:w-auto active:bg-rose-500 hover:bg-rose-700 focus:outline-none focus:ring"
+                            href="{{ url('/users') }}">
+                            Manage roles
+                        </a>
+                        @endif
+                        @if (Auth::user()->role == '0')
                         <a class="block w-full px-12 py-3 text-sm font-medium text-white rounded shadow bg-rose-600 sm:w-auto active:bg-rose-500 hover:bg-rose-700 focus:outline-none focus:ring"
                             href="{{ url('/dashboard') }}">
                             Dashboard
                         </a>
+                        @endif
+                        @endif
                     @else
                         <a class="block w-full px-12 py-3 text-sm font-medium text-white rounded shadow bg-rose-600 sm:w-auto active:bg-rose-500 hover:bg-rose-700 focus:outline-none focus:ring"
                             href="{{ route('login') }}">
