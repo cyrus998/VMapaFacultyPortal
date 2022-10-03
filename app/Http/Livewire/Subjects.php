@@ -10,6 +10,7 @@ class Subjects extends Component
 
     use WithPagination;
 
+    public $term;
 
     public $subjectname, $coursecode, $instructor, $subject_id;
     public $isOpen = 0;
@@ -23,7 +24,11 @@ class Subjects extends Component
     {
         // $this->subjects = Subject::paginate(2);
         return view('livewire.subjects.subjects', [
-            'subjects' => Subject::paginate(5)
+            'subjects' => Subject::when($this->term, function($query, $term){
+                return $query->where('subjectname', 'LIKE', "%$term%")
+                ->orWhere('coursecode', 'LIKE', "%$term%")
+                ->orWhere('instructor', 'LIKE', "%$term%");
+            })->paginate(5)
         ]);
     }
   
