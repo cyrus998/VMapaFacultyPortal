@@ -57,7 +57,10 @@
                     Faculty Number
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Role
+                    Admin Role
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Position
                 </th>
                 <th scope="col" class="py-3 px-6">
                     Actions
@@ -83,6 +86,9 @@
                     {{ $user->role }}
                 </td>
                 <td class="py-4 px-6">
+                    {{ $user->position }}
+                </td>
+                <td class="py-4 px-6">
 
                     <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="{{ route('user.show',$user->hashid) }}">Show</a>
                     <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="{{ route('user.edit',$user->hashid) }}">Edit</a>
@@ -97,13 +103,19 @@
             @endforeach
         </tbody>
     </table>
-    {!! $data->links() !!}
+
+   
 
 
     <div class="relative px-4 py-3 text-white bg-teal-700 pr-14">
         <p class="text-sm font-medium text-left sm:text-center">
           Welcome, <span class="text-teal-300 font-bold">{{ auth()->user()->name }} </span> You are an Administrator.
         </p>
+    </div>
+
+    <div class="mt-5 mb-5">
+        {!! $data->links() !!}
+
     </div>
 </div>
 

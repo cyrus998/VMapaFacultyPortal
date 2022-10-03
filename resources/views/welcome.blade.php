@@ -25,7 +25,7 @@
                         @if (Auth::user()->role == '1')
                         <a class="block w-full px-12 py-3 text-sm font-medium text-white rounded shadow bg-rose-600 sm:w-auto active:bg-rose-500 hover:bg-rose-700 focus:outline-none focus:ring"
                             href="{{ url('/users') }}">
-                            Manage roles
+                            Manage Administrative Tools
                         </a>
                         @endif
                         @if (Auth::user()->role == '0')

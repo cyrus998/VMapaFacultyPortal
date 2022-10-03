@@ -44,5 +44,15 @@ class UserSeeder extends Seeder
             'email_verified_at' => '2022-09-03 16:30:32',
             'password' => '$2y$10$h45XBUUIwz/mARvOZrtYIOvCV8tz6oRlxKzSxTs/7CiawU2axPRdG',
         ]);
+
+        User::create([
+            'name' => 'Regular User',
+            'email' => 'user@gmail.com',
+            'role' => '0',
+            'facultyNumber' => '177502',
+            'created_at' => '2022-02-23 11:12:05',
+            'email_verified_at' => '2022-09-03 16:30:32',
+            'password' => '$2y$10$h45XBUUIwz/mARvOZrtYIOvCV8tz6oRlxKzSxTs/7CiawU2axPRdG',
+        ]);
     }
 }

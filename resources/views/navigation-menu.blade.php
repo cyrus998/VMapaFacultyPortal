@@ -75,6 +75,11 @@
                                     {{ __('Manage Users and Roles') }}
                                 </x-jet-responsive-nav-link>
 
+                                <x-jet-responsive-nav-link href="/subjects" :active="request()->routeIs('subjects')">
+                                    {{ __('Manage Subjects') }}
+                                </x-jet-responsive-nav-link>
+
+
 
                             </div>
                         @endif
@@ -88,6 +93,10 @@
 
                                 <x-jet-responsive-nav-link href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
                                     {{ __('My Portfolio.') }}
+                                </x-jet-responsive-nav-link>
+
+                                <x-jet-responsive-nav-link href="{{ route('myhandledsections') }}" :active="request()->routeIs('myhandledsections')">
+                                    {{ __('View My Handled Sections.') }}
                                 </x-jet-responsive-nav-link>
 
                                 <x-jet-responsive-nav-link href="" :active="request()->routeIs('')">
@@ -124,6 +133,10 @@
                         {{ __('Manage Users and Roles') }}
                     </x-jet-nav-link>
 
+                    <x-jet-nav-link style="color: white;" href="/subjects" :active="request()->routeIs('/subjects')">
+                        {{ __('Manage Subjects') }}
+                    </x-jet-nav-link>
+
 
                 @endif
 
@@ -136,6 +149,10 @@
 
                     <x-jet-nav-link style="color: white;" href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
                         {{ __('My Portfolio.') }}
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link style="color: white;" href="{{ route('myhandledsections') }}" :active="request()->routeIs('myhandledsections')">
+                        {{ __('View My Handled Sections.') }}
                     </x-jet-nav-link>
 
                     <x-jet-nav-link style="color: white;" href="" :active="request()->routeIs('')">

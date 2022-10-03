@@ -32,6 +32,7 @@ class UserController extends Controller
             'facultyNumber' => 'required',
             'password' => 'required',
             'role' => 'required',
+            'position' => 'required',
         ]);
 
         User::create([
@@ -39,6 +40,7 @@ class UserController extends Controller
             'email' => $request->email,
             'facultyNumber' => $request->facultyNumber,
             'role' => $request->role,
+            'position' => $request->position,
             'password' => Hash::make($request['password']),
         ]);
 
@@ -73,7 +75,8 @@ class UserController extends Controller
             'email' => 'required',
             'facultyNumber' => 'required',
             // 'password' => 'required',
-            'role' => 'required'
+            'role' => 'required',
+            'position' => 'required'
         ]);
 
         $user->update([
@@ -81,7 +84,8 @@ class UserController extends Controller
             'email' => $request->email,
             // 'password' => $request->password,
             'facultyNumber' => $request->facultyNumber,
-            'role' => $request->role
+            'role' => $request->role,
+            'position' => $request->position,
         ]);
 
         return redirect()->route('user.index')

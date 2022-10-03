@@ -6,6 +6,9 @@ use App\Http\Controllers\SubmissionController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
+use App\Http\Livewire\Subjects;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +20,9 @@ use App\Http\Controllers\ContactController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('subjects', Subjects::class)->middleware('auth');
+
 Route::controller(UserController::class)->group(function () {
     Route::get('/users', 'index')->name('user.index');
     Route::get('/user/create', 'create')->name('user.create');
@@ -69,4 +75,8 @@ Route::middleware([
     Route::get('/portfolio', function () {
         return view('portfolio');
     })->name('portfolio');
+
+    Route::get('/myhandledsections', function () {
+        return view('myhandledsections');
+    })->name('myhandledsections');
 });
