@@ -84,6 +84,15 @@
             'success'
         )
     });
+    
+    // user added
+    window.addEventListener('userAdded', event => {
+        Swal.fire(
+            'Success',
+            'The User has been Added.',
+            'success'
+        )
+    });
 </script>
 
 </html>
