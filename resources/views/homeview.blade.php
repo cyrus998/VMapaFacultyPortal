@@ -59,7 +59,7 @@
 
     <!--Hero-->
     <div
-        class="py-20 bg-[url('https://images.unsplash.com/photo-1613899209236-ea0496f96180?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')]">
+    class="py-20 bg-[url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=990&q=80')]">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold mb-2 text-white">
                 Victorino Mapa High School Official
