@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'name' => 'Adrian Villanueva',
             'email' => 'kyleactive101@gmail.com',
             'role' => '0',
-            'position' => 'teacher',
+            'position' => 'student',
             'facultyNumber' => '177544',
             'created_at' => '2022-02-23 11:12:05',
             'email_verified_at' => '2022-09-03 16:30:32',
@@ -49,14 +49,38 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Regular User',
+            'name' => 'Elon Musk',
             'email' => 'user@gmail.com',
             'role' => '0',
-            'position' => 'user',
-            'facultyNumber' => '177502',
+            'position' => 'teacher',
+            'facultyNumber' => '177885',
             'created_at' => '2022-02-23 11:12:05',
             'email_verified_at' => '2022-09-03 16:30:32',
             'password' => '$2y$10$h45XBUUIwz/mARvOZrtYIOvCV8tz6oRlxKzSxTs/7CiawU2axPRdG',
         ]);
+
+        User::create([
+            'name' => 'Kohta Yamamoto',
+            'email' => 'kohta@gmail.com',
+            'role' => '0',
+            'position' => 'user',
+            'facultyNumber' => '175202',
+            'created_at' => '2022-02-23 11:12:05',
+            'email_verified_at' => '2022-09-03 16:30:32',
+            'password' => '$2y$10$h45XBUUIwz/mARvOZrtYIOvCV8tz6oRlxKzSxTs/7CiawU2axPRdG',
+        ]);
+
+        User::create([
+            'name' => 'Reiner Braun',
+            'email' => 'reinerarmor@gmail.com',
+            'role' => '0',
+            'position' => 'user',
+            'facultyNumber' => '175522',
+            'created_at' => '2022-02-23 11:12:05',
+            'email_verified_at' => '2022-09-03 16:30:32',
+            'password' => '$2y$10$h45XBUUIwz/mARvOZrtYIOvCV8tz6oRlxKzSxTs/7CiawU2axPRdG',
+        ]);
+
+
     }
 }
