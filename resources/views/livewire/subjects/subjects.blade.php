@@ -77,8 +77,8 @@
                                         <span class="relative"> edit </span>
                                     </span>
                                 </a>
-
-                                <a wire:click="delete({{ $subject->id }})">
+                                {{-- wire:click="delete({{ $subject->id }})" --}}
+                                <a wire:click.prevent='deleteConfirmation({{$subject->id}})'>
                                     <span
                                         class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                         <span aria-hidden="true"

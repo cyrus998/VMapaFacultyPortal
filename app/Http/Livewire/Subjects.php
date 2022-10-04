@@ -20,6 +20,25 @@ class Subjects extends Component
      *
      * @var array
      */
+
+    public $delete_id;
+
+    protected $listeners = ['deleteConfirmed'=>'deleteSubject'];
+
+    public function deleteConfirmation($id){
+
+        $this->delete_id = $id;
+        $this->dispatchBrowserEvent('show-delete-confirmation');
+
+    }
+
+    public function deleteSubject(){
+        $subject = Subject::where('id', $this->delete_id)->first();
+        $subject->delete();
+
+        $this->dispatchBrowserEvent('subjectDeleted');
+    }
+
     public function render()
     {
         // $this->subjects = Subject::paginate(2);
@@ -102,6 +121,8 @@ class Subjects extends Component
   
         $this->closeModal();
         $this->resetInputFields();
+
+        $this->dispatchBrowserEvent('subjectAdded');
     }
   
     /**
