@@ -7,7 +7,7 @@ use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ContactController;
 use App\Http\Livewire\Subjects;
 use App\Http\Livewire\Users;
-
+use App\Http\Livewire\Portfolios;
 
 
 /*
@@ -20,6 +20,9 @@ use App\Http\Livewire\Users;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('portfolios', Portfolios::class)->middleware('auth');
+
 
 Route::get('subjects', Subjects::class)->middleware('auth');
 

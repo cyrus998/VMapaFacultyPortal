@@ -79,6 +79,10 @@
                                     {{ __('Manage Subjects') }}
                                 </x-jet-responsive-nav-link>
 
+                                <x-jet-responsive-nav-link href="/portfolios" :active="request()->routeIs('portfolios')">
+                                    {{ __('Manage Instructors Information') }}
+                                </x-jet-responsive-nav-link>
+
 
 
                             </div>
@@ -93,6 +97,10 @@
 
                                 <x-jet-responsive-nav-link href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
                                     {{ __('My Portfolio.') }}
+                                </x-jet-responsive-nav-link>
+
+                                <x-jet-responsive-nav-link href="/portfolios" :active="request()->routeIs('portfolios')">
+                                    {{ __('My Personal Details.') }}
                                 </x-jet-responsive-nav-link>
 
                                 <x-jet-responsive-nav-link href="{{ route('myhandledsections') }}" :active="request()->routeIs('myhandledsections')">
@@ -137,6 +145,10 @@
                         {{ __('Manage Subjects') }}
                     </x-jet-nav-link>
 
+                    <x-jet-nav-link style="color: white;" href="/portfolios" :active="request()->routeIs('/portfolios')">
+                        {{ __('Manage Instructors Information') }}
+                    </x-jet-nav-link>
+
 
                 @endif
 
@@ -149,6 +161,10 @@
 
                     <x-jet-nav-link style="color: white;" href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
                         {{ __('My Portfolio.') }}
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link style="color: white;" href="/portfolios" :active="request()->routeIs('portfolios')">
+                        {{ __('My Personal Details.') }}
                     </x-jet-nav-link>
 
                     <x-jet-nav-link style="color: white;" href="{{ route('myhandledsections') }}" :active="request()->routeIs('myhandledsections')">
