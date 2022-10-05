@@ -106,7 +106,7 @@ class Portfolios extends Component
         ]);
   
         session()->flash('message', 
-            $this->portfolio_id ? 'Post Updated Successfully.' : 'Post Created Successfully.');
+            $this->portfolio_id ? 'Portfolio Updated Successfully.' : 'Portfolio Created Successfully.');
   
         $this->closeModal();
         $this->resetInputFields();
@@ -120,12 +120,12 @@ class Portfolios extends Component
 
     public function edit($id)
     {
-        $post = User::findOrFail($id);
+        $portfolio = User::findOrFail($id);
         $this->portfolio_id = $id;
-        $this->contactnumber = $post->contactnumber;
-        $this->address = $post->address;
-        $this->aboutme = $post->aboutme;
-        $this->subjectexpertise = $post->subjectexpertise;
+        $this->contactnumber = $portfolio->contactnumber;
+        $this->address = $portfolio->address;
+        $this->aboutme = $portfolio->aboutme;
+        $this->subjectexpertise = $portfolio->subjectexpertise;
     
         $this->openModal();
     }
@@ -138,6 +138,6 @@ class Portfolios extends Component
     public function delete($id)
     {
         User::find($id)->delete();
-        session()->flash('message', 'Post Deleted Successfully.');
+        session()->flash('message', 'Portfolio Deleted Successfully.');
     }
 }
