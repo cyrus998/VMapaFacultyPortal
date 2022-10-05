@@ -8,10 +8,22 @@
 
     <div class="max-w-full mx-auto sm:px-6 lg:px-8">
 
+        <div class="flex mt-5 justify-center items-center">
+            <div class="flex border-2 rounded">
+                <input wire:model="term" type="text" class="px-4 py-2 w-80" placeholder="Search...">
+                <button class="flex items-center justify-center px-4 border-l">
+                    <svg class="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
 
         <div class="grid grid-cols-1 gap-8 mt-5 md:grid-cols-2 lg:grid-cols-3">
 
-            @foreach (App\Models\User::where('position', '=', 'teacher')->get() as $portfolio)
+            @foreach ( $portfolios as $portfolio)
                 <div class="card1 flex-col px-4 ">
                     <a href="/portfolios"
                         class="max-w-lg flex flex-col bg-white relative overflow-hidden rounded-lg border border-gray-100 p-8">
@@ -110,6 +122,7 @@
                     <tr class="bg-gray-100">
                         <th class="px-4 py-2 w-20">No.</th>
                         <th class="px-4 py-2">Faculty Number</th>
+                        <th class="px-4 py-2">Name</th>
                         <th class="px-4 py-2">Contact Number</th>
                         <th class="px-4 py-2">Address</th>
                         <th class="px-4 py-2">About Me</th>
@@ -119,10 +132,11 @@
                 </thead>
                 <tbody>
 
-                    @foreach (App\Models\User::where('position', '=', 'teacher')->get() as $portfolio)
+                    @foreach ($portfolios as $portfolio)
                         <tr>
                             <td class="border px-4 py-2">{{ $portfolio->id }}</td>
                             <td class="border px-4 py-2">{{ $portfolio->facultyNumber }}</td>
+                            <td class="border px-4 py-2">{{ $portfolio->name }}</td>
                             <td class="border px-4 py-2">{{ $portfolio->contactnumber }}</td>
                             <td class="border px-4 py-2">{{ $portfolio->address }}</td>
                             <td class="border px-4 py-2">{{ $portfolio->aboutme }}</td>

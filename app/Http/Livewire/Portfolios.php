@@ -4,10 +4,16 @@ namespace App\Http\Livewire;
   
 use Livewire\Component;
 use App\Models\User;
-  
+use Livewire\WithPagination;
+
 class Portfolios extends Component
 {
-    public $portfolios, $contactnumber, $address, $aboutme, $subjectexpertise, $portfolio_id;
+
+    use WithPagination;
+
+    public $term;
+
+    public $contactnumber, $address, $aboutme, $subjectexpertise, $portfolio_id;
     public $isOpen = 0;
   
     /**
@@ -17,8 +23,18 @@ class Portfolios extends Component
      */
     public function render()
     {
-        $this->portfolios = User::all();
-        return view('livewire.portfolios.portfolios');
+
+        return view('livewire.portfolios.portfolios', [
+            'portfolios' => User::when($this->term, function($query, $term){
+                return $query->where('address', 'LIKE', "%$term%")
+                ->orWhere('name', 'LIKE', "%$term%")
+                ->orWhere('subjectexpertise', 'LIKE', "%$term%")
+                ->orWhere('facultyNumber', 'LIKE', "%$term%")
+                ->orWhere('aboutme', 'LIKE', "%$term%")
+                ->orWhere('contactnumber', 'LIKE', "%$term%");
+                
+            })->paginate(5)
+        ]);
     }
   
     /**
