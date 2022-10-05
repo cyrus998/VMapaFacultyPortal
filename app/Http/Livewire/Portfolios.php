@@ -13,7 +13,7 @@ class Portfolios extends Component
 
     public $term;
 
-    public $contactnumber, $address, $aboutme, $subjectexpertise, $portfolio_id;
+    public $contactnumber, $address, $name, $email, $aboutme, $subjectexpertise, $portfolio_id;
     public $isOpen = 0;
   
     /**
@@ -33,7 +33,7 @@ class Portfolios extends Component
                 ->orWhere('aboutme', 'LIKE', "%$term%")
                 ->orWhere('contactnumber', 'LIKE', "%$term%");
                 
-            })->paginate(5)
+            })->paginate(6)
         ]);
     }
   
