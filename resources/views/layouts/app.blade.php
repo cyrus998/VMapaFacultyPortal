@@ -93,6 +93,15 @@
             'success'
         )
     });
+
+     // info saved
+     window.addEventListener('infoSaved', event => {
+        Swal.fire(
+            'Success',
+            'The Information has been Saved.',
+            'success'
+        )
+    });
 </script>
 
 </html>

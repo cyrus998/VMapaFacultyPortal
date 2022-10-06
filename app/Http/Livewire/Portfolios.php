@@ -1,143 +1,133 @@
 <?php
-  
+
 namespace App\Http\Livewire;
-  
-use Livewire\Component;
+
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
+use Livewire\Component;
+use Livewire\WithFileUploads;
 use Livewire\WithPagination;
 
 class Portfolios extends Component
 {
+    use WithFileUploads;
 
     use WithPagination;
-
     public $term;
 
-    public $contactnumber, $address, $name, $email, $aboutme, $subjectexpertise, $portfolio_id;
-    public $isOpen = 0;
-  
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    public $showingPostModal = false;
+
+    public $contactnumber, $address, $name, $email, $aboutme, $subjectexpertise;
+
+    public $newImage;
+    public $oldImage;
+
+    public $isEditMode = false;
+    public $portfolio;
+
     public function render()
     {
+        // return view('livewire.portfolios.portfolios', [
+        //     'portfolios' => User::all()
+        // ]);
 
         return view('livewire.portfolios.portfolios', [
             'portfolios' => User::when($this->term, function($query, $term){
-                return $query->where('address', 'LIKE', "%$term%")
-                ->orWhere('name', 'LIKE', "%$term%")
-                ->orWhere('subjectexpertise', 'LIKE', "%$term%")
-                ->orWhere('facultyNumber', 'LIKE', "%$term%")
-                ->orWhere('aboutme', 'LIKE', "%$term%")
-                ->orWhere('contactnumber', 'LIKE', "%$term%");
-                
+                return $query->where('name', 'LIKE', "%$term%")
+                ->orWhere('email', 'LIKE', "%$term%")
+                ->orWhere('aboutme', 'LIKE', "%$term%");
             })->paginate(6)
         ]);
-    }
-  
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    public function create()
-    {
-        $this->resetInputFields();
-        $this->openModal();
-    }
-  
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    public function openModal()
-    {
-        $this->isOpen = true;
-    }
-  
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    public function closeModal()
-    {
-        $this->isOpen = false;
-    }
-  
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
 
-    private function resetInputFields(){
-        $this->contactnumber = '';
-        $this->address = '';
-        $this->aboutme = '';
-        $this->subjectexpertise = '';
-        
-        $this->portfolio_id = '';
     }
-     
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
 
-    public function store()
+    public function showPostModal()
     {
-        // $this->validate([
-        //     'contactnumber' => 'required',
-        //     'address' => 'required',
-        //     'aboutme' => 'required',
-        //     'subjectexpertise' => 'required',
-        // ]);
-   
-        User::updateOrCreate(['id' => $this->portfolio_id], [
+        $this->reset();
+        $this->showingPostModal = true;
+    }
+
+
+    public function storePost()
+    {
+
+        $this->validate([
+            'newImage' => 'image|mimes:jpeg,png,jpg,svg|max:1024', // 1MB Max
+            'contactnumber' => 'required',
+            'address' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'aboutme' => 'required',
+            'subjectexpertise' => 'required'
+        ]);
+
+        $image = $this->newImage->store('public/portfolios');
+
+        User::create([
+            'image' => $image,
+            'contactnumber' => $this->title,
+            'address' => $this->body,
+            'name' => $this->title,
+            'email' => $this->body,
+            'aboutme' => $this->title,
+            'subjectexpertise' => $this->body,
+        ]);
+        $this->reset();
+    }
+
+    public function showEditPostModal($id)
+    {
+        $this->portfolio = User::findOrFail($id);
+
+        $this->contactnumber = $this->portfolio->contactnumber;
+        $this->address = $this->portfolio->address;
+        $this->name = $this->portfolio->name;
+        $this->email = $this->portfolio->email;
+        $this->aboutme = $this->portfolio->aboutme;
+        $this->subjectexpertise = $this->portfolio->subjectexpertise;
+
+        $this->oldImage = $this->portfolio->image;
+        $this->isEditMode = true;
+        $this->showingPostModal = true;
+    }
+
+    public function updatePost()
+    {
+        $this->validate([
+            'contactnumber' => 'required',
+            'address' => 'required',
+            // 'newImage' => 'image|mimes:jpeg,png,jpg,svg|max:2048',
+            'name' => 'required',
+            'email' => 'required',
+            'aboutme' => 'required',
+            'subjectexpertise' => 'required'
+        ]);
+        $image = $this->portfolio->image;
+        if ($this->newImage) {
+            $image = $this->newImage->store('public/portfolios');
+        }
+
+        $this->portfolio->update([
+            'image' => $image,
             'contactnumber' => $this->contactnumber,
             'address' => $this->address,
+            'name' => $this->name,
+            'email' => $this->email,
             'aboutme' => $this->aboutme,
             'subjectexpertise' => $this->subjectexpertise
         ]);
-  
-        session()->flash('message', 
-            $this->portfolio_id ? 'Portfolio Updated Successfully.' : 'Portfolio Created Successfully.');
-  
-        $this->closeModal();
-        $this->resetInputFields();
-    }
-  
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+        $this->reset();
 
-    public function edit($id)
+        $this->dispatchBrowserEvent('infoSaved');
+    }
+        //    public $contactnumber, $address, $name, $email, $aboutme, $subjectexpertise;
+    public function deletePost($id)
     {
         $portfolio = User::findOrFail($id);
-        $this->portfolio_id = $id;
-        $this->contactnumber = $portfolio->contactnumber;
-        $this->address = $portfolio->address;
-        $this->aboutme = $portfolio->aboutme;
-        $this->subjectexpertise = $portfolio->subjectexpertise;
+        Storage::delete($portfolio->image);
+        $portfolio->delete();
+        $this->reset();
+    }
+
     
-        $this->openModal();
-    }
-     
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    public function delete($id)
-    {
-        User::find($id)->delete();
-        session()->flash('message', 'Portfolio Deleted Successfully.');
-    }
 }
