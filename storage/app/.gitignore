@@ -1,8 +1,6 @@
 
-# exclude everything
-public/*
+livewire-tmp/
 
-# exception to the rule
-!public/pog.txt 
+
 
 !.gitignore

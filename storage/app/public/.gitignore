@@ -1,0 +1,11 @@
+
+# exclude everything
+portfolios/*
+
+# exception to the rule
+!portfolios/pog.txt 
+
+!portfolios/nQj3sigByW0nClBcywKF3RHog92pjoInfRwJtMGc.png
+
+
+!.gitignore
