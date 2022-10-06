@@ -35,7 +35,10 @@ class Portfolios extends Component
             'portfolios' => User::when($this->term, function($query, $term){
                 return $query->where('name', 'LIKE', "%$term%")
                 ->orWhere('email', 'LIKE', "%$term%")
-                ->orWhere('aboutme', 'LIKE', "%$term%");
+                ->orWhere('aboutme', 'LIKE', "%$term%")
+                ->orWhere('address', 'LIKE', "%$term%")
+                ->orWhere('contactnumber', 'LIKE', "%$term%")
+                ->orWhere('subjectexpertise', 'LIKE', "%$term%");
             })->paginate(6)
         ]);
 
