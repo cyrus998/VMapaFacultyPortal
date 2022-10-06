@@ -1,3 +1,8 @@
-*
-!public/
+
+# exclude everything
+public/*
+
+# exception to the rule
+!public/pog.txt 
+
 !.gitignore
