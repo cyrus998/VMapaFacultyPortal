@@ -19,6 +19,24 @@
 </head>
 
 <body class="font-sans antialiased">
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/63415d2037898912e96d85f8/1gerl7ikv';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+
     <x-jet-banner />
 
     <div class="min-h-screen bg-gray-100">
@@ -37,6 +55,13 @@
         <main>
             {{ $slot }}
         </main>
+
+        <div hidden class="livechat">
+            <a href="https://wa.me/+639693141458?text=Hello%20I%20Need%20your%20Help%20Thank%20You" target="_blank">
+                <img height="80px" width="80px" src="{{ asset('assets/images/livechat.png') }}" alt="">
+            </a>
+        </div>
+
     </div>
 
     @stack('modals')
@@ -66,7 +91,7 @@
 
     });
 
-    
+
     // subject deleted
     window.addEventListener('subjectDeleted', event => {
         Swal.fire(
@@ -84,7 +109,7 @@
             'success'
         )
     });
-    
+
     // user added
     window.addEventListener('userAdded', event => {
         Swal.fire(
@@ -94,8 +119,8 @@
         )
     });
 
-     // info saved
-     window.addEventListener('infoSaved', event => {
+    // info saved
+    window.addEventListener('infoSaved', event => {
         Swal.fire(
             'Success',
             'The Information has been Saved.',
@@ -105,3 +130,12 @@
 </script>
 
 </html>
+
+
+<style>
+    .livechat {
+        bottom: 10px;
+        left: 10px;
+        position: fixed;
+    }
+</style>
