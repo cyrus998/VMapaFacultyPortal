@@ -149,6 +149,10 @@
                         {{ __('Manage Instructors Information') }}
                     </x-jet-nav-link>
 
+                    <x-jet-nav-link style="color: white;" href="/chart" :active="request()->routeIs('/chart')">
+                        {{ __('Analytics') }}
+                    </x-jet-nav-link>
+
 
                 @endif
 
