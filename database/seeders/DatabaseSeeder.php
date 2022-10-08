@@ -20,6 +20,6 @@ class DatabaseSeeder extends Seeder
             SubjectsSeeder::class,
         ]);
 
-        // \App\Models\User::factory(169)->create();
+        \App\Models\User::factory(169)->create();
     }
 }

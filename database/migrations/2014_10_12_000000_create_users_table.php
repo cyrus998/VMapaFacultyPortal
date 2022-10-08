@@ -19,12 +19,12 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('facultyNumber');
             $table->string('role')->default(0);
-            $table->string('position')->default('user');
+            $table->string('position')->default('new_user');
 
-            $table->string('contactnumber')->nullable();
-            $table->string('address')->nullable();
-            $table->string('aboutme')->nullable();
-            $table->string('subjectexpertise')->nullable();
+            $table->string('contactnumber')->default('Add Your Contact Number Here.');
+            $table->string('address')->default('Add Your Address Here.');
+            $table->string('aboutme')->default('Add Something About Yourself Here.');
+            $table->string('subjectexpertise')->default('Add Your Subject of Expertise Here.');
             $table->string('image')->default('public/portfolios/nQj3sigByW0nClBcywKF3RHog92pjoInfRwJtMGc.png');
             
             $table->timestamp('email_verified_at')->nullable();

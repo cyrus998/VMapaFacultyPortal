@@ -99,7 +99,7 @@
                                     {{ __('My Portfolio.') }}
                                 </x-jet-responsive-nav-link>
 
-                                <x-jet-responsive-nav-link href="/portfolios" :active="request()->routeIs('portfolios')">
+                                <x-jet-responsive-nav-link href="/selfinfos" :active="request()->routeIs('selfinfos')">
                                     {{ __('My Personal Details.') }}
                                 </x-jet-responsive-nav-link>
 
@@ -167,7 +167,7 @@
                         {{ __('My Portfolio.') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link style="color: white;" href="/portfolios" :active="request()->routeIs('portfolios')">
+                    <x-jet-nav-link style="color: white;" href="/selfinfos" :active="request()->routeIs('selfinfos')">
                         {{ __('My Personal Details.') }}
                     </x-jet-nav-link>
 
