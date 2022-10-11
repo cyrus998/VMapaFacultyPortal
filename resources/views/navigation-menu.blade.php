@@ -84,6 +84,19 @@
                                 </x-jet-responsive-nav-link>
 
 
+                                <x-jet-responsive-nav-link href="/chart" :active="request()->routeIs('chart')">
+                                    {{ __('Analytics') }}
+                                </x-jet-responsive-nav-link>
+
+                            
+
+                                <x-jet-responsive-nav-link href="/adminchat" :active="request()->routeIs('portfolios')">
+                                    {{ __('Manage Admin Chat') }}
+                                </x-jet-responsive-nav-link>
+
+
+
+
 
                             </div>
                         @endif
@@ -151,6 +164,10 @@
 
                     <x-jet-nav-link style="color: white;" href="/chart" :active="request()->routeIs('/chart')">
                         {{ __('Analytics') }}
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link style="color: white;" href="/adminchat" :active="request()->routeIs('/adminchat')">
+                        {{ __('Manage Admin Chat') }}
                     </x-jet-nav-link>
 
 
