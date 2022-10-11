@@ -65,7 +65,7 @@
                 Victorino Mapa High School Official
             </h2>
             <h3 class="text-2xl mb-8 text-gray-200">
-                Mataas na Paaralang Victorino Mapa
+                Mataas na Paaralang Victorino Mapa  
             </h3>
             <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">
                 More Information.
@@ -113,182 +113,150 @@
 
     {{-- Programs Offered --}}
 
-    <section>
-        <div class="max-w-screen px-4 py-16 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-x-16 lg:items-center">
-                <div class="max-w-lg mx-auto text-center lg:text-left lg:mx-0">
-                    <h2 class="text-3xl font-bold sm:text-4xl">Find your career path</h2>
+  <!-- 
+content starts here -->
+<!-- ====== About Section Start -->
 
-                    <p class="mt-4 text-gray-600">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut vero
-                        aliquid sint distinctio iure ipsum cupiditate? Quis, odit assumenda?
-                        Deleniti quasi inventore, libero reiciendis minima aliquid tempora.
-                        Obcaecati, autem.
-                    </p>
+<section class="pt-20 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden mx-40 ">
+    
+    <div class="container">
+        <div class="flex flex-wrap justify-between items-center -mx-4">
+            <div class="w-full lg:w-6/12 px-4">
+                <div class="flex items-center -mx-3 sm:-mx-4">
+                    <div class="w-full xl:w-1/2 px-3 sm:px-4">
+                        <div class="py-3 sm:py-4">
+                            <img src="https://scontent.fmnl9-2.fna.fbcdn.net/v/t1.18169-9/166302_187768457918333_3527613_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cdbe9c&_nc_eui2=AeF8CXIUu4XjkGaDDgjo3av7tV6iVEEvJtO1XqJUQS8m06LjPdzYkujkr69PmZM56uLt6YANy6K2rlVaw7nbjHEA&_nc_ohc=XKu2dLxvOg4AX8GS1vp&_nc_ht=scontent.fmnl9-2.fna&oh=00_AT8B8XZSjy0betfVgwswLya8FFmRf3jdIHqoLK77THk62g&oe=6340E400" alt="" class="rounded-2xl w-full" />
+                        </div>
+                        <div class="py-3 sm:py-4">
+                            <img src="https://scontent.fmnl8-1.fna.fbcdn.net/v/t1.18169-9/162822_187487007946478_7240829_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cdbe9c&_nc_eui2=AeE2hp50epEL3gu4asHJr_wh2Wotu7Qo5K3Zai27tCjkrcHbP7LDvBb9L03kV2-zX3JIkbvxaPLsmXYtMG0pLXxC&_nc_ohc=Opo8sTILI9wAX8Uqv0c&tn=VkflTHCVtXw-JD2u&_nc_ht=scontent.fmnl8-1.fna&oh=00_AT8gDq7P7-8Y9stnUsT-NFadpEoMZSC90donxrboBF_fEw&oe=6342D711" alt="" class="rounded-2xl w-full" />
+                        </div>
+                    </div>
+                    <div class="w-full xl:w-1/2 px-3 sm:px-4">
+                        <div class="my-4 relative z-10">
+                            <img src="https://scontent.fmnl9-1.fna.fbcdn.net/v/t1.18169-9/12540812_1195326113829224_1568043238246640753_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cdbe9c&_nc_eui2=AeHxLai1dcYrK9UfYHlTSoXmyjjFSZZObajKOMVJlk5tqGpRW_i49u5y4Mc1WFRt2D84tHQRTxsaYwvKn3l8xIW-&_nc_ohc=POu6rn3WaF0AX_YdtTG&_nc_ht=scontent.fmnl9-1.fna&oh=00_AT8bgdGFnokGa36GhjQJyMDEbvJjytBsaq13vSGLu6oWow&oe=6342DD6C" alt="" class="rounded-2xl w-full" />
 
-                    <a class="inline-flex items-center px-8 py-3 mt-8 text-white bg-indigo-600 border border-indigo-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
-                        href="/get-started">
-                        <span class="text-sm font-medium"> Get Started </span>
-
-                        <svg class="w-5 h-5 ml-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </a>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
-                    <a class="block p-4 border border-gray-100 shadow-sm rounded-xl focus:outline-none focus:ring hover:border-gray-200 hover:ring-1 hover:ring-gray-200"
-                        href="/accountant">
-                        <span class="inline-block p-3 rounded-lg bg-gray-50">
-                            <img src="https://media.discordapp.net/attachments/971130306751000636/980725050418274334/unknown.png"
-                                width="25" alt="">
-                        </span>
-
-                        <h6 class="mt-2 font-bold">Accountant</h6>
-
-                        <p class="hidden sm:mt-1 sm:text-sm sm:text-gray-600 sm:block">
-                            Lorem ipsum dolor sit amet consectetur.
-                        </p>
+            </div>
+            <div class="w-full lg:w-1/2 xl:w-5/12 px-4">
+                <div class="mt-10 lg:mt-0">
+                    <span class="font-semibold text-lg text-primary mb-2 block">
+                        Your Journey Starts Here.
+                    </span>
+                    <h2 class="font-bold text-3xl sm:text-4xl text-dark mb-8">
+                        Why choose Victorino Mapa HighSchool?
+                    </h2>
+                    <p class="text-base text-body-color mb-8">
+                        It is a long established fact that a reader will be distracted
+                        by the readable content of a page when looking at its layout.
+                        The point of using Lorem Ipsum is that it has a more-or-less.
+                    </p>
+                    <p class="text-base text-body-color mb-12">
+                        A domain name is one of the first steps to establishing your
+                        brand. Secure a consistent brand image with a domain name that
+                        matches your business.
+                    </p>
+                    <a href="javascript:void(0)" class="
+                  py-4
+                  px-10
+                  lg:px-8
+                  xl:px-10
+                  inline-flex
+                  items-center
+                  justify-center
+                  text-center text-white text-base
+                  bg-primary
+                  hover:bg-opacity-90
+                  font-normal
+                  rounded-lg
+                  ">
+                        Get Started
                     </a>
-
-                    <a class="block p-4 border border-gray-100 shadow-sm rounded-xl focus:outline-none focus:ring hover:border-gray-200 hover:ring-1 hover:ring-gray-200"
-                        href="/accountant">
-                        <span class="inline-block p-3 rounded-lg bg-gray-50">
-                            <img src="https://media.discordapp.net/attachments/971130306751000636/980725050418274334/unknown.png"
-                                width="25" alt="">
-                        </span>
-
-                        <h6 class="mt-2 font-bold">Accountant</h6>
-
-                        <p class="hidden sm:mt-1 sm:text-sm sm:text-gray-600 sm:block">
-                            Lorem ipsum dolor sit amet consectetur.
-                        </p>
-                    </a>
-
-                    <a class="block p-4 border border-gray-100 shadow-sm rounded-xl focus:outline-none focus:ring hover:border-gray-200 hover:ring-1 hover:ring-gray-200"
-                        href="/accountant">
-                        <span class="inline-block p-3 rounded-lg bg-gray-50">
-                            <img src="https://media.discordapp.net/attachments/971130306751000636/980725050418274334/unknown.png"
-                                width="25" alt="">
-                        </span>
-
-                        <h6 class="mt-2 font-bold">Accountant</h6>
-
-                        <p class="hidden sm:mt-1 sm:text-sm sm:text-gray-600 sm:block">
-                            Lorem ipsum dolor sit amet consectetur.
-                        </p>
-                    </a>
-
-                    <a class="block p-4 border border-gray-100 shadow-sm rounded-xl focus:outline-none focus:ring hover:border-gray-200 hover:ring-1 hover:ring-gray-200"
-                        href="/accountant">
-                        <span class="inline-block p-3 rounded-lg bg-gray-50">
-                            <img src="https://media.discordapp.net/attachments/971130306751000636/980725050418274334/unknown.png"
-                                width="25" alt="">
-                        </span>
-
-                        <h6 class="mt-2 font-bold">Accountant</h6>
-
-                        <p class="hidden sm:mt-1 sm:text-sm sm:text-gray-600 sm:block">
-                            Lorem ipsum dolor sit amet consectetur.
-                        </p>
-                    </a>
-
-                    <a class="block p-4 border border-gray-100 shadow-sm rounded-xl focus:outline-none focus:ring hover:border-gray-200 hover:ring-1 hover:ring-gray-200"
-                        href="/accountant">
-                        <span class="inline-block p-3 rounded-lg bg-gray-50">
-                            <img src="https://media.discordapp.net/attachments/971130306751000636/980725050418274334/unknown.png"
-                                width="25" alt="">
-                        </span>
-
-                        <h6 class="mt-2 font-bold">Accountant</h6>
-
-                        <p class="hidden sm:mt-1 sm:text-sm sm:text-gray-600 sm:block">
-                            Lorem ipsum dolor sit amet consectetur.
-                        </p>
-                    </a>
-
-                    <a class="block p-4 border border-gray-100 shadow-sm rounded-xl focus:outline-none focus:ring hover:border-gray-200 hover:ring-1 hover:ring-gray-200"
-                        href="/accountant">
-                        <span class="inline-block p-3 rounded-lg bg-gray-50">
-                            <img src="https://media.discordapp.net/attachments/971130306751000636/980725050418274334/unknown.png"
-                                width="25" alt="">
-                        </span>
-
-                        <h6 class="mt-2 font-bold">Accountant</h6>
-
-                        <p class="hidden sm:mt-1 sm:text-sm sm:text-gray-600 sm:block">
-                            Lorem ipsum dolor sit amet consectetur.
-                        </p>
-                    </a>
-
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <div class="lg:flex">
+        <div class="flex items-center justify-center w-full px-6 py-8 lg:h-[32rem] lg:w-1/2">
+            <div class="max-w-xl">
+                <h2 class="text-2xl font-semibold text-gray-800 lg:text-3xl">Victorino Mapa HighSchool <span class="text-blue-600 ">History:</span></h2>
+
+                <p class="mt-2 text-sm text-gray-500  lg:text-base">
+                Victorino Mapa High School opened its first classes (Manila East High School) as one of the four schools in City of Manila together with Torres High School (Manila South High School) and Arellano High School (Manila North High School) in June 1923.
+
+                </p>
+<br>
+                <p class="mt-2 text-sm text-gray-500  lg:text-base">
+                Mapa Has been under the administration of principals since it was founded in June 1923. The three of these were Americans namely, John Carl, Sarah M. England and James Burns. The first Filipino principal of the School was Indolencio Madamba in 1951. In his term, the Parents-Teachers Association was organized and succession of principals took over, after Madamba retired in May 1956.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="w-full h-64 lg:w-1/2 lg:h-auto rounded-2xl">
+            <div class="w-full rounded-2xl h-full bg-cover" style="background-image: url(https://images.unsplash.com/photo-1508394522741-82ac9c15ba69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=748&q=80)">
+                <div class="w-full h-full rounded-2xl bg-black opacity-25"></div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
     <!-- Testimonials -->
-    <section class="bg-white ">
+    <section class= "py-20 bg-[url('https://images.unsplash.com/photo-1593588332695-cd49488a8ec8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80')] ">
+   
     <div class="container px-6 py-10 mx-auto">
-        <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize xl:text-5xl lg:text-4xl ">
-            What our <span class="text-blue-500 ">clients</span> say
+        <h1 class="text-3xl font-semibold text-center capitalize xl:text-5xl lg:text-4xl ">
+        <span class="text-white "> Schools Organization</span>
         </h1>
 
-        <p class="max-w-2xl mx-auto mt-6 text-center text-gray-500 ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni quia error
-            alias, adipisci rem similique, at omnis eligendi optio eos harum.
+        <p class="max-w-2xl mx-auto mt-6 text-center text-neutral-50 ">
+            Principal and Guidance 
         </p>
 
         <section class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 lg:grid-cols-2 xl:grid-cols-3">
-            <div class="p-8 border rounded-lg ">
-                <p class="leading-loose text-gray-500 ">
-                    “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad
-                    tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum, culpa
-                    aperiam dolorum, obcaecati corrupti aspernatur a.”.
+            <div class="p-12 bg-neutral-800 border rounded-lg ">
+                <p class="leading-loose text-white ">
+                    “There's nothing more important than our good health - that's our principal capital asset”.
                 </p>
 
                 <div class="flex items-center mt-8 -mx-2">
-                    <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 " src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
+                    <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 " src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t1.6435-9/33060388_636582630006475_6440931242836754432_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=2Ws5H1V8EC8AX9idkoa&_nc_ht=scontent.fmnl2-2.fna&oh=00_AT9orkoccL0kGPnPV6UMLOxONB8kjJPipUPoE4BfJlzl1g&oe=636C663A" alt="">
 
                     <div class="mx-2">
-                        <h1 class="font-semibold text-gray-800 ">Robert</h1>
-                        <span class="text-sm text-gray-500">CTO, Robert Consultency</span>
+                        <h1 class="font-semibold text-white">Robert Velasquez</h1>
+                        <span class="text-sm text-gray-50">School Principal of the Victorino Mapa High School</span>
                     </div>
                 </div>
             </div>
 
-            <div class="p-8 border rounded-lg">
-                <p class="leading-loose text-gray-500">
-                    “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad
-                    tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum, culpa
-                    aperiam dolorum, obcaecati corrupti aspernatur a.”.
+            <div class="p-8 bg-neutral-800 border rounded-lg">
+                <p class="leading-loose text-white">
+                    “When you have a dream, you've got to grab it and never let go, Leaders don't rise to the pinnacle of success without developing the right set of attittudes and habits; they make every day a masterpiece”.
                 </p>
 
                 <div class="flex items-center mt-8 -mx-2">
                     <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 " src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="">
 
                     <div class="mx-2">
-                        <h1 class="font-semibold text-gray-800">Jeny Doe</h1>
-                        <span class="text-sm text-gray-500">CEO, Jeny Consultency</span>
+                        <h1 class="font-semibold text-white">Jeny Doe</h1>
+                        <span class="text-sm text-white">Edit ko patong part nato bare with me :)</span>
                     </div>
                 </div>
             </div>
 
-            <div class="p-8 border rounded-lg">
-                <p class="leading-loose text-gray-500">
-                    “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus libero ad
-                    tempora doloribus expedita laborum saepe voluptas perferendis delectus assumenda rerum, culpa
-                    aperiam dolorum, obcaecati corrupti aspernatur a.”.
+            <div class="p-8 bg-neutral-800 border rounded-lg">
+                <p class="leading-loose text-white">
+                    “Do not look at how long it will take you to accomplish those goals or how hard it will be, take it step by step and know day it will all be worth it.”.
                 </p>
 
                 <div class="flex items-center mt-8 -mx-2">
                     <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 " src="https://images.unsplash.com/photo-1488508872907-592763824245?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
 
                     <div class="mx-2">
-                        <h1 class="font-semibold text-gray-800">Ema Watson </h1>
-                        <span class="text-sm text-gray-500">Marketing Manager at Stech</span>
+                        <h1 class="font-semibold text-White">Ema Watson </h1>
+                        <span class="text-sm text-white">Edit ko patong part nato bare with me :)</span>
                     </div>
                 </div>
             </div>
