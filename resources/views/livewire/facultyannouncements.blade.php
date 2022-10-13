@@ -2,16 +2,17 @@
 @if (Auth::user()->position == 'teacher')
 
 <div class="max-w-6xl mx-auto">
-
+    @if (Auth::user()->role == '1')
     <div class="flex justify m-2 p-2">
         <x-jet-button wire:click="showPostModal">Create New Announcement For Faculty</x-jet-button>
     </div>
+    @endif
 
-  
+
     <div class="relative mx-auto max-w-7xl">
         <div class="grid max-w-lg gap-12 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none">
 
-        @foreach ($facultyannouncements as $facultyannouncement)
+            @foreach ($facultyannouncements as $facultyannouncement)
             <div class="flex flex-col mb-12 overflow-hidden cursor-pointer shadow-lg">
                 <a href="" class="hidden">{{ $facultyannouncement->id }}</a>
                 <a href="">
@@ -35,6 +36,8 @@
                             </h3>
                             <p class="text-lg font-normal text-gray-500">{{ $facultyannouncement->description }}</p>
                         </a>
+
+                        @if (Auth::user()->role == '1')
                         <div style="float:right;">
                             <x-jet-button wire:click="showEditPostModal({{ $facultyannouncement->id }})">Edit
                             </x-jet-button>
@@ -42,6 +45,7 @@
                             <x-jet-button class="bg-red-400 hover:bg-red-600" wire:click="deletePost({{ $facultyannouncement->id }})">Delete
                             </x-jet-button>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>

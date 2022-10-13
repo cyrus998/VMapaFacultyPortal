@@ -12,21 +12,12 @@
 
         {{-- For regular users --}}
         @if (Auth::user()->role == '0')
-<<<<<<< HEAD
-            <div class="shrink-0 flex items-center">
-                <a href="{{ route('homeview') }}">
-                    <x-jet-application-mark class="block h-9 w-auto" />
-                </a>
-                <h1 class="text-white text-2xl ml-5">Victorino Mapa</h1>
-            </div>
-=======
         <div class="shrink-0 flex items-center">
             <a href="{{ route('dashboard') }}">
                 <x-jet-application-mark class="block h-9 w-auto" />
             </a>
             <h1 class="text-white text-2xl ml-5">Victorino Mapa</h1>
         </div>
->>>>>>> 856d9e590407989a8e41aa58d1849502a5588117
         @endif
 
         <div class="flex items-center md:order-2">
@@ -86,6 +77,9 @@
                                 {{ __('Manage Instructors Information') }}
                             </x-jet-responsive-nav-link>
 
+                            <x-jet-responsive-nav-link href="/facultyannouncements" :active="request()->routeIs('facultyannouncements')">
+                                {{ __('Manage Faculty Announcements') }}
+                            </x-jet-responsive-nav-link>
 
                             <x-jet-responsive-nav-link href="/chart" :active="request()->routeIs('chart')">
                                 {{ __('Analytics') }}
@@ -147,6 +141,10 @@
                 <x-jet-nav-link style="color: white;" href="/users" :active="request()->routeIs('/users')">
                     {{ __('Manage Users and Roles') }}
                 </x-jet-nav-link>
+                
+                <x-jet-nav-link style="color: white;" href="/facultyannouncements" :active="request()->routeIs('/facultyannouncements')">
+                {{ __('Manage Faculty Announcements') }}
+                </x-jet-nav-link>
 
                 <x-jet-nav-link style="color: white;" href="/subjects" :active="request()->routeIs('/subjects')">
                     {{ __('Manage Subjects') }}
@@ -164,6 +162,7 @@
                     {{ __('Manage Admin Chat') }}
                 </x-jet-nav-link>
 
+              
 
                 @endif
 
