@@ -32,7 +32,7 @@
                                 <p class="text-lg font-normal text-gray-500">{{ $publicannouncement->description }}</p>
                             </a>
 
-                            <div style="float:right;">
+                            <div style="float:right;" class="mt-4">
                                 <x-jet-button wire:click="showEditPostModal({{ $publicannouncement->id }})">Edit
                                 </x-jet-button>
 
