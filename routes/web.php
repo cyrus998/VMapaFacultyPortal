@@ -63,10 +63,9 @@ Route::get('/aboutview', function () {
     return view('aboutview');
 });
 
-
 Route::get('/', function () {
     return view('homeview');
-});
+})->name('homeview');
 
 Route::middleware([
     'auth:sanctum',

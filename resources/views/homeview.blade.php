@@ -1,4 +1,5 @@
 <script src="https://cdn.tailwindcss.com"></script>
+<script defer src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"></script>
 
 <body id="main" class="text-gray-700 " style="font-family: 'Source Sans Pro', sans-serif">
     <!--Nav-->
@@ -30,28 +31,48 @@
                     <a href="/" style="color: white;" href="" :active="request() - > routeIs('/')">
                         {{ __('Home') }}
                     </a>
+                    
+            <div class="justify-center">
+            <div x-data="{ open: false }" @mouseleave="open = false" class="relative">
+            
+            <!-- Dropdown toggle button -->
+            <button @mouseover="open = true">
+                <span class="text-white">About</span>
+            </button>   
+    
 
-                    <a href="/missionandvision" style="color: white;" href="" :active="request() - > routeIs('/')">
-                        {{ __('Vision and Mission') }}
-                    </a>
-
+            <!-- Dropdown menu -->
+            <div x-show="open"
+                    x-transition.scale.origin.top
+                    class="absolute right-0 w-48 py-2 mt-2 bg-white bg-gray-100 rounded-md shadow-xl">
+                        <a href="/missionandvision"
+                            class="block px-4 py-2 text-sm text-black-300 text-gray-700 hover:bg-gray-900 hover:text-white">
+                            {{ __('Vision and Mission') }}
+                        </a>
+                        <a href="/aboutview"
+                            class="block px-4 py-2 text-sm text-black-300 text-gray-700 hover:bg-gray-900 hover:text-white">
+                            {{ __('About') }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+                    
                     <a href="/submissions/create" style="color: white;" href="" :active="request() - > routeIs('/')">
                         {{ __('Admission / Submission of Requirements') }}
                     </a>
 
-                    <a href="/aboutview" style="color: white;" href="" :active="request() - > routeIs('/')">
-                        {{ __('About') }}
-                    </a>
+                   
 
                     <a href="/announcements" style="color: white;" href="" :active="request() - > routeIs('/')">
                         {{ __('News and Announcements') }}
                     </a>
 
+                </ul>
+                <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                     <a href="/portal" style="color: white;" href="" :active="request() - > routeIs('/')">
                         {{ __('Faculty Portal') }}
                     </a>
-
-                </ul>
+                </button>
             </div>
         </div>
 

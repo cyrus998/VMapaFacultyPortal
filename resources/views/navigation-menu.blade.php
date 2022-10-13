@@ -13,7 +13,7 @@
         {{-- For regular users --}}
         @if (Auth::user()->role == '0')
             <div class="shrink-0 flex items-center">
-                <a href="{{ route('dashboard') }}">
+                <a href="{{ route('homeview') }}">
                     <x-jet-application-mark class="block h-9 w-auto" />
                 </a>
                 <h1 class="text-white text-2xl ml-5">Victorino Mapa</h1>
