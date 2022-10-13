@@ -77,23 +77,20 @@
                                 {{ __('Manage Instructors Information') }}
                             </x-jet-responsive-nav-link>
 
+<<<<<<< HEAD
                             <x-jet-responsive-nav-link href="/facultyannouncements" :active="request()->routeIs('facultyannouncements')">
                                 {{ __('Manage Faculty Announcements') }}
                             </x-jet-responsive-nav-link>
 
+=======
+>>>>>>> 32034aa0d2ca00f8d566d0cf217b8212828e9798
                             <x-jet-responsive-nav-link href="/chart" :active="request()->routeIs('chart')">
                                 {{ __('Analytics') }}
                             </x-jet-responsive-nav-link>
 
-
-
                             <x-jet-responsive-nav-link href="/adminchat" :active="request()->routeIs('portfolios')">
                                 {{ __('Manage Admin Chat') }}
                             </x-jet-responsive-nav-link>
-
-
-
-
 
                         </div>
                         @endif
