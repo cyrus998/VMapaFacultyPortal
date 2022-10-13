@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Kayandra\Hashidable\Hashidable;
-class FacultyAnnouncement extends Model
+
+class Facultyannouncement extends Model
 {
-    use Hashidable;
     use HasFactory;
+    protected $fillable = ['title', 'image', 'description'];
 }

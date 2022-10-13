@@ -12,6 +12,7 @@ use App\Http\Livewire\Users;
 use App\Http\Livewire\Portfolios;
 use App\Http\Livewire\Selfinfos;
 use App\Http\Livewire\Adminchat;
+use App\Http\Livewire\Facultyannouncements;
 
 
 /*
@@ -24,8 +25,7 @@ use App\Http\Livewire\Adminchat;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::resource('faculty-announcements', FacultyAnnouncementController::class);
+Route::get('facultyannouncements', Facultyannouncements::class)->middleware('auth');
 
 Route::get('adminchat', Adminchat::class)->middleware('auth');
 
