@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\FaculltyAnnouncementController;
 use App\Http\Controllers\SubmissionController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ChartJSController;
@@ -24,19 +25,17 @@ use App\Http\Livewire\Adminchat;
 |
 */
 
+Route::resource('faculty-announcements', FacultyAnnouncementController::class);
 
 Route::get('adminchat', Adminchat::class)->middleware('auth');
 
 Route::get('selfinfos', Selfinfos::class)->middleware('auth');
 
-
 Route::get('chart', [ChartJSController::class, 'index']);
 
 Route::get('portfolios', Portfolios::class)->middleware('auth');
 
-
 Route::get('subjects', Subjects::class)->middleware('auth');
-
 
 Route::get('users', Users::class)->middleware('auth');
 

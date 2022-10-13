@@ -104,8 +104,8 @@
                         {{-- For Regular Users --}}
                         @if (Auth::user()->role == '0')
                             <div class="pt-2 pb-3 space-y-1">
-                                <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                                    {{ __('Dashboard') }}
+                                <x-jet-responsive-nav-link href="{{ route('faculty-announcements.index') }}" :active="request()->routeIs('dashboard')">
+                                    {{ __('Faculty Announcement') }}
                                 </x-jet-responsive-nav-link>
 
                                 <x-jet-responsive-nav-link href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
@@ -118,14 +118,6 @@
 
                                 <x-jet-responsive-nav-link href="{{ route('myhandledsections') }}" :active="request()->routeIs('myhandledsections')">
                                     {{ __('View My Handled Sections.') }}
-                                </x-jet-responsive-nav-link>
-
-                                <x-jet-responsive-nav-link href="" :active="request()->routeIs('')">
-                                    {{ __('My Students.') }}
-                                </x-jet-responsive-nav-link>
-
-                                <x-jet-responsive-nav-link href="" :active="request()->routeIs('')">
-                                    {{ __('My Time Card.') }}
                                 </x-jet-responsive-nav-link>
                             </div>
                         @endif
@@ -176,8 +168,8 @@
                 {{-- For regular users --}}
 
                 @if (Auth::user()->role == '0')
-                    <x-jet-nav-link style="color: white;" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('To Do') }}
+                    <x-jet-nav-link style="color: white;" href="{{ route('faculty-announcements.index') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('News and Announcement') }}
                     </x-jet-nav-link>
 
                     <x-jet-nav-link style="color: white;" href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
@@ -190,14 +182,6 @@
 
                     <x-jet-nav-link style="color: white;" href="{{ route('myhandledsections') }}" :active="request()->routeIs('myhandledsections')">
                         {{ __('View My Handled Sections.') }}
-                    </x-jet-nav-link>
-
-                    <x-jet-nav-link style="color: white;" href="" :active="request()->routeIs('')">
-                        {{ __('My Students.') }}
-                    </x-jet-nav-link>
-
-                    <x-jet-nav-link style="color: white;" href="" :active="request()->routeIs('')">
-                        {{ __('My Time Card.') }}
                     </x-jet-nav-link>
                 @endif
             </ul>
