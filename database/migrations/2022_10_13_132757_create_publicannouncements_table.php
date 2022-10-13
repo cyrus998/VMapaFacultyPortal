@@ -12,16 +12,15 @@ return new class extends Migration
      * @return void
      */
     public function up()
-{
-    Schema::create('announcements', function (Blueprint $table) {
-        $table->id();
-        $table->string('date');
-        $table->string('title');
-        $table->string('description');
-        $table->string('photourl');
-        $table->timestamps();
-    });
-}
+    {
+        Schema::create('publicannouncements', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('image');
+            $table->text('description');
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('announcements');
+        Schema::dropIfExists('publicannouncements');
     }
 };

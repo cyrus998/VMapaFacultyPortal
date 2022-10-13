@@ -64,7 +64,7 @@
 
                    
 
-                    <a href="/announcements" style="color: white;" href="" :active="request() - > routeIs('/')">
+                    <a href="/publicnews" style="color: white;" href="" :active="request() - > routeIs('/')">
                         {{ __('News and Announcements') }}
                     </a>
 

@@ -13,7 +13,7 @@ use App\Http\Livewire\Portfolios;
 use App\Http\Livewire\Selfinfos;
 use App\Http\Livewire\Adminchat;
 use App\Http\Livewire\Facultyannouncements;
-
+use App\Http\Livewire\Publicannouncements;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +25,8 @@ use App\Http\Livewire\Facultyannouncements;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('publicannouncements', Publicannouncements::class);
+
 Route::get('facultyannouncements', Facultyannouncements::class)->middleware('auth');
 
 Route::get('adminchat', Adminchat::class)->middleware('auth');
@@ -54,6 +56,11 @@ Route::get('redirects', 'App\Http\Controllers\HomeController@index')->middleware
 Route::get('/portal', function () {
     return view('welcome');
 });
+
+Route::get('/publicnews', function () {
+    return view('publicnews');
+});
+
 
 Route::get('/missionandvision', function () {
     return view('missionandvision');

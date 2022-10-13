@@ -69,6 +69,14 @@
                                 {{ __('Manage Users and Roles') }}
                             </x-jet-responsive-nav-link>
 
+                            <x-jet-responsive-nav-link href="/facultyannouncements" :active="request()->routeIs('facultyannouncements')">
+                                {{ __('Manage Faculty Announcements') }}
+                            </x-jet-responsive-nav-link>
+
+                            <x-jet-responsive-nav-link href="/publicannouncements" :active="request()->routeIs('publicannouncements')">
+                                {{ __('Manage Public Announcements') }}
+                            </x-jet-responsive-nav-link>
+
                             <x-jet-responsive-nav-link href="/subjects" :active="request()->routeIs('subjects')">
                                 {{ __('Manage Subjects') }}
                             </x-jet-responsive-nav-link>
@@ -77,13 +85,6 @@
                                 {{ __('Manage Instructors Information') }}
                             </x-jet-responsive-nav-link>
 
-<<<<<<< HEAD
-                            <x-jet-responsive-nav-link href="/facultyannouncements" :active="request()->routeIs('facultyannouncements')">
-                                {{ __('Manage Faculty Announcements') }}
-                            </x-jet-responsive-nav-link>
-
-=======
->>>>>>> 32034aa0d2ca00f8d566d0cf217b8212828e9798
                             <x-jet-responsive-nav-link href="/chart" :active="request()->routeIs('chart')">
                                 {{ __('Analytics') }}
                             </x-jet-responsive-nav-link>
@@ -141,6 +142,10 @@
                 
                 <x-jet-nav-link style="color: white;" href="/facultyannouncements" :active="request()->routeIs('/facultyannouncements')">
                 {{ __('Manage Faculty Announcements') }}
+                </x-jet-nav-link>
+
+                <x-jet-nav-link style="color: white;" href="/publicannouncements" :active="request()->routeIs('/publicannouncements')">
+                {{ __('Manage Public Announcements') }}
                 </x-jet-nav-link>
 
                 <x-jet-nav-link style="color: white;" href="/subjects" :active="request()->routeIs('/subjects')">
