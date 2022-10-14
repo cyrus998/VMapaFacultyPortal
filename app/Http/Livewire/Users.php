@@ -144,9 +144,23 @@ class Users extends Component
      *
      * @var array
      */
-    public function delete($id)
+
+    public $delete_id;
+
+    protected $listeners = ['deleteConfirmed'=>'delete'];
+
+    public function deleteConfirmation($id){
+
+        $this->delete_id = $id;
+        $this->dispatchBrowserEvent('show-delete-confirmation');
+
+    }
+
+    public function delete()
     {
-        User::find($id)->delete();
+        $user = User::where('id', $this->delete_id)->first();
+        $user->delete();
+        $this->dispatchBrowserEvent('userDeleted');
         session()->flash('message', 'User Deleted Successfully.');
     }
 }

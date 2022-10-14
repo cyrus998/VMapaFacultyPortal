@@ -92,7 +92,7 @@
                                     </span>
                                 </a>
                                 {{-- wire:click="delete({{ $subject->id }})" --}}
-                                <a wire:click='delete({{ $user->id }})'>
+                                <a wire:click.prevent="deleteConfirmation({{ $user->id }})">
                                     <span
                                         class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                         <span aria-hidden="true"

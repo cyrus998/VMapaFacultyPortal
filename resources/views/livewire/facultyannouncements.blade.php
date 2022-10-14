@@ -41,7 +41,7 @@
                             <x-jet-button wire:click="showEditPostModal({{ $facultyannouncement->id }})">Edit
                             </x-jet-button>
 
-                            <x-jet-button wire:click="deletePost({{ $facultyannouncement->id }})">Delete
+                            <x-jet-button wire:click.prevent="deleteConfirmation({{ $facultyannouncement->id }})">Delete
                             </x-jet-button>
                         </div>
                         @endif

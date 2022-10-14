@@ -46,6 +46,7 @@ class Facultyannouncements extends Component
             'description' => $this->description,
         ]);
         $this->reset();
+        $this->dispatchBrowserEvent('announcementSaved');
     }
 
     public function showEditPostModal($id)
@@ -81,12 +82,25 @@ class Facultyannouncements extends Component
         $this->dispatchBrowserEvent('announcementSaved');
     }
 
-    public function deletePost($id)
+
+    public $delete_id;
+
+    protected $listeners = ['deleteConfirmed'=>'deletePost'];
+
+    public function deleteConfirmation($id){
+
+        $this->delete_id = $id;
+        $this->dispatchBrowserEvent('show-delete-confirmation');
+
+    }
+
+    public function deletePost()
     {
-        $facultyannouncement = Facultyannouncement::findOrFail($id);
+        $facultyannouncement = Facultyannouncement::where('id', $this->delete_id)->first();
         Storage::delete($facultyannouncement->image);
         $facultyannouncement->delete();
         $this->reset();
+        $this->dispatchBrowserEvent('infoDeleted');
     }
 
     public function render()

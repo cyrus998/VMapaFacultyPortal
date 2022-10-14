@@ -91,6 +91,15 @@
 
     });
 
+    // userDeleted
+    window.addEventListener('userDeleted', event => {
+        Swal.fire(
+            'Deleted',
+            'The User has been Deleted.',
+            'success'
+        )
+    });
+
 
     // infoDeleted
     window.addEventListener('infoDeleted', event => {

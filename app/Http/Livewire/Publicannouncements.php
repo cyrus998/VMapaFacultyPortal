@@ -82,12 +82,25 @@ class Publicannouncements extends Component
         $this->dispatchBrowserEvent('announcementSaved');
     }
 
-    public function deletePost($id)
+
+    public $delete_id;
+
+    protected $listeners = ['deleteConfirmed'=>'deletePost'];
+
+    public function deleteConfirmation($id){
+
+        $this->delete_id = $id;
+        $this->dispatchBrowserEvent('show-delete-confirmation');
+
+    }
+
+    public function deletePost()
     {
-        $publicannouncement = PublicAnnouncement::findOrFail($id);
+        $publicannouncement = PublicAnnouncement::where('id', $this->delete_id)->first();
         Storage::delete($publicannouncement->image);
         $publicannouncement->delete();
         $this->reset();
+        $this->dispatchBrowserEvent('infoDeleted');
     }
 
     public function render()
