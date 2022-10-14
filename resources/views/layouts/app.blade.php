@@ -92,6 +92,15 @@
     });
 
 
+    // infoDeleted
+    window.addEventListener('infoDeleted', event => {
+        Swal.fire(
+            'Deleted',
+            'The Information has been Deleted.',
+            'success'
+        )
+    });
+
     // subject deleted
     window.addEventListener('subjectDeleted', event => {
         Swal.fire(
@@ -124,6 +133,15 @@
         Swal.fire(
             'Success',
             'The Information has been Saved.',
+            'success'
+        )
+    });
+
+    // announcement saved
+    window.addEventListener('announcementSaved', event => {
+        Swal.fire(
+            'Success',
+            'The Announcement has been Saved and Posted.',
             'success'
         )
     });

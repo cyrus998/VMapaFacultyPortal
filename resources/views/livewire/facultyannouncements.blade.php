@@ -18,38 +18,33 @@
                 @foreach ($facultyannouncements as $facultyannouncement)
                 <div class="flex flex-col mb-12 overflow-hidden cursor-pointer shadow-lg">
                     <a href="" class="hidden">{{ $facultyannouncement->id }}</a>
-                    <a href="">
                         <div class="flex-shrink-0">
                             <img class="object-cover w-full h-52 rounded-lg" src="{{ Storage::url($facultyannouncement->image) }}" alt="">
                         </div>
                     </a>
                     <div class="flex flex-col justify-between flex-1 p-3">
-                        <a href=""></a>
                         <div class="flex-1">
-                            <a href="">
                                 <div class="flex pt-6 space-x-1 text-sm text-gray-500">
-                                    <time datetime="2020-03-10"> Date to be added</time>
+                                    <time datetime="2020-03-10">Date: {{ $facultyannouncement->setdate }}</time>
                                     <span aria-hidden="true"> · </span>
                                     <span> 4 min read </span>
                                 </div>
-                            </a>
                             <a href="#" class="block mt-2 space-y-6">
                                 <h3 class="text-2xl font-semibold leading-none tracking-tighter text-neutral-600">
                                     {{ $facultyannouncement->title }}
                                 </h3>
                                 <p class="text-lg font-normal text-gray-500">{{ $facultyannouncement->description }}</p>
                             </a>
-
-                            @if (Auth::user()->role == '1')
-                            <div style="float:right;">
-                                <x-jet-button wire:click="showEditPostModal({{ $facultyannouncement->id }})">Edit
-                                </x-jet-button>
-
-                                <x-jet-button class="bg-red-400 hover:bg-red-600" wire:click="deletePost({{ $facultyannouncement->id }})">Delete
-                                </x-jet-button>
-                            </div>
-                            @endif
                         </div>
+                        @if (Auth::user()->role == '1')
+                        <div class="mt-2" style="text-align: right">
+                            <x-jet-button wire:click="showEditPostModal({{ $facultyannouncement->id }})">Edit
+                            </x-jet-button>
+
+                            <x-jet-button wire:click="deletePost({{ $facultyannouncement->id }})">Delete
+                            </x-jet-button>
+                        </div>
+                        @endif
                     </div>
                 </div>
                 @endforeach
@@ -77,7 +72,14 @@
                                 @enderror
                             </div>
 
-                            <div class="sm:col-span-6">
+                            <div class="sm:col-span-6 mt-4">
+                                <label for="title" class="block text-sm font-medium text-gray-700"> Announcement Date </label>
+                                <div class="mt-1">
+                                    <input required type="date" id="setdate" wire:model.lazy="setdate" name="setdate" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5">
+                                </div>
+                            </div>
+
+                            <div class="sm:col-span-6 mt-4">
                                 <label for="title" class="block text-sm font-medium text-gray-700"> Announcement Image </label>
                                 @if ($oldImage)
                                 Old Image:

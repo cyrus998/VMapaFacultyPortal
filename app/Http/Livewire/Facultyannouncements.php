@@ -14,6 +14,7 @@ class Facultyannouncements extends Component
     public $showingPostModal = false;
 
     public $title;
+    public $setdate;
     public $newImage;
     public $description;
     public $oldImage;
@@ -32,6 +33,7 @@ class Facultyannouncements extends Component
         $this->validate([
             'newImage' => 'image|max:4096', // 1MB Max
             'title' => 'required',
+            'setdate' => 'required',
             'description' => 'required'
         ]);
 
@@ -39,6 +41,7 @@ class Facultyannouncements extends Component
 
         Facultyannouncement::create([
             'title' => $this->title,
+            'setdate' => $this->setdate,
             'image' => $image,
             'description' => $this->description,
         ]);
@@ -49,6 +52,7 @@ class Facultyannouncements extends Component
     {
         $this->facultyannouncement = Facultyannouncement::findOrFail($id);
         $this->title = $this->facultyannouncement->title;
+        $this->setdate = $this->facultyannouncement->setdate;
         $this->description = $this->facultyannouncement->description;
         $this->oldImage = $this->facultyannouncement->image;
         $this->isEditMode = true;
@@ -59,6 +63,7 @@ class Facultyannouncements extends Component
     {
         $this->validate([
             'title' => 'required',
+            'setdate' => 'required',
             'description' => 'required'
         ]);
         $image = $this->facultyannouncement->image;
@@ -68,10 +73,12 @@ class Facultyannouncements extends Component
 
         $this->facultyannouncement->update([
             'title' => $this->title,
+            'setdate' => $this->setdate,
             'image' => $image,
             'description' => $this->description
         ]);
         $this->reset();
+        $this->dispatchBrowserEvent('announcementSaved');
     }
 
     public function deletePost($id)

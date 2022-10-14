@@ -14,6 +14,7 @@ class Publicannouncements extends Component
     public $showingPostModal = false;
 
     public $title;
+    public $setdate;
     public $newImage;
     public $description;
     public $oldImage;
@@ -32,6 +33,7 @@ class Publicannouncements extends Component
         $this->validate([
             'newImage' => 'image|max:4096', // 1MB Max
             'title' => 'required',
+            'setdate' => 'required',
             'description' => 'required'
         ]);
 
@@ -39,16 +41,19 @@ class Publicannouncements extends Component
 
         PublicAnnouncement::create([
             'title' => $this->title,
+            'setdate' => $this->setdate,
             'image' => $image,
             'description' => $this->description,
         ]);
         $this->reset();
+        $this->dispatchBrowserEvent('announcementSaved');
     }
 
     public function showEditPostModal($id)
     {
         $this->publicannouncement = PublicAnnouncement::findOrFail($id);
         $this->title = $this->publicannouncement->title;
+        $this->setdate = $this->publicannouncement->setdate;
         $this->description = $this->publicannouncement->description;
         $this->oldImage = $this->publicannouncement->image;
         $this->isEditMode = true;
@@ -59,6 +64,7 @@ class Publicannouncements extends Component
     {
         $this->validate([
             'title' => 'required',
+            'setdate' => 'required',
             'description' => 'required'
         ]);
         $image = $this->publicannouncement->image;
@@ -68,10 +74,12 @@ class Publicannouncements extends Component
 
         $this->publicannouncement->update([
             'title' => $this->title,
+            'setdate' => $this->setdate,
             'image' => $image,
             'description' => $this->description
         ]);
         $this->reset();
+        $this->dispatchBrowserEvent('announcementSaved');
     }
 
     public function deletePost($id)

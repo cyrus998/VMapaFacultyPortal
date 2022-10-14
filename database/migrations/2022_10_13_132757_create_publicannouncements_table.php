@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('publicannouncements', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('setdate');
             $table->string('image');
             $table->text('description');
             $table->timestamps();
