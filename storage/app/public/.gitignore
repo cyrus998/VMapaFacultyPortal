@@ -4,6 +4,12 @@ portfolios/*
 facultyannouncements/*
 publicannouncements/*
 
+# pfp exception
+!portfolios/cyrus.jpg
+!portfolios/dian.jpg
+!portfolios/ira.jpg
+!portfolios/mico.jpg
+
 # exception to the rule
 !portfolios/pog.txt 
 !portfolios/nQj3sigByW0nClBcywKF3RHog92pjoInfRwJtMGc.png

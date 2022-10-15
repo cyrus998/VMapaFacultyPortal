@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'Adrian Villanueva',
+            'image' => 'public/portfolios/dian.jpg',
             'email' => 'kyleactive101@gmail.com',
             'role' => '0',
             'position' => 'teacher',
@@ -32,6 +33,7 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'Cyrus Francisco',
+            'image' => 'public/portfolios/cyrus.jpg',
             'email' => 'jonathanfranciscosopro@gmail.com',
             'role' => '1',
             'position' => 'teacher',
@@ -47,6 +49,7 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'Ira Llabres',
+            'image' => 'public/portfolios/ira.jpg',
             'email' => 'ilorenzollabres@gmail.com',
             'role' => '1',
             'position' => 'teacher',
@@ -62,6 +65,7 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'Jamaico Padilla',
+            'image' => 'public/portfolios/mico.jpg',
             'email' => 'mjdpadilla@gmail.com',
             'role' => '1',
             'position' => 'teacher',
@@ -130,6 +134,21 @@ class UserSeeder extends Seeder
             'aboutme' => 'Thomas Michael Shelby, OBE, DCM, MM, MP is a fictional character born in 1890 in Birmingham, England, and the main protagonist in the British period crime drama Peaky Blinders',
             'subjectexpertise' => 'Horse Riding',
             'facultyNumber' => '1554841',
+            'created_at' => '2022-02-23 11:12:05',
+            'email_verified_at' => '2022-09-03 16:30:32',
+            'password' => '$2y$10$h45XBUUIwz/mARvOZrtYIOvCV8tz6oRlxKzSxTs/7CiawU2axPRdG',
+        ]);
+
+        User::create([
+            'name' => 'Armin Arlert',
+            'email' => 'collosalarmin@gmail.com',
+            'role' => '0',
+            'position' => 'teacher',
+            'contactnumber' => '09774451141',
+            'address' => 'A2 Strautt Block, Wall Maria, Eldia',
+            'aboutme' => 'Armin Arlert is one of the main protagonists of the anime/manga series Attack on Titan. He is a refugee from Shiganshina and Eren Yeager and Mikasa Ackermans best friend from childhood.',
+            'subjectexpertise' => 'Strategical Attacks',
+            'facultyNumber' => '177451',
             'created_at' => '2022-02-23 11:12:05',
             'email_verified_at' => '2022-09-03 16:30:32',
             'password' => '$2y$10$h45XBUUIwz/mARvOZrtYIOvCV8tz6oRlxKzSxTs/7CiawU2axPRdG',

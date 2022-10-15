@@ -12,15 +12,15 @@ content starts here -->
                 <div class="flex items-center -mx-3 sm:-mx-4">
                     <div class="w-full xl:w-1/2 px-3 sm:px-4">
                         <div class="py-3 sm:py-4">
-                            <img src="https://scontent.fmnl9-2.fna.fbcdn.net/v/t1.18169-9/166302_187768457918333_3527613_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cdbe9c&_nc_eui2=AeF8CXIUu4XjkGaDDgjo3av7tV6iVEEvJtO1XqJUQS8m06LjPdzYkujkr69PmZM56uLt6YANy6K2rlVaw7nbjHEA&_nc_ohc=XKu2dLxvOg4AX8GS1vp&_nc_ht=scontent.fmnl9-2.fna&oh=00_AT8B8XZSjy0betfVgwswLya8FFmRf3jdIHqoLK77THk62g&oe=6340E400" alt="" class="rounded-2xl w-full" />
+                            <img src="https://iili.io/ZPVyYX.jpg" alt="" class="rounded-2xl w-full" />
                         </div>
                         <div class="py-3 sm:py-4">
-                            <img src="https://scontent.fmnl8-1.fna.fbcdn.net/v/t1.18169-9/162822_187487007946478_7240829_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cdbe9c&_nc_eui2=AeE2hp50epEL3gu4asHJr_wh2Wotu7Qo5K3Zai27tCjkrcHbP7LDvBb9L03kV2-zX3JIkbvxaPLsmXYtMG0pLXxC&_nc_ohc=Opo8sTILI9wAX8Uqv0c&tn=VkflTHCVtXw-JD2u&_nc_ht=scontent.fmnl8-1.fna&oh=00_AT8gDq7P7-8Y9stnUsT-NFadpEoMZSC90donxrboBF_fEw&oe=6342D711" alt="" class="rounded-2xl w-full" />
+                            <img src="https://iili.io/ZPW9vn.jpg" alt="" class="rounded-2xl w-full" />
                         </div>
                     </div>
                     <div class="w-full xl:w-1/2 px-3 sm:px-4">
                         <div class="my-4 relative z-10">
-                            <img src="https://scontent.fmnl9-1.fna.fbcdn.net/v/t1.18169-9/12540812_1195326113829224_1568043238246640753_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cdbe9c&_nc_eui2=AeHxLai1dcYrK9UfYHlTSoXmyjjFSZZObajKOMVJlk5tqGpRW_i49u5y4Mc1WFRt2D84tHQRTxsaYwvKn3l8xIW-&_nc_ohc=POu6rn3WaF0AX_YdtTG&_nc_ht=scontent.fmnl9-1.fna&oh=00_AT8bgdGFnokGa36GhjQJyMDEbvJjytBsaq13vSGLu6oWow&oe=6342DD6C" alt="" class="rounded-2xl w-full" />
+                            <img src="https://iili.io/ZPVp2t.jpg" alt="" class="rounded-2xl w-full" />
 
                         </div>
                     </div>
