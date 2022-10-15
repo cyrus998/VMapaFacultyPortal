@@ -113,7 +113,7 @@
 
                     <div class="grid grid-cols-1 gap-8 mt-5 md:grid-cols-2 lg:grid-cols-3">
 
-                        @foreach ($portfolios->where('position', 'teacher') as $portfolio)
+                        @foreach ($portfolios as $portfolio)
                             <div class="card1 flex-col px-4 ">
                                 <div
                                     class="max-w-lg flex flex-col bg-white relative overflow-hidden rounded-lg border border-gray-100 p-8">
@@ -228,7 +228,7 @@
                             </thead>
                             <tbody>
 
-                                @foreach ($portfolios->where('position', 'teacher') as $portfolio)
+                                @foreach ($portfolios as $portfolio)
                                     <tr>
                                         {{-- <td class="border px-4 py-2">{{ $portfolio->id }}</td> --}}
                                         <td class="border px-4 py-2">{{ $portfolio->facultyNumber }}</td>

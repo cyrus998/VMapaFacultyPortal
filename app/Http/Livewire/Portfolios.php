@@ -39,7 +39,7 @@ class Portfolios extends Component
                 ->orWhere('address', 'LIKE', "%$term%")
                 ->orWhere('contactnumber', 'LIKE', "%$term%")
                 ->orWhere('subjectexpertise', 'LIKE', "%$term%");
-            })->paginate(6)
+            })->orWhere('position','teacher')->paginate(6)
         ]);
 
     }
