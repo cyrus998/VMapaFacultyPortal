@@ -66,23 +66,23 @@
                         <div class="pt-2 pb-3 space-y-1">
 
                             <x-jet-responsive-nav-link href="/users" :active="request()->routeIs('users')">
-                                {{ __('Manage Users and Roles') }}
+                                {{ __('Users and Roles') }}
                             </x-jet-responsive-nav-link>
 
                             <x-jet-responsive-nav-link href="/facultyannouncements" :active="request()->routeIs('facultyannouncements')">
-                                {{ __('Manage Faculty Announcements') }}
+                                {{ __('Faculty Announcements') }}
                             </x-jet-responsive-nav-link>
 
                             <x-jet-responsive-nav-link href="/publicannouncements" :active="request()->routeIs('publicannouncements')">
-                                {{ __('Manage Public Announcements') }}
+                                {{ __('Public Announcements') }}
                             </x-jet-responsive-nav-link>
 
                             <x-jet-responsive-nav-link href="/subjects" :active="request()->routeIs('subjects')">
-                                {{ __('Manage Subjects') }}
+                                {{ __('Subjects') }}
                             </x-jet-responsive-nav-link>
 
                             <x-jet-responsive-nav-link href="/portfolios" :active="request()->routeIs('portfolios')">
-                                {{ __('Manage Instructors Information') }}
+                                {{ __('Instructors Information') }}
                             </x-jet-responsive-nav-link>
 
                             <x-jet-responsive-nav-link href="/chart" :active="request()->routeIs('chart')">
@@ -90,7 +90,7 @@
                             </x-jet-responsive-nav-link>
 
                             <x-jet-responsive-nav-link href="/adminchat" :active="request()->routeIs('portfolios')">
-                                {{ __('Manage Admin Chat') }}
+                                {{ __('Admin Chat') }}
                             </x-jet-responsive-nav-link>
 
                         </div>
@@ -137,23 +137,23 @@
                 @if (Auth::user()->role == '1')
 
                 <x-jet-nav-link style="color: white;" href="/users" :active="request()->routeIs('/users')">
-                    {{ __('Manage Users and Roles') }}
+                    {{ __('Users and Roles') }}
                 </x-jet-nav-link>
                 
                 <x-jet-nav-link style="color: white;" href="/facultyannouncements" :active="request()->routeIs('/facultyannouncements')">
-                {{ __('Manage Faculty Announcements') }}
+                {{ __('Faculty Announcements') }}
                 </x-jet-nav-link>
 
                 <x-jet-nav-link style="color: white;" href="/publicannouncements" :active="request()->routeIs('/publicannouncements')">
-                {{ __('Manage Public Announcements') }}
+                {{ __('Public Announcements') }}
                 </x-jet-nav-link>
 
                 <x-jet-nav-link style="color: white;" href="/subjects" :active="request()->routeIs('/subjects')">
-                    {{ __('Manage Subjects') }}
+                    {{ __('Subjects') }}
                 </x-jet-nav-link>
 
                 <x-jet-nav-link style="color: white;" href="/portfolios" :active="request()->routeIs('/portfolios')">
-                    {{ __('Manage Instructors Information') }}
+                    {{ __('Instructors Information') }}
                 </x-jet-nav-link>
 
                 <x-jet-nav-link style="color: white;" href="/chart" :active="request()->routeIs('/chart')">
@@ -161,7 +161,7 @@
                 </x-jet-nav-link>
 
                 <x-jet-nav-link style="color: white;" href="/adminchat" :active="request()->routeIs('/adminchat')">
-                    {{ __('Manage Admin Chat') }}
+                    {{ __('Admin Chat') }}
                 </x-jet-nav-link>
 
               
