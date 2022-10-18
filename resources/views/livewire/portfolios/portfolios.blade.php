@@ -100,7 +100,7 @@
                 @if (Auth::user()->role == '1')
                     <div class="flex mt-5 justify-center items-center">
                         <div class="flex border-2 rounded">
-                            <input wire:model="term" type="text" class="px-4 py-2 w-80" placeholder="Search...">
+                            <input wire:model="term" type="text" class="px-6 py-2 w-80" placeholder="Search...">
                             <button class="flex items-center justify-center px-4 border-l">
                                 <svg class="w-6 h-6 text-gray-600" fill="currentColor"
                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -111,6 +111,7 @@
                         </div>
                     </div>
 
+                    @if ($term)
                     <div class="grid grid-cols-1 gap-8 mt-5 md:grid-cols-2 lg:grid-cols-3">
 
                         @foreach ($portfolios as $portfolio)
@@ -252,11 +253,10 @@
                             </tbody>
                         </table>
                     </div>
+                    @endif
                 @endif
 
             </div>
-
-
 
 
         </div>

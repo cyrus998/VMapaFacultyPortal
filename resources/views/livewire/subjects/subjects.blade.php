@@ -92,9 +92,6 @@
             <div class="mt-6">
                 {{ $subjects->links() }}
             </div>
-           
-            
-
 
         </div>
     </div>
