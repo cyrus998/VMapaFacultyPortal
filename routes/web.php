@@ -7,8 +7,6 @@ use App\Http\Controllers\SubmissionController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ChartJSController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\LessonsController;
-use App\Http\Controllers\SchoolClassesController;
 use App\Http\Livewire\Subjects;
 use App\Http\Livewire\Users;
 use App\Http\Livewire\Portfolios;
@@ -27,7 +25,6 @@ use App\Http\Livewire\Publicannouncements;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('publicannouncements', Publicannouncements::class);
 
 Route::get('facultyannouncements', Facultyannouncements::class)->middleware('auth');
