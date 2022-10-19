@@ -58,6 +58,15 @@
                             Instructor</th>
                         <th
                             class="px-4 py-2 bg-slate-800 border-b border-gray-200 text-white text-left text-sm uppercase font-normal">
+                            Day of the Subject</th>
+                        <th
+                            class="px-4 py-2 bg-slate-800 border-b border-gray-200 text-white text-left text-sm uppercase font-normal">
+                            Start Time</th>
+                        <th
+                            class="px-4 py-2 bg-slate-800 border-b border-gray-200 text-white text-left text-sm uppercase font-normal">
+                            End Time</th>
+                        <th
+                            class="px-4 py-2 bg-slate-800 border-b border-gray-200 text-white text-left text-sm uppercase font-normal">
                             Action</th>
                     </tr>
                 </thead>
@@ -68,6 +77,9 @@
                             <td class="border px-4 py-2">{{ $subject->subjectname }}</td>
                             <td class="border px-4 py-2">{{ $subject->coursecode }}</td>
                             <td class="border px-4 py-2">{{ $subject->instructor }}</td>
+                            <td class="border px-4 py-2">{{ $subject->subjectday }}</td>
+                            <td class="border px-4 py-2">{{ $subject->starttime }}</td>
+                            <td class="border px-4 py-2">{{ $subject->endtime }}</td>
                             <td class="border px-4 py-2">
 
                                 <a wire:click="edit({{ $subject->id }})">

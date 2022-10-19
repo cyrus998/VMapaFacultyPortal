@@ -12,7 +12,7 @@ class Subjects extends Component
 
     public $term;
 
-    public $subjectname, $coursecode, $instructor, $subject_id;
+    public $subjectname, $coursecode, $instructor, $subject_id, $subjectday, $starttime, $endtime;
     public $isOpen = 0;
   
     /**
@@ -46,7 +46,8 @@ class Subjects extends Component
             'subjects' => Subject::when($this->term, function($query, $term){
                 return $query->where('subjectname', 'LIKE', "%$term%")
                 ->orWhere('coursecode', 'LIKE', "%$term%")
-                ->orWhere('instructor', 'LIKE', "%$term%");
+                ->orWhere('instructor', 'LIKE', "%$term%")
+                ->orWhere('subjectday', 'LIKE', "%$term%");
             })->paginate(5)
         ]);
     }
@@ -93,6 +94,9 @@ class Subjects extends Component
         $this->coursecode = '';
         $this->instructor = '';
         $this->subject_id = '';
+        $this->subjectday = '';
+        $this->starttime = '';
+        $this->endtime = '';
     }
      
     /**
@@ -108,12 +112,18 @@ class Subjects extends Component
             'subjectname' => 'required',
             'coursecode' => 'required',
             'instructor' => 'required',
+            'subjectday' => 'required',
+            'starttime' => 'required',
+            'endtime' => 'required',
         ]);
 
         Subject::updateOrCreate(['id' => $this->subject_id], [
             'subjectname' => $this->subjectname,
             'coursecode' => $this->coursecode,
-            'instructor' => $this->instructor
+            'instructor' => $this->instructor,
+            'subjectday' => $this->subjectday,
+            'starttime' => $this->starttime,
+            'endtime' => $this->endtime,
         ]);
   
         session()->flash('message', 
@@ -138,6 +148,9 @@ class Subjects extends Component
         $this->subjectname = $subject->subjectname;
         $this->coursecode = $subject->coursecode;
         $this->instructor = $subject->instructor;
+        $this->subjectday = $subject->subjectday;
+        $this->starttime = $subject->starttime;
+        $this->endtime = $subject->endtime;
     
         $this->openModal();
     }
