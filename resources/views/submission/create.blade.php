@@ -1,15 +1,7 @@
 @extends('nonuserlayout')
 @section('content')
 
-@if(Auth::check())
-@if (Auth::user()->role == '1')
-<a href="/submissions">
-    <button style="float:left" type="submit" class="mt-3   inline-block px-5 py-3 ml-3 text-sm font-medium text-white bg-blue-500 rounded-lg"> ADMIN: View all Submissions </button></a>
-@endif
-@endif
-
-
-<section class="relative flex flex-wrap lg:h-screen lg:items-center">
+<section class="relative flex flex-wrap lg:h-screen lg:items-center mb-32">
     <div class="w-full px-4 lg:w-1/2 sm:px-6 lg:px-8 sm:py-16 lg:py-24">
         @if ($errors->any())
         <div class="flex items-center justify-between p-4 border rounded text-sky-700 bg-sky-50 border-sky-900/10" role="alert">
@@ -77,7 +69,7 @@
                 <h1 class="text-zinc-500">Enter Image</h1>
                 <label for="password" class="sr-only">Image</label>
                 <div class="relative">
-                    <input type="file" name="image" class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm" placeholder="Enter password" />
+                    <input type="file" id="image" name="image" class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm" placeholder="Enter password" />
                     <span class="absolute inset-y-0 inline-flex items-center right-4">
                         <img src="https://media.discordapp.net/attachments/971130306751000636/981174821494849556/unknown.png" width="24" alt="">
                     </span>
@@ -86,7 +78,7 @@
             <div>
                 <h1 class="text-zinc-500">Submit Form 137</h1>
                 <div class="relative">
-                    <input type="file" name="form137" class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm" placeholder="Enter form137" />
+                    <input type="file" id="form137" name="form137" class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm" placeholder="Enter form137" />
                     <span class="absolute inset-y-0 inline-flex items-center right-4">
                         <img src="https://media.discordapp.net/attachments/971130306751000636/981174821494849556/unknown.png" width="24" alt="">
                     </span>

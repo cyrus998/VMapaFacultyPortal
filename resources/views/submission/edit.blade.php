@@ -1,7 +1,7 @@
 
 @extends('nonuserlayout')
 @section('content')
-<section class="relative flex flex-wrap lg:h-screen lg:items-center">
+<section class="relative flex flex-wrap lg:h-screen lg:items-center mb-32">
     <div class="w-full px-4 lg:w-1/2 sm:px-6 lg:px-8 sm:py-16 lg:py-24"> 
         
 
@@ -80,7 +80,7 @@
         </form>
     </div>
     <div class="relative w-full h-64 sm:h-96 lg:w-1/2 lg:h-full">
-        <img class="absolute inset-0 object-cover w-full h-full" src="https://www.hyperui.dev/photos/team-1.jpeg" alt="" />
+        <img class="absolute inset-0 object-cover w-full h-full" src="https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="" />
     </div>
     @endsection
 

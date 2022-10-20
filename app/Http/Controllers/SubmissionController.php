@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
+use Livewire\WithFileUploads;
 use App\Models\Submission;
 use Illuminate\Http\Request;
 
 class SubmissionController extends Controller
 {
+
+    use WithFileUploads;
+    public $image;
     /**
      * Display a listing of the resource.
      *
@@ -43,27 +48,21 @@ class SubmissionController extends Controller
             'detail' => 'required',
             'yearlevel' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
-            'form137' => 'required|mimes:jpeg,png,jpg,gif,pdf,docx,svg|max:4096',
+            'form137' => 'required|mimes:pdf,docx,svg|max:4096',
         ]);
 
-        $input = $request->all();
 
-        if ($image = $request->file('image')) {
-            $destinationPath = 'uploads/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
-        }
+        $image = $request->image->store('public/submissions');
+        $form137 = $request->form137->store('public/submissions');
 
-        if ($form137 = $request->file('form137')) {
-            $destinationPath = 'uploads/';
-            $profileImage = date('YmdHis') . "." . $form137->getClientOriginalExtension();
-            $form137->move($destinationPath, $profileImage);
-            $input['form137'] = "$profileImage";
-        }
-
-        Submission::create($input);
-
+        Submission::create([
+            'image' => $image,
+            'form137' => $form137,
+            'name' => $request->name,
+            'detail' => $request->detail,
+            'yearlevel' => $request->yearlevel,
+        ]);
+    
         return redirect()->route('submissions.create')
             ->with('success', 'Submission created successfully.');
     }
@@ -141,6 +140,8 @@ class SubmissionController extends Controller
      */
     public function destroy(Submission $submission)
     {
+        Storage::delete($submission->image);
+        Storage::delete($submission->form137);
         $submission->delete();
 
         return redirect()->route('submissions.index')

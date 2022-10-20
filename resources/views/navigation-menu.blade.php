@@ -77,6 +77,10 @@
                                 {{ __('Public Announcements') }}
                             </x-jet-responsive-nav-link>
 
+                            <x-jet-responsive-nav-link href="/submissions" :active="request()->routeIs('submissions')">
+                                {{ __('Manage Admissions') }}
+                            </x-jet-responsive-nav-link>
+
                             <x-jet-responsive-nav-link href="/subjects" :active="request()->routeIs('subjects')">
                                 {{ __('Subjects') }}
                             </x-jet-responsive-nav-link>
@@ -146,6 +150,10 @@
 
                 <x-jet-nav-link style="color: white;" href="/publicannouncements" :active="request()->routeIs('/publicannouncements')">
                 {{ __('Public Announcements') }}
+                </x-jet-nav-link>
+
+                <x-jet-nav-link style="color: white;" href="/submissions" :active="request()->routeIs('/submissions')">
+                {{ __('Manage Admissions') }}
                 </x-jet-nav-link>
 
                 <x-jet-nav-link style="color: white;" href="/subjects" :active="request()->routeIs('/subjects')">

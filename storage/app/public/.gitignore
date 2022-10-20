@@ -3,6 +3,7 @@
 portfolios/*
 facultyannouncements/*
 publicannouncements/*
+submissions/*
 
 # pfp exception
 !portfolios/cyrus.jpg

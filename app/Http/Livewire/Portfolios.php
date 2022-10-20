@@ -68,11 +68,11 @@ class Portfolios extends Component
 
         User::create([
             'image' => $image,
-            'contactnumber' => $this->title,
-            'address' => $this->body,
-            'name' => $this->title,
-            'email' => $this->body,
-            'aboutme' => $this->title,
+            'contactnumber' => $this->contactnumber,
+            'address' => $this->address,
+            'name' => $this->name,
+            'email' => $this->email,
+            'aboutme' => $this->aboutme,
             'subjectexpertise' => $this->body,
         ]);
         $this->reset();

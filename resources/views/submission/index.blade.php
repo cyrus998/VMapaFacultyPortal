@@ -68,14 +68,14 @@
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-left">
                                     <p class="text-gray-900 whitespace-no-wrap">
-                                        <a href="/uploads/{{ $submission->image }}">
-                                            <img src="/uploads/{{ $submission->image }}" width="100px">
+                                        <a href="{{ Storage::url($submission->image) }}">
+                                            <img src="{{ Storage::url($submission->image) }}" width="100px">
                                         </a>
                                     </p>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-left">
                                     <p class="text-gray-900 whitespace-no-wrap">
-                                        <a href="/uploads/{{ $submission->form137 }}">Click to View Form 137 </a>
+                                        <a href="{{ Storage::url($submission->form137) }}">Click to View Form 137 </a>
                                     </p>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-left">
@@ -96,8 +96,7 @@
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-left">
                                     <form action="{{ route('submissions.destroy', $submission->hashid) }}" method="POST">
-                                        <a href="{{ route('submissions.edit', $submission->hashid) }}" class="text-indigo-600 hover:text-indigo-900 mr-5"> Edit </a>
-                                        <!-- <a href="{{ route('submissions.show', $submission->hashid) }}" class="text-indigo-600 hover:text-indigo-900"> Show </a>  -->
+                                        <!-- <a href="{{ route('submissions.edit', $submission->hashid) }}" class="text-indigo-600 hover:text-indigo-900 mr-5"> Edit </a> -->
                                         @csrf @method('DELETE') <button type="submit" class="text-indigo-600 hover:text-indigo-900">Delete</button>
                                     </form>
                                 </td>
