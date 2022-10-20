@@ -52,7 +52,7 @@
                     @mouseover="open = true"
                     @mouseleave="open = false"
                     x-transition:enter.duration.500ms
-                    x-transition:leave.duration.2500ms
+                    x-transition:leave.duration.800ms
                             class="absolute right-0 w-48 py-2 mt-2 bg-white bg-gray-100 rounded-md shadow-xl">
                                 <a href="/missionandvision"
                                     class="block px-4 py-2 text-sm text-black-300 text-gray-700 hover:bg-gray-900 hover:text-white">
