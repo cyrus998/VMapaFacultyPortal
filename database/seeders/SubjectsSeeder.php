@@ -20,7 +20,7 @@ class SubjectsSeeder extends Seeder
             'subjectname' => 'Capstone 2',
             'coursecode' => 'CIT 400-IT41S2',
             'instructor' => 'Adrian Villanueva',
-            'subjectday' => '3',
+            'subjectday' => 'Wednesday',
             'starttime' => '3:00',
             'endtime' => '4:00',
         ]);
@@ -29,7 +29,7 @@ class SubjectsSeeder extends Seeder
             'subjectname' => 'Living in the IT Era',
             'coursecode' => 'GEE 002B-IT32S2',
             'instructor' => 'Adrian Villanueva',
-            'subjectday' => '2',
+            'subjectday' => 'Tuesday',
             'starttime' => '3:00',
             'endtime' => '4:00',
         ]);
@@ -38,7 +38,7 @@ class SubjectsSeeder extends Seeder
             'subjectname' => 'Data Mining and Warehousing',
             'coursecode' => 'CIS 202-IT32S2',
             'instructor' => 'Ira Llabres',
-            'subjectday' => '1',
+            'subjectday' => 'Monday',
             'starttime' => '3:00',
             'endtime' => '4:00',
         ]);
@@ -47,7 +47,16 @@ class SubjectsSeeder extends Seeder
             'subjectname' => 'Web Systems and Technologies 2',
             'coursecode' => 'CIT 511-IT32S2',
             'instructor' => 'Ira Llabres',
-            'subjectday' => '4',
+            'subjectday' => 'Thursday',
+            'starttime' => '3:00',
+            'endtime' => '4:00',
+        ]);
+
+        Subject::create([
+            'subjectname' => 'Data Mining and Warehousing',
+            'coursecode' => 'CIS 202-IT32S2',
+            'instructor' => 'Ira Llabres',
+            'subjectday' => 'Thursday',
             'starttime' => '3:00',
             'endtime' => '4:00',
         ]);
@@ -56,7 +65,34 @@ class SubjectsSeeder extends Seeder
             'subjectname' => 'Robotics and Engineering 2',
             'coursecode' => 'RBE 001-IT42S2',
             'instructor' => 'Elon Musk',
-            'subjectday' => '5',
+            'subjectday' => 'Friday',
+            'starttime' => '3:00',
+            'endtime' => '4:00',
+        ]);
+
+        Subject::create([
+            'subjectname' => 'Robotics and Engineering 2',
+            'coursecode' => 'RBE 001-IT42S2',
+            'instructor' => 'Cyrus Francisco',
+            'subjectday' => 'Tuesday',
+            'starttime' => '3:00',
+            'endtime' => '4:00',
+        ]);
+
+        Subject::create([
+            'subjectname' => 'Web Systems and Technologies 2',
+            'coursecode' => 'CIT 511-IT32S2',
+            'instructor' => 'Adrian Villanueva',
+            'subjectday' => 'Monday',
+            'starttime' => '3:00',
+            'endtime' => '4:00',
+        ]);
+
+        Subject::create([
+            'subjectname' => 'Web Systems and Technologies 2',
+            'coursecode' => 'CIT 511-IT32S2',
+            'instructor' => 'Ira Llabres',
+            'subjectday' => 'Friday',
             'starttime' => '3:00',
             'endtime' => '4:00',
         ]);
@@ -65,7 +101,16 @@ class SubjectsSeeder extends Seeder
             'subjectname' => 'Data Science and Astrology 2',
             'coursecode' => 'DSA 001-IT42S2',
             'instructor' => 'Elon Musk',
-            'subjectday' => '3',
+            'subjectday' => 'Wednesday',
+            'starttime' => '3:00',
+            'endtime' => '4:00',
+        ]);
+
+        Subject::create([
+            'subjectname' => 'Data Science and Astrology 2',
+            'coursecode' => 'DSA 001-IT42S2',
+            'instructor' => 'Cyrus Francisco',
+            'subjectday' => 'Monday',
             'starttime' => '3:00',
             'endtime' => '4:00',
         ]);
@@ -74,7 +119,7 @@ class SubjectsSeeder extends Seeder
             'subjectname' => 'Great Swordsmanship 1',
             'coursecode' => 'GSS 001-IT42S2',
             'instructor' => 'Kohta Yamamoto',
-            'subjectday' => '3',
+            'subjectday' => 'Wednesday',
             'starttime' => '3:00',
             'endtime' => '4:00',
         ]);
@@ -83,7 +128,25 @@ class SubjectsSeeder extends Seeder
             'subjectname' => 'Construction and Engineering 1',
             'coursecode' => 'CAE 001-IT42S2',
             'instructor' => 'Reiner Braun',
-            'subjectday' => '3',
+            'subjectday' => 'Wednesday',
+            'starttime' => '3:00',
+            'endtime' => '4:00',
+        ]);
+
+        Subject::create([
+            'subjectname' => 'Construction and Engineering 1',
+            'coursecode' => 'CAE 001-IT42S2',
+            'instructor' => 'Cyrus Francisco',
+            'subjectday' => 'Friday',
+            'starttime' => '3:00',
+            'endtime' => '4:00',
+        ]);
+
+        Subject::create([
+            'subjectname' => 'Construction and Engineering 1',
+            'coursecode' => 'CAE 001-IT42S2',
+            'instructor' => 'Cyrus Francisco',
+            'subjectday' => 'Thursday',
             'starttime' => '3:00',
             'endtime' => '4:00',
         ]);
