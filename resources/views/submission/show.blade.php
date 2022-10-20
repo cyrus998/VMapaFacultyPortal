@@ -27,6 +27,12 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 20px;">
             <div class="form-group">
+                <strong>Year Level:</strong><br>
+                {{ $submission->yearlevel }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 20px;">
+            <div class="form-group">
                 <strong>Image:</strong><br>
                 <a href="/images/{{ $submission->image }}">
                 <img src="/images/{{ $submission->image }}" width="200px">

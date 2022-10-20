@@ -34,6 +34,17 @@
                 </div>
             </div>
             <div>
+                <h1 class="text-zinc-500">Year Level</h1>
+                <div class="relative">
+                    <select type="text" name="yearlevel" value="{{ $submission->yearlevel }}" class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm">
+                        <option value="Grade 7">Grade 7</option>
+                        <option value="Grade 8">Grade 8</option>
+                        <option value="Grade 9">Grade 9</option>
+                        <option value="Grade 10">Grade 10</option>
+                    </select>
+                </div>
+            </div>
+            <div>
                 <h1 class="text-zinc-500">Detail</h1>
                 <div class="relative">
                     <input type="text" name="detail" value="{{ $submission->detail }}" class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm" placeholder="Enter Detail" />

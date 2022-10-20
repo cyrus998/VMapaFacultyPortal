@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 50);
             $table->text('detail')->nullable();
+            $table->text('yearlevel', 50);
             $table->string('image', 155);
             $table->string('form137', 155);
             $table->timestamps();

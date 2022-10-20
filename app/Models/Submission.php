@@ -11,6 +11,6 @@ class Submission extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'detail', 'image', 'form137'
+        'name', 'detail', 'yearlevel', 'image', 'form137'
     ];
 }

@@ -51,6 +51,7 @@
                                 <th scope="col" class="px-5 py-3 bg-slate-800 border-b border-gray-200 text-white text-left text-sm uppercase font-normal"> Image </th>
                                 <th scope="col" class="px-5 py-3 bg-slate-800 border-b border-gray-200 text-white text-left text-sm uppercase font-normal"> Form 137 </th>
                                 <th scope="col" class="px-5 py-3 bg-slate-800 border-b border-gray-200 text-white text-left text-sm uppercase font-normal"> Details </th>
+                                <th scope="col" class="px-5 py-3 bg-slate-800 border-b border-gray-200 text-white text-left text-sm uppercase font-normal"> Year Level </th>
                                 <th scope="col" class="px-5 py-3 bg-slate-800 border-b border-gray-200 text-white text-left text-sm uppercase font-normal"> status </th>
                                 <th scope="col" class="px-5 py-3 bg-slate-800 border-b border-gray-200 text-white text-left text-sm uppercase font-normal"> Actions</th>
                             </tr>
@@ -79,7 +80,12 @@
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-left">
                                     <p class="text-gray-900 whitespace-no-wrap">
-                                        {{ $submission->detail }}s
+                                        {{ $submission->detail }}
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-left">
+                                    <p class="text-gray-900 whitespace-no-wrap">
+                                        {{ $submission->yearlevel }}
                                     </p>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-left">
