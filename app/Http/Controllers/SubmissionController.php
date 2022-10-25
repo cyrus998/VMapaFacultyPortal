@@ -45,7 +45,7 @@ class SubmissionController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'detail' => 'required',
+            'city' => 'required',
             'yearlevel' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
             'form137' => 'required|mimes:pdf,docx,svg|max:4096',
@@ -59,7 +59,7 @@ class SubmissionController extends Controller
             'image' => $image,
             'form137' => $form137,
             'name' => $request->name,
-            'detail' => $request->detail,
+            'city' => $request->city,
             'yearlevel' => $request->yearlevel,
         ]);
     
@@ -100,7 +100,7 @@ class SubmissionController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'detail' => 'required',
+            'city' => 'required',
             'yearlevel' => 'required',
             'image' => 'required',
             'form137' => 'required'

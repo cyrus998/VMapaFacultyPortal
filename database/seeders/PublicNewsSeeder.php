@@ -21,6 +21,7 @@ class PublicNewsSeeder extends Seeder
             'setdate' => '10-11-2022',
             'image' => 'public/publicannouncements/93k2NgpNullC0n3sagOiZ9uOGJswrWb2LCbHxOp7.png',
             'description' => 'Heavy rains may be expected over northern Luzon on Saturday due to Tropical Depression Neneng, which entered the Philippine Area of Responsibility (PAR) Thursday.',
+            'linkurl' => 'https://www.gmanetwork.com/news/scitech/weather/847968/rainy-weekend-expected-for-northern-luzon-due-to-neneng/story/',
         ]);
 
         PublicAnnouncement::create([
@@ -28,6 +29,7 @@ class PublicNewsSeeder extends Seeder
             'setdate' => '10-14-2022',
             'image' => 'public/publicannouncements/IlugZ074wqkQW8u0ykwsDs3TtGcKei1DiQSrmsZQ.jpg',
             'description' => 'The head of the Philippines’ Department of National Defense (DND) and his American counterpart reaffirmed commitments to the Mutual Defense Treaty of the two long-time allies.',
+            'linkurl' => 'https://globalnation.inquirer.net/206401/ph-us-defense-officials-vow-commitment-to-mutual-defense-treaty',
         ]);
 
         PublicAnnouncement::create([
@@ -35,6 +37,8 @@ class PublicNewsSeeder extends Seeder
             'setdate' => '10-4-2022',
             'image' => 'public/publicannouncements/jdLitRtF35M4IUgz9vrh3ncsxDfiIFrtftTVj8Mv.png',
             'description' => 'For the first time in more than six months, SpaceX has stacked both stages of its next-generation Starship rocket, creating the largest and most powerful launch vehicle ever fully assembled.',
+            'linkurl' => 'https://www.teslarati.com/spacex-starship-first-full-stack-six-months/',
+
         ]);
 
     }

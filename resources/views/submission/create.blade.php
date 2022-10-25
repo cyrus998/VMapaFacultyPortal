@@ -53,18 +53,42 @@
                         <option value="Grade 9">Grade 9</option>
                         <option value="Grade 10">Grade 10</option>
                     </select>
-                </div>
-            </div>
-            <div>
-                <h1 class="text-zinc-500">Detail</h1>
-                <div class="relative">
-                    <input type="text" name="detail" class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm" placeholder="Enter Detail" />
                     <span class="absolute inset-y-0 inline-flex items-center right-4">
                         <img src="https://media.discordapp.net/attachments/971130306751000636/981174821494849556/unknown.png" width="24" alt="">
                     </span>
                 </div>
             </div>
-    
+            <div>
+                <h1 class="text-zinc-500">City of Residence</h1>
+                <div class="relative">
+
+                    <select type="text" name="city" class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm">
+                        <option value="">-- Choose a City --</option>
+                        <option value="Caloocan City">Caloocan City</option>
+                        <option value="Las Piñas City">Las Piñas City</option>
+                        <option value="Makati City">Makati City</option>
+                        <option value="Malabon City">Malabon City</option>
+                        <option value="Mandaluyong City">Mandaluyong City</option>
+                        <option value="Manila City">Manila City</option>
+                        <option value="Marikina City">Marikina City</option>
+                        <option value="Muntinlupa City">Muntinlupa City</option>
+                        <option value="Navotas City">Navotas City</option>
+                        <option value="Parañaque City">Parañaque City</option>
+                        <option value="Pasay City">Pasay City</option>
+                        <option value="Pasig City">Pasig City</option>
+                        <option value="Quezon City">Quezon City</option>
+                        <option value="San Juan City">San Juan City</option>
+                        <option value="Taguig City">Taguig City</option>
+                        <option value="Valenzuela City">Valenzuela City</option>
+                        <option value="Non-NCR">Others e.g. Outside NCR</option>
+                    </select>
+
+                    <span class="absolute inset-y-0 inline-flex items-center right-4">
+                        <img src="https://media.discordapp.net/attachments/971130306751000636/981174821494849556/unknown.png" width="24" alt="">
+                    </span>
+                </div>
+            </div>
+
             <div>
                 <h1 class="text-zinc-500">Enter Image</h1>
                 <label for="password" class="sr-only">Image</label>

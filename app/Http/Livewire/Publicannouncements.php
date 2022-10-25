@@ -17,6 +17,7 @@ class Publicannouncements extends Component
     public $setdate;
     public $newImage;
     public $description;
+    public $linkurl;
     public $oldImage;
     public $isEditMode = false;
     public $publicannouncement;
@@ -34,7 +35,8 @@ class Publicannouncements extends Component
             'newImage' => 'image|max:4096', // 1MB Max
             'title' => 'required',
             'setdate' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'linkurl' => 'required'
         ]);
 
         $image = $this->newImage->store('public/publicannouncements');
@@ -44,6 +46,7 @@ class Publicannouncements extends Component
             'setdate' => $this->setdate,
             'image' => $image,
             'description' => $this->description,
+            'linkurl' => $this->linkurl,
         ]);
         $this->reset();
         $this->dispatchBrowserEvent('announcementSaved');
@@ -55,6 +58,7 @@ class Publicannouncements extends Component
         $this->title = $this->publicannouncement->title;
         $this->setdate = $this->publicannouncement->setdate;
         $this->description = $this->publicannouncement->description;
+        $this->linkurl = $this->publicannouncement->linkurl;
         $this->oldImage = $this->publicannouncement->image;
         $this->isEditMode = true;
         $this->showingPostModal = true;
@@ -65,7 +69,8 @@ class Publicannouncements extends Component
         $this->validate([
             'title' => 'required',
             'setdate' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'linkurl' => 'required'
         ]);
         $image = $this->publicannouncement->image;
         if ($this->newImage) {
@@ -76,7 +81,8 @@ class Publicannouncements extends Component
             'title' => $this->title,
             'setdate' => $this->setdate,
             'image' => $image,
-            'description' => $this->description
+            'description' => $this->description,
+            'linkurl' => $this->linkurl
         ]);
         $this->reset();
         $this->dispatchBrowserEvent('announcementSaved');

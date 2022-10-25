@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Publicannouncement extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'setdate', 'image', 'description'];
+    protected $fillable = ['title', 'setdate', 'image', 'description', 'linkurl',];
 }
