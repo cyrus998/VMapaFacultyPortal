@@ -19,8 +19,10 @@ class DatabaseSeeder extends Seeder
             SubjectsSeeder::class,
             PublicNewsSeeder::class,
             FacultyAnnouncementsSeeder::class,
+            SubmissionsSeeder::class,
         ]);
 
-        \App\Models\User::factory(169)->create();
+        \App\Models\User::factory(200)->create();
+        \App\Models\Submission::factory(450)->create();
     }
 }

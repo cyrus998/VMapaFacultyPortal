@@ -50,21 +50,21 @@
     
     <div class="grid place-items-center grid-cols-3 p-16">
         <div>
-            <canvas id="Submission"></canvas>
+            <canvas  style="width: 350px;" id="Submission"></canvas>
         </div>
         <div>
-            <canvas id="YearLevel"></canvas>
+            <canvas style="width: 350px;" id="YearLevel"></canvas>
         </div>
         <div>
-            <canvas id="City"></canvas>
+            <canvas style="width: 350px;" id="City"></canvas>
         </div>
     </div>
 
 <h1 class="text-black-600 text-5xl font-bold text-center">Data gathered through employee</h1> 
-    
-    <div class="grid place-items-center grid-cols-3 p-16">
+    <!-- removed place-items-center -->
+    <div class="grid p-16">
         <div>
-            <canvas id="User"></canvas>
+            <canvas style="padding: 0; margin: auto; display: block; width: 800px;" id="User"></canvas>
         </div>
     </div>
 
@@ -99,7 +99,7 @@
         type: 'bar',
         data: dataUser,
         options: {
-            aspectRatio: 1,
+            aspectRatio: 2,
             scales: {
                 y: {
                     beginAtZero: true
@@ -186,13 +186,13 @@
     };
   
     const configCity = {
-        type: 'polarArea',
+        type: 'line',
         data: dataCity,
         options: {
             aspectRatio: 1,
             scales: {
                 y: {
-                    beginAtZero: true
+                    stacked: true
                 }
             }
         }
