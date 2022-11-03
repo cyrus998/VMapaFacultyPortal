@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
     
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Submission;
+use App\Models\Subject;
+use Illuminate\Support\Facades\Auth;
+
 use DB;
     
 class ChartJSController extends Controller
@@ -15,15 +19,43 @@ class ChartJSController extends Controller
      */
     public function index()
     {
+
+        $totalusers = User::count();
+        $totalteachers = User::where('position','teacher')->count();
+        $totaladmins = User::where('role','1')->count();
+        $activesubjects = Subject::count();
+
         $users = User::select(DB::raw("COUNT(*) as count"), DB::raw("MONTHNAME(created_at) as month_name"))
-                    ->whereYear('created_at', date('Y'))
                     ->groupBy(DB::raw("month_name"))
                     ->orderBy('id','ASC')
                     ->pluck('count', 'month_name');
  
-        $labels = $users->keys();
-        $data = $users->values();
+        $labelsUser = $users->keys();
+        $dataUser = $users->values();
+
+        $submissions = Submission::select(DB::raw("COUNT(*) as count"), DB::raw("MONTHNAME(created_at) as month_name"))
+                    ->groupBy(DB::raw("month_name"))
+                    ->orderBy('id','ASC')
+                    ->pluck('count', 'month_name');
+ 
+        $labelsSubmission = $submissions->keys();
+        $dataSubmission = $submissions->values();
+
+        $yearlevel = Submission::select(DB::raw("COUNT(*) as count"), DB::raw("yearlevel as year"))
+                    ->groupBy(DB::raw("year"))
+                    ->pluck('count', 'year');
+ 
+        $labelsYearLevel = $yearlevel->keys();
+        $dataYearLevel = $yearlevel->values();
+
+        $city = Submission::select(DB::raw("COUNT(*) as count"), DB::raw("city as city"))
+                    ->groupBy(DB::raw("city"))
+                    ->pluck('count', 'city');
+ 
+        $labelsCity = $city->keys();
+        $dataCity = $city->values();
               
-        return view('chart', compact('labels', 'data'));
+        $role = Auth::user()->role;
+        return view('chart', compact ('totalusers','totalteachers', 'totaladmins', 'activesubjects', 'labelsUser', 'dataUser', 'labelsSubmission', 'dataSubmission', 'labelsYearLevel', 'dataYearLevel', 'labelsCity', 'dataCity'));
     }
 }

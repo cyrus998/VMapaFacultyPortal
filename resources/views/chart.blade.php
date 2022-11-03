@@ -5,47 +5,206 @@
 @if(Auth::check())
 
 @if (Auth::user()->role == '1')
-<!DOCTYPE html>
-<html>
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Kodchasan:ital,wght@0,300;1,200;1,300&family=Montserrat:ital,wght@0,200;0,300;0,800;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Parisienne&family=Playball&family=Poppins:ital,wght@0,100;0,200;0,300;0,800;0,900;1,100;1,200;1,300&family=Roboto+Condensed:wght@300;400;700&family=Roboto+Mono:ital,wght@0,100;1,100&family=Roboto:ital,wght@0,100;0,300;1,100&family=Rubik+Beastly&family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <title>Chart</title>
-</head>
-<body style>
-    <canvas id="myChart" height="100px"></canvas>
-</body>
+
+    <div class="relative mx-auto max-w-7xl">
+        <div class="grid max-w-lg gap-12 mx-auto mt-5 lg:grid-cols-3 lg:max-w-none p-5">
+
+            <a href="/subjects" class="relative block rounded-sm border-t-4 border-indigo-700 p-8 pb-12 shadow-xl">
+                <h3 class="text-4xl font-bold">{{ $activesubjects }} <span class="text-xs text-cyan-600">as of {{ date('Y/m/d') }}</span></h3>
+                </h3>
+                <p class="mt-4 text-lg font-medium text-gray-500">
+                    Active Subjects
+                </p>
+
+                <span class="absolute bottom-8 right-8">
+                    <img class="w-16" src="https://iili.io/ZPhzLx.png" alt="">
+                </span>
+            </a>
+
+            <a href="/portfolios" class="relative block rounded-sm border-t-4 border-pink-600 p-8 pb-12 shadow-xl">
+                <h3 class="text-4xl font-bold">{{ $totalteachers }} <span class="text-xs text-cyan-600">as of {{ date('Y/m/d') }}</span></h3>
+                </h3>
+                <p class="mt-4 text-lg font-medium text-gray-500">
+                    Teachers
+                </p>
+
+                <span class="absolute bottom-8 right-8">
+                    <img class="w-16" src="https://iili.io/ZPhTqQ.png" alt="">
+                </span>
+            </a>
+
+            <a href="/users" class="relative block rounded-sm border-t-4 border-emerald-600 p-8 pb-12 shadow-xl">
+                <h3 class="text-4xl font-bold">{{ $totalusers }} <span class="text-xs text-cyan-600">as of {{ date('Y/m/d') }}</span></h3>
+                <p class="mt-4 text-lg font-medium text-gray-500">
+                    Total Users
+                </p>
+
+                <span class="absolute bottom-8 right-8">
+                    <img class="w-16" src="https://iili.io/ZPhu1V.png" alt="">
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <h1 class="text-black-600 text-5xl font-bold text-center mt-12">Data gathered through students</h1> 
+    
+    <div class="grid place-items-center grid-cols-3 p-16">
+        <div>
+            <canvas id="Submission"></canvas>
+        </div>
+        <div>
+            <canvas id="YearLevel"></canvas>
+        </div>
+        <div>
+            <canvas id="City"></canvas>
+        </div>
+    </div>
+
+<h1 class="text-black-600 text-5xl font-bold text-center">Data gathered through employee</h1> 
+    
+    <div class="grid place-items-center grid-cols-3 p-16">
+        <div>
+            <canvas id="User"></canvas>
+        </div>
+    </div>
+
   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
 <script type="text/javascript">
   
-    var labels =  {{ Js::from($labels) }};
-    var users =  {{ Js::from($data) }};
+    var labelsUser =  {{ Js::from($labelsUser) }};
+    var users =  {{ Js::from($dataUser) }};
+    var labelsSubmission =  {{ Js::from($labelsSubmission) }};
+    var submissions =  {{ Js::from($dataSubmission) }};
+    var labelsYearLevel =  {{ Js::from($labelsYearLevel) }};
+    var yearlevel =  {{ Js::from($dataYearLevel) }};
+    var labelsCity =  {{ Js::from($labelsCity) }};
+    var city =  {{ Js::from($dataCity) }};
   
-    const data = {
-        labels: labels,
+    //User
+    const dataUser = {
+        labels: labelsUser,
         datasets: [{
             label: 'User Account',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: ['rgb(255, 99, 132, 0.2)', 'rgb(54, 162, 235, 0.2)', 'rgb(255, 206, 86, 0.2)', 'rgb(75, 192, 192, 0.2)'],
+            borderColor: ['rgb(255, 99, 132, 1)', 'rgb(54, 162, 235, 1)', 'rgb(255, 206, 86, 1)', 'rgb(75, 192, 192, 1)'],
+            borderWidth: 1,
             data: users,
         }]
     };
   
-    const config = {
-        type: 'line',
-        data: data,
-        options: {}
+    const configUser = {
+        type: 'bar',
+        data: dataUser,
+        options: {
+            aspectRatio: 1,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
     };
   
-    const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
+    const User = new Chart(
+        document.getElementById('User'),
+        configUser
+    );
+
+    //Submissions
+    const dataSubmission = {
+        labels: labelsSubmission,
+        datasets: [{
+            label: 'Total of submitted requirements',
+            backgroundColor: ['rgb(255, 99, 132, 0.2)', 'rgb(54, 162, 235, 0.2)', 'rgb(255, 206, 86, 0.2)', 'rgb(75, 192, 192, 0.2)'],
+            borderColor: ['rgb(255, 99, 132, 1)', 'rgb(54, 162, 235, 1)', 'rgb(255, 206, 86, 1)', 'rgb(75, 192, 192, 1)'],
+            borderWidth: 1,
+            data: submissions,
+        }]
+    };
+  
+    const configSubmission = {
+        type: 'line',
+        data: dataSubmission,
+        options: {
+            aspectRatio: 1,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    };
+  
+    const Submission = new Chart(
+        document.getElementById('Submission'),
+        configSubmission
+    );
+
+    //YearLevel
+    const dataYearLevel = {
+        labels: labelsYearLevel,
+        datasets: [{
+            label: 'Total students each year',
+            backgroundColor: ['rgb(255, 99, 132, 0.2)', 'rgb(54, 162, 235, 0.2)', 'rgb(255, 206, 86, 0.2)', 'rgb(75, 192, 192, 0.2)'],
+            borderColor: ['rgb(255, 99, 132, 1)', 'rgb(54, 162, 235, 1)', 'rgb(255, 206, 86, 1)', 'rgb(75, 192, 192, 1)'],
+            borderWidth: 1,
+            data: yearlevel,
+        }]
+    };
+  
+    const configYearLevel = {
+        type: 'doughnut',
+        data: dataYearLevel,
+        options: {
+            aspectRatio: 1,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    };
+  
+    const YearLevel = new Chart(
+        document.getElementById('YearLevel'),
+        configYearLevel
+    );
+
+    //City
+    const dataCity = {
+        labels: labelsCity,
+        datasets: [{
+            label: 'Students from each city',
+            backgroundColor: ['rgb(153, 102, 255, 0.2)', 'rgb(255, 159, 64, 0.2)', 'rgb(255, 206, 86, 0.2)', 'rgb(75, 192, 192, 0.2)'],
+            borderColor: ['rgb(153, 102, 255, 1)', 'rgb(255, 159, 64, 1)', 'rgb(255, 206, 86, 1)', 'rgb(75, 192, 192, 1)'],
+            borderWidth: 1,
+            data: city,
+        }]
+    };
+  
+    const configCity = {
+        type: 'polarArea',
+        data: dataCity,
+        options: {
+            aspectRatio: 1,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    };
+  
+    const City = new Chart(
+        document.getElementById('City'),
+        configCity
     );
   
 </script>
-</html>
+
 @endif
 @endif
 

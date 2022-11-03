@@ -1,7 +1,7 @@
 {
     "name": "laravel/laravel",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Victorino Mapa Highschool website",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {

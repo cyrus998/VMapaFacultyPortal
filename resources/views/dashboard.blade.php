@@ -42,45 +42,6 @@
     @endif
 
     @if(Auth::user()->role=="1")
-    <div class="relative mx-auto max-w-7xl">
-        <div class="grid max-w-lg gap-12 mx-auto mt-5 lg:grid-cols-3 lg:max-w-none p-5">
-
-            <a href="/subjects" class="relative block rounded-sm border-t-4 border-indigo-700 p-8 pb-12 shadow-xl">
-                <h3 class="text-4xl font-bold">{{ $activesubjects }} <span class="text-xs text-cyan-600">as of {{ date('Y/m/d') }}</span></h3>
-                </h3>
-                <p class="mt-4 text-lg font-medium text-gray-500">
-                    Active Subjects
-                </p>
-
-                <span class="absolute bottom-8 right-8">
-                    <img class="w-16" src="https://iili.io/ZPhzLx.png" alt="">
-                </span>
-            </a>
-
-            <a href="/portfolios" class="relative block rounded-sm border-t-4 border-pink-600 p-8 pb-12 shadow-xl">
-                <h3 class="text-4xl font-bold">{{ $totalteachers }} <span class="text-xs text-cyan-600">as of {{ date('Y/m/d') }}</span></h3>
-                </h3>
-                <p class="mt-4 text-lg font-medium text-gray-500">
-                    Teachers
-                </p>
-
-                <span class="absolute bottom-8 right-8">
-                    <img class="w-16" src="https://iili.io/ZPhTqQ.png" alt="">
-                </span>
-            </a>
-
-            <a href="/users" class="relative block rounded-sm border-t-4 border-emerald-600 p-8 pb-12 shadow-xl">
-                <h3 class="text-4xl font-bold">{{ $totalusers }} <span class="text-xs text-cyan-600">as of {{ date('Y/m/d') }}</span></h3>
-                <p class="mt-4 text-lg font-medium text-gray-500">
-                    Total Users
-                </p>
-
-                <span class="absolute bottom-8 right-8">
-                    <img class="w-16" src="https://iili.io/ZPhu1V.png" alt="">
-                </span>
-            </a>
-        </div>
-    </div>
 
     <section class=" lg:py-12 lg:flex lg:justify-center p-4 rounded">
         <div class=" bg-gray-800 lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
