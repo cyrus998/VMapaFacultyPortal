@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnnouncementController;
-use App\Http\Controllers\FaculltyAnnouncementController;
 use App\Http\Controllers\SubmissionController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ChartJSController;
@@ -14,6 +13,7 @@ use App\Http\Livewire\Selfinfos;
 use App\Http\Livewire\Adminchat;
 use App\Http\Livewire\Facultyannouncements;
 use App\Http\Livewire\Publicannouncements;
+use App\Http\Livewire\Replies;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +25,12 @@ use App\Http\Livewire\Publicannouncements;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::post('/send', [Replies::class, 'send'])->name('send.email');
+
+Route::get('allcontactusmessages', Replies::class)->middleware('auth');
+
+
 Route::get('publicannouncements', Publicannouncements::class);
 
 Route::get('facultyannouncements', Facultyannouncements::class)->middleware('auth');
@@ -47,11 +53,11 @@ Route::resource('submissions', SubmissionController::class);
 
 Route::resource('announcements', AnnouncementController::class);
 
-Route::view('/home','home')->middleware(['auth','verified']);
+Route::view('/home', 'home')->middleware(['auth', 'verified']);
 
 Route::get('export', [PDFController::class, 'CreatePDF']);
 
-Route::get('redirects', 'App\Http\Controllers\HomeController@index')->middleware(['auth','verified']);
+Route::get('redirects', 'App\Http\Controllers\HomeController@index')->middleware(['auth', 'verified']);
 
 Route::get('/portal', function () {
     return view('welcome');
@@ -77,8 +83,8 @@ Route::get('/', function () {
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified','auth','verified'
-    
+    'verified', 'auth', 'verified'
+
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -91,5 +97,4 @@ Route::middleware([
     Route::get('/myhandledsections', function () {
         return view('myhandledsections');
     })->name('myhandledsections');
-
 });

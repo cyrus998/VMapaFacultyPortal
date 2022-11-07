@@ -97,6 +97,11 @@
                                 {{ __('Admin Chat') }}
                             </x-jet-responsive-nav-link>
 
+                            <x-jet-responsive-nav-link href="/allcontactusmessages" :active="request()->routeIs('allcontactusmessages')">
+                                {{ __('Inquiries Forms') }}
+                            </x-jet-responsive-nav-link>
+
+                            
                         </div>
                         @endif
 
@@ -170,6 +175,10 @@
 
                 <x-jet-nav-link style="color: white;" href="/adminchat" :active="request()->routeIs('/adminchat')">
                     {{ __('Admin Chat') }}
+                </x-jet-nav-link>
+
+                <x-jet-nav-link style="color: white;" href="/allcontactusmessages" :active="request()->routeIs('/allcontactusmessages')">
+                    {{ __('Inquiries Forms') }}
                 </x-jet-nav-link>
 
               

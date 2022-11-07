@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             SubjectsSeeder::class,
             PublicNewsSeeder::class,
             FacultyAnnouncementsSeeder::class,
+            ContactSeeder::class,
             SubmissionsSeeder::class,
         ]);
 

@@ -214,6 +214,16 @@
         )
     });
 
+     //reply deleted
+     window.addEventListener('contactReplied', event => {
+        Swal.fire(
+            'Success',
+            'You have deleted a reply.',
+            'success'
+        )
+    });
+
+
     // announcement saved
     window.addEventListener('announcementSaved', event => {
         Swal.fire(

@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('address')->default('Add Your Address Here.');
             $table->string('aboutme')->default('Add Something About Yourself Here.');
             $table->string('subjectexpertise')->default('Add Your Subject of Expertise Here.');
-            $table->string('image')->default('public/portfolios/nQj3sigByW0nClBcywKF3RHog92pjoInfRwJtMGc.png');
+            $table->string('image')->default('public/portfolios/defaultpfp.png');
             
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
