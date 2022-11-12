@@ -98,10 +98,8 @@
                         {{ Session::get('error')}}
                     </div>
                     @endif
-
-
                     <div hidden class="form-group">
-                        <label for="">Email Message</label>
+                        <input hidden type="text" name="clientmessage" value="{{ $reply->message }}">
                         <input hidden type="text" class="form-control" name="name" placeholder="enter name" value="Victorino Mapa HighSchool">
                         <input hidden type="email" class="form-control" name="email" placeholder="enter email" value="{{ $reply->email }}">
                         <input hidden type="text" class="form-control" name="messageid" placeholder="enter email" value="{{ $reply->id }}">

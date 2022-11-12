@@ -13,13 +13,17 @@ submissions/*
 
 # exception to the rule
 !portfolios/pog.txt 
-!portfolios/nQj3sigByW0nClBcywKF3RHog92pjoInfRwJtMGc.png
+!portfolios/defaultpfp.png
+!portfolios/defaultpfpbackup.png
+!portfolios/admissionsdefaultpfp.png
 
 # exception to publicnews images
 !publicannouncements/93k2NgpNullC0n3sagOiZ9uOGJswrWb2LCbHxOp7.png
 !publicannouncements/IlugZ074wqkQW8u0ykwsDs3TtGcKei1DiQSrmsZQ.jpg
+!publicannouncements/jdLitRtF35M4IUgz9vrh3ncsxDfiIFrtftTVj8Mv.png
+
 !publicannouncements/defaultpfp.png
-!publicannouncements/admissionsdefaultpfp.png
+!publicannouncements/defaultpfpbackup.png
 
 
 # exception to facultynews images

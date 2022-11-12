@@ -30,14 +30,15 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'email' => 'required',
-            'message' => 'required',
+            'email' => 'required|email',
+            'message' => 'required|min:10',
         ]);
 
         $input = $request->all();
 
         Contact::create($input);
 
-        return view('aboutview');
+        // return view('aboutview');
+        return redirect()->back()->with('success', 'Email Sent, please wait for a reply.');
     }
 }

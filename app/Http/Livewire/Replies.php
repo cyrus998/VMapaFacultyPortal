@@ -29,6 +29,7 @@ class Replies extends Component
                 'fromName' => $request->name,
                 'subject' => $request->subject,
                 'body' => $request->message,
+                'clientmessage' => $request->clientmessage,
             ];
             
             Mail::send('livewire.contacts.email-template',$mail_data, function($message) use ($mail_data){
