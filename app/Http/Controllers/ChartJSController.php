@@ -20,6 +20,26 @@ class ChartJSController extends Controller
     public function index()
     {
 
+        
+        $gradesevenpeople = Submission::where('yearlevel', 'Grade 7')->count();
+        $gradeeightpeople = Submission::where('yearlevel', 'Grade 8')->count();
+        $gradeninepeople = Submission::where('yearlevel', 'Grade 9')->count();
+        $gradetenpeople = Submission::where('yearlevel', 'Grade 10')->count();
+
+    
+        $totaladmissions = Submission::count();
+
+        $totalschoolcapacity=3000;
+        $everyyearlevelcapacity=750;
+
+        $totalcapacityleft= $totalschoolcapacity-$totaladmissions;
+        $fivepercentmarginaccommodation=$totalcapacityleft-($totalschoolcapacity*.05);
+        $gradesevenpercent= ($gradesevenpeople/$everyyearlevelcapacity)*100;
+        $gradeeightpercent= ($gradeeightpeople/$everyyearlevelcapacity)*100;
+
+        $totalcapacitypercent= ($totaladmissions/$totalschoolcapacity)*100;
+        $totalcapacitypercentnumeral= ($totaladmissions/$totalschoolcapacity);
+
         $totalusers = User::count();
         $totalteachers = User::where('position','teacher')->count();
         $totaladmins = User::where('role','1')->count();
@@ -56,6 +76,6 @@ class ChartJSController extends Controller
         $dataCity = $city->values();
               
         $role = Auth::user()->role;
-        return view('chart', compact ('totalusers','totalteachers', 'totaladmins', 'activesubjects', 'labelsUser', 'dataUser', 'labelsSubmission', 'dataSubmission', 'labelsYearLevel', 'dataYearLevel', 'labelsCity', 'dataCity'));
+        return view('chart', compact ('totalusers','totalteachers', 'totaladmins', 'activesubjects', 'labelsUser', 'dataUser', 'labelsSubmission', 'dataSubmission', 'labelsYearLevel', 'dataYearLevel', 'labelsCity', 'dataCity', 'totaladmissions','totalcapacitypercent','totalcapacitypercentnumeral','gradesevenpeople' , 'gradeeightpeople', 'gradeninepeople', 'gradetenpeople','gradesevenpercent','gradeeightpercent','totalcapacityleft','fivepercentmarginaccommodation'));
     }
 }

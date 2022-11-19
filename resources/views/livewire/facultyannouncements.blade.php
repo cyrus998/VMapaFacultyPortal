@@ -17,35 +17,38 @@
 
                 @foreach ($facultyannouncements as $facultyannouncement)
                 <div class="flex flex-col mb-12 overflow-hidden cursor-pointer shadow-lg">
-                    <a href="" class="hidden">{{ $facultyannouncement->id }}</a>
+                    <a href="{{ $facultyannouncement->linkurl }}">
+
+                        <p class="hidden">{{ $facultyannouncement->id }}</p>
                         <div class="flex-shrink-0">
                             <img class="object-cover w-full h-52 rounded-lg" src="{{ Storage::url($facultyannouncement->image) }}" alt="">
                         </div>
-                    </a>
-                    <div class="flex flex-col justify-between flex-1 p-3">
-                        <div class="flex-1">
+
+                        <div class="flex flex-col justify-between flex-1 p-3">
+                            <div class="flex-1">
                                 <div class="flex pt-6 space-x-1 text-sm text-gray-500">
                                     <time datetime="2020-03-10">Date: {{ $facultyannouncement->setdate }}</time>
                                     <span aria-hidden="true"> · </span>
                                     <span> 4 min read </span>
                                 </div>
-                            <a href="#" class="block mt-2 space-y-6">
+
                                 <h3 class="text-2xl font-semibold leading-none tracking-tighter text-neutral-600">
                                     {{ $facultyannouncement->title }}
                                 </h3>
                                 <p class="text-lg font-normal text-gray-500">{{ $facultyannouncement->description }}</p>
-                            </a>
-                        </div>
-                        @if (Auth::user()->role == '1')
-                        <div class="mt-2" style="text-align: right">
-                            <x-jet-button wire:click="showEditPostModal({{ $facultyannouncement->id }})">Edit
-                            </x-jet-button>
 
-                            <x-jet-button wire:click.prevent="deleteConfirmation({{ $facultyannouncement->id }})">Delete
-                            </x-jet-button>
+                            </div>
+                            @if (Auth::user()->role == '1')
+                            <div class="mt-2" style="text-align: right">
+                                <x-jet-button wire:click="showEditPostModal({{ $facultyannouncement->id }})">Edit
+                                </x-jet-button>
+
+                                <x-jet-button wire:click.prevent="deleteConfirmation({{ $facultyannouncement->id }})">Delete
+                                </x-jet-button>
+                            </div>
+                            @endif
                         </div>
-                        @endif
-                    </div>
+                    </a>
                 </div>
                 @endforeach
             </div>
@@ -103,6 +106,15 @@
                                     <textarea id="description" rows="3" wire:model.lazy="description" class="shadow-sm focus:ring-indigo-500 appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"></textarea>
                                 </div>
                                 @error('description')
+                                <span class="text-red-400">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="sm:col-span-6 pt-5">
+                                <label for="linkurl" class="block text-sm font-medium text-gray-700"> Post Url Link </label>
+                                <div class="mt-1">
+                                    <input type="text" id="linkurl" wire:model.lazy="linkurl" name="linkurl" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                                </div>
+                                @error('linkurl')
                                 <span class="text-red-400">{{ $message }}</span>
                                 @enderror
                             </div>

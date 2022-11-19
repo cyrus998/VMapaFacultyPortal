@@ -18,6 +18,7 @@ class Facultyannouncements extends Component
     public $newImage;
     public $description;
     public $oldImage;
+    public $linkurl;
     public $isEditMode = false;
     public $facultyannouncement;
 
@@ -34,6 +35,7 @@ class Facultyannouncements extends Component
             'newImage' => 'image|max:4096', // 1MB Max
             'title' => 'required',
             'setdate' => 'required',
+            'linkurl' => 'required',
             'description' => 'required'
         ]);
 
@@ -42,6 +44,7 @@ class Facultyannouncements extends Component
         Facultyannouncement::create([
             'title' => $this->title,
             'setdate' => $this->setdate,
+            'linkurl' => $this->linkurl,
             'image' => $image,
             'description' => $this->description,
         ]);
@@ -55,6 +58,7 @@ class Facultyannouncements extends Component
         $this->title = $this->facultyannouncement->title;
         $this->setdate = $this->facultyannouncement->setdate;
         $this->description = $this->facultyannouncement->description;
+        $this->linkurl = $this->facultyannouncement->linkurl;
         $this->oldImage = $this->facultyannouncement->image;
         $this->isEditMode = true;
         $this->showingPostModal = true;
@@ -65,6 +69,7 @@ class Facultyannouncements extends Component
         $this->validate([
             'title' => 'required',
             'setdate' => 'required',
+            'linkurl' => 'required',
             'description' => 'required'
         ]);
         $image = $this->facultyannouncement->image;
@@ -75,6 +80,7 @@ class Facultyannouncements extends Component
         $this->facultyannouncement->update([
             'title' => $this->title,
             'setdate' => $this->setdate,
+            'linkurl' => $this->linkurl,
             'image' => $image,
             'description' => $this->description
         ]);

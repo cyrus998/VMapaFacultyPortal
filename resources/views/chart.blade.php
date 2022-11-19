@@ -68,7 +68,204 @@
         </div>
     </div>
 
-  
+    <div class="flex justify-center">
+
+<div class="flex flex-col mb-20 md:flex-row md:max-w-full rounded-lg bg-white shadow-lg m-8 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-101 hover:bg-zinc-300 duration-300">
+
+    <div class="skill-container m-9">
+        <div class="skill">
+            <div class="outer">
+                <div class="inner">
+                    <div class="number" data-num="{{$totalcapacitypercent}}">
+                    </div>
+                </div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                    <linearGradient id="GradientColor">
+                        <stop offset="0%" stop-color="#206cfb" />
+                        <stop offset="100%" stop-color="#206cfb" />
+                    </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+            </svg>
+        </div>
+
+    </div>
+    <div class="p-6 flex flex-col justify-start">
+        <h5 class="text-gray-900 text-xl font-medium mb-2">Total School Admissions</h5>
+        <p class="text-gray-700 text-base mb-4">
+            The data shown are the percentage of the school's enrolees, with the corresponding total capacity and room accommodation of 3000.
+        </p>
+        <p class="text-gray-600 text-xs">Last updated {{ date('Y/m/d') }}.</p>
+
+        <div class="flex w-full max-w-full overflow-hidden rounded-lg shadow-md bg-gray-800 mt-5">
+            <div class="flex items-center justify-center w-12 bg-blue-500">
+                <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM21.6667 28.3333H18.3334V25H21.6667V28.3333ZM21.6667 21.6666H18.3334V11.6666H21.6667V21.6666Z" />
+                </svg>
+            </div>
+
+            <div class="px-4 py-2 -mx-3">
+                <div class="mx-3">
+                    <span class="font-semibold  text-blue-400">Information:</span>
+                    <p class="text-sm text-gray-200">The current number of students enrolled from Grade 7 to Grade 10 is <span class="text-blue-400 font-bold">{{$totaladmissions}}</span> <span class="text-green-400 font-bold">out of 3000.</span>! This takes up about {{$totalcapacitypercent}}% of the school's capacity.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-6 flex flex-col justify-start">
+        <h5 class="text-gray-900 text-xl font-medium mb-2">Suggestion Analytics</h5>
+        <p class="text-gray-700 text-base mb-4">
+        To ensure that there are enough rooms to accommodate all the existing and incoming students, we suggest the following actions below.
+        </p>
+        <p class="text-gray-600 text-xs">Last updated {{ date('Y/m/d') }}.</p>
+
+        <div class="flex w-full max-w-full overflow-hidden rounded-lg shadow-md bg-gray-800 mt-9">
+            <div class="flex items-center justify-center w-12 bg-blue-500">
+                <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM21.6667 28.3333H18.3334V25H21.6667V28.3333ZM21.6667 21.6666H18.3334V11.6666H21.6667V21.6666Z" />
+                </svg>
+            </div>
+
+            <div class="px-4 py-2 -mx-3">
+                <div class="mx-3">
+                    <span class="font-semibold  text-blue-400">Suggestion:</span>
+                    <p class="text-sm text-gray-200">We recommend that the total capacity left to accommodate students should only be within: <span class="text-blue-400 text-2xl font-bold">{{$totalcapacityleft}}</span> maximum students only, for this school year. However, to avoid overloading, we suggest to leave atleast a 5% margin allowance. A maximum accommodation of <span class="text-green-400 font-bold">{{$fivepercentmarginaccommodation}}</span> is preferred this school year.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<!-- <h1>
+Population Capacity
+</h1>
+<p>Total School Admissions {{$gradesevenpeople}}</p>
+<p>Total School Capacity</p>
+<p>{{$totalcapacitypercent}}% or {{$totaladmissions}}/3000</p>
+
+<h1>Room allocation per year level</h1>
+<p>Total Students Enrolled in 1st year: {{$gradesevenpeople}}</p>
+<p>Total Students Enrolled in 2st year: {{$gradeeightpeople}}</p>
+<p>Total Students Enrolled in 3st year: {{$gradeninepeople}}</p>
+<p>Total Students Enrolled in 4st year: {{$gradetenpeople}}</p> -->
+
+
+
+<script>
+const numbers = document.querySelectorAll('.number');
+const svgEl = document.querySelectorAll('svg circle');
+const counters = Array(numbers.length);
+const intervals = Array(counters.length);
+counters.fill(0);
+
+numbers.forEach((number, index) => {
+    intervals[index] = setInterval(() => {
+        if (counters[index] === parseInt(number.dataset.num)) {
+            clearInterval(counters[index]);
+        } else {
+            counters[index] += 1;
+            number.innerHTML = counters[index] + "%";
+            svgEl[index].style.strokeDashoffset = Math.floor(472 - 440 * parseFloat(number.dataset.num / 100));
+        }
+    }, 20);
+});
+</script>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.skill-container {
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-container .skill {
+    position: relative;
+    margin-right: 40px;
+}
+
+.skill-container .skill .outer {
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: 6px 6px 10px -1px rgba(0 0 0 /.15),
+        -6px -6px 10px -1px rgba(255 255 255 / .7);
+}
+
+.skill-container .skill .outer .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    box-shadow: inset 4px 4px 6px -1px rgba(0 0 0/ .2),
+        inset -4px -4px 6px -1px rgba(255 255 255 / .7),
+        -.5px -.5px 0px rgba(255 255 255 / 1),
+        .5px .5px 0px rgba(0 0 0 /.15),
+        0px 12px 10px -10px rgba(0 0 0 / 0.05);
+}
+
+.skill-container .skill .outer .inner .number {
+    font-weight: 800;
+}
+
+
+.skill-container .skill:nth-child(1) .outer .inner .number {
+    color: #206cfb;
+    font-size: 2rem;
+}
+
+.skill-container .skill:nth-child(2) .outer .inner .number {
+    color: #206cfb;
+    font-size: 2rem;
+}
+
+.skill-container .skill:nth-child(3) .outer .inner .number {
+    color: #206cfb;
+    font-size: 2rem;
+}
+
+circle {
+    fill: none;
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    transition: 2s linear;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.skill-container .skill:nth-child(1) circle {
+    stroke: #206cfb;
+}
+
+.skill-container .skill:nth-child(2) circle {
+    stroke: #4fa0ff;
+}
+
+.skill-container .skill:nth-child(3) circle {
+    stroke: #7811f7;
+}
+</style>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   
