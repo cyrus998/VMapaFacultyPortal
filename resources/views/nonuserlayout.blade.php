@@ -62,6 +62,11 @@
                                     class="block px-4 py-2 text-sm text-black-300 text-gray-700 hover:bg-gray-900 hover:text-white">
                                     {{ __('About') }}
                                 </a>
+
+                                <a href="/awardees"
+                                    class="block px-4 py-2 text-sm text-black-300 text-gray-700 hover:bg-gray-900 hover:text-white">
+                                    {{ __('Excellence Hall.') }}
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -84,9 +89,9 @@
 
     </nav>
 
-    <div class="container">
+
         @yield('content')
-    </div>
+
     
     <footer class="bg-gray-900">
         <div class="relative max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8 lg:pt-24">

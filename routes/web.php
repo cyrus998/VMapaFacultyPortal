@@ -67,6 +67,9 @@ Route::get('/publicnews', function () {
     return view('publicnews');
 });
 
+Route::get('/awardees', function () {
+    return view('awardees');
+});
 
 Route::get('/missionandvision', function () {
     return view('missionandvision');
