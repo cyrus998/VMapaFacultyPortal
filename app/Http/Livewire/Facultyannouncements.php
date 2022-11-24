@@ -112,7 +112,7 @@ class Facultyannouncements extends Component
     public function render()
     {
         return view('livewire.facultyannouncements', [
-            'facultyannouncements' => Facultyannouncement::all()
+            'facultyannouncements' => Facultyannouncement::all()->sortByDesc('created_at')
         ]);
     }
 }

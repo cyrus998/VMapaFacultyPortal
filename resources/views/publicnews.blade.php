@@ -15,7 +15,7 @@
                 <div class="flex flex-col justify-between flex-1 p-3">
                     <div class="flex-1">
                         <div class="flex pt-6 space-x-1 text-sm text-gray-500">
-                            <time datetime="2020-03-10"> Date to be added</time>
+                            <time datetime="2020-03-10"> {{ $publicannouncement->setdate }}</time>
                             <span aria-hidden="true"> · </span>
                             <span> 4 min read </span>
                         </div>

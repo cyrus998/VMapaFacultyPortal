@@ -37,7 +37,7 @@ class PortfolioPDFController extends Controller
             'users' => $users
         ]; 
             
-        $pdf = PDF::loadView('myPDF', $data);
+        $pdf = PDF::loadView('myportfolioPDF', $data);
      
         return $pdf->download('My Portfolio.pdf');
     }

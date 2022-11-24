@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
 
-    <title>Invoice</title>
-
-    <!-- Bootstrap core CSS -->
-
+    <title>My Portfolio</title>
 
     <style>
         .text-right {

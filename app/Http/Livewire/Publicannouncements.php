@@ -112,7 +112,7 @@ class Publicannouncements extends Component
     public function render()
     {
         return view('livewire.publicannouncements', [
-            'publicannouncements' => PublicAnnouncement::all()
+            'publicannouncements' => PublicAnnouncement::all()->sortByDesc('created_at')
         ]);
     }
 }
