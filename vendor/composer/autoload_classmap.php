@@ -20,6 +20,7 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\PDFController' => $baseDir . '/app/Http/Controllers/PDFController.php',
+    'App\\Http\\Controllers\\PortfolioPDFController' => $baseDir . '/app/Http/Controllers/PortfolioPDFController.php',
     'App\\Http\\Controllers\\SubmissionController' => $baseDir . '/app/Http/Controllers/SubmissionController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Livewire\\Adminchat' => $baseDir . '/app/Http/Livewire/Adminchat.php',

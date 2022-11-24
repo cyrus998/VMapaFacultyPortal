@@ -17,7 +17,7 @@ class Selfinfos extends Component
 
     public $showingPostModal = false;
 
-    public $contactnumber, $address, $name, $email, $aboutme, $subjectexpertise;
+    public $contactnumber, $address, $name, $email, $aboutme, $subjectexpertise, $yeargraduated, $collegename, $teachercollegecourse;
 
     public $newImage;
     public $oldImage;
@@ -61,19 +61,25 @@ class Selfinfos extends Component
             'name' => 'required',
             'email' => 'required',
             'aboutme' => 'required',
-            'subjectexpertise' => 'required'
+            'subjectexpertise' => 'required',
+            'yeargraduated' => 'required',
+            'collegename' => 'required',
+            'teachercollegecourse' => 'required'
         ]);
 
         $image = $this->newImage->store('public/selfinfos');
 
         User::create([
             'image' => $image,
-            'contactnumber' => $this->title,
-            'address' => $this->body,
-            'name' => $this->title,
-            'email' => $this->body,
-            'aboutme' => $this->title,
-            'subjectexpertise' => $this->body,
+            'contactnumber' => $this->contactnumber,
+            'address' => $this->address,
+            'name' => $this->name,
+            'email' => $this->email,
+            'aboutme' => $this->aboutme,
+            'subjectexpertise' => $this->subjectexpertise,
+            'yeargraduated' => $this->yeargraduated,
+            'collegename' => $this->collegename,
+            'teachercollegecourse' => $this->teachercollegecourse,
         ]);
         $this->reset();
     }
@@ -88,6 +94,9 @@ class Selfinfos extends Component
         $this->email = $this->selfinfo->email;
         $this->aboutme = $this->selfinfo->aboutme;
         $this->subjectexpertise = $this->selfinfo->subjectexpertise;
+        $this->yeargraduated = $this->selfinfo->yeargraduated;
+        $this->collegename = $this->selfinfo->collegename;
+        $this->teachercollegecourse = $this->selfinfo->teachercollegecourse;
 
         $this->oldImage = $this->selfinfo->image;
         $this->isEditMode = true;
@@ -103,7 +112,10 @@ class Selfinfos extends Component
             'name' => 'required',
             'email' => 'required',
             'aboutme' => 'required',
-            'subjectexpertise' => 'required'
+            'subjectexpertise' => 'required',
+            'yeargraduated' => 'required',
+            'collegename' => 'required',
+            'teachercollegecourse' => 'required'
         ]);
         $image = $this->selfinfo->image;
         if ($this->newImage) {
@@ -117,7 +129,10 @@ class Selfinfos extends Component
             'name' => $this->name,
             'email' => $this->email,
             'aboutme' => $this->aboutme,
-            'subjectexpertise' => $this->subjectexpertise
+            'subjectexpertise' => $this->subjectexpertise,
+            'yeargraduated' => $this->yeargraduated,
+            'collegename' => $this->collegename,
+            'teachercollegecourse' => $this->teachercollegecourse
         ]);
         $this->reset();
 

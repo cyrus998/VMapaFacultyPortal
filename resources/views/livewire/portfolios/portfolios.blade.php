@@ -79,7 +79,32 @@
                                         <dd class="font-medium"></dd>
                                     </div>
                                 </div>
+                         
+                                <div class="flex flex-col-reverse">
+                                    <svg class="h-4 w-4 text-indigo-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                                    </svg>
+                                    <div class="sm:ml-3 mt-1.5 sm:mt-0">
+                                        <dt class="text-gray-500">Batch: {{ $portfolio->yeargraduated }} <br>
+                                            {{ $portfolio->collegename }}
+                                        </dt>
+                                        <dd class="font-medium"></dd>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col-reverse ml-5">
+                                    <svg class="h-4 w-4 text-indigo-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                    </svg>
+                                    <div class="sm:ml-3 mt-1.5 sm:mt-0">
+                                        <dt class="text-gray-500"> College Course : <br>
+                                            {{ $portfolio->teachercollegecourse }}
+                                        </dt>
+                                        <dd class="font-medium"></dd>
+                                    </div>
+                                </div>
                             </dl>
+
                         </div>
                     </div>
                 </div>
@@ -196,6 +221,34 @@
                                     </div>
                                 </div>
                             </dl>
+
+                            <dl class="mt-6 flex">
+                                <div class="flex flex-col-reverse">
+                                    <svg class="h-4 w-4 text-indigo-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                                    </svg>
+                                    <div class="sm:ml-3 mt-1.5 sm:mt-0">
+                                        <dt class="text-gray-500">Batch: {{ $portfolio->yeargraduated }} <br>
+                                            {{ $portfolio->collegename }}
+                                        </dt>
+                                        <dd class="font-medium"></dd>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col-reverse ml-5">
+                                    <svg class="h-4 w-4 text-indigo-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                    </svg>
+                                    <div class="sm:ml-3 mt-1.5 sm:mt-0">
+                                        <dt class="text-gray-500"> College Course : <br>
+                                            {{ $portfolio->teachercollegecourse }}
+                                        </dt>
+                                        <dd class="font-medium"></dd>
+                                    </div>
+                                </div>
+                            </dl>
+
+
                         </div>
                     </div>
                     @endforeach
@@ -218,6 +271,9 @@
                                 <th class="px-4 py-2">Address</th>
                                 <th class="px-4 py-2">About Me</th>
                                 <th class="px-4 py-2">Subject Expertise</th>
+                                <th class="px-4 py-2">Batch</th>
+                                <th class="px-4 py-2">Name of College</th>
+                                <th class="px-4 py-2">College Course</th>
                                 <th class="px-4 py-2">Actions</th>
                             </tr>
                         </thead>
@@ -235,6 +291,9 @@
                                 <td class="border px-4 py-2">{{ $portfolio->address }}</td>
                                 <td class="border px-4 py-2">{{ $portfolio->aboutme }}</td>
                                 <td class="border px-4 py-2">{{ $portfolio->subjectexpertise }}</td>
+                                <td class="border px-4 py-2">{{ $portfolio->yeargraduated }}</td>
+                                <td class="border px-4 py-2">{{ $portfolio->collegename }}</td>
+                                <td class="border px-4 py-2">{{ $portfolio->teachercollegecourse }}</td>
                                 <td class="border px-4 py-2">
                                     <x-jet-button wire:click="showEditPostModal({{ $portfolio->id }})">Edit
                                     </x-jet-button>
@@ -325,6 +384,39 @@
                                 <input type="text" id="subjectexpertise" wire:model.lazy="subjectexpertise" name="subjectexpertise" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
                             </div>
                             @error('subjectexpertise')
+                            <span class="text-red-400">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="sm:col-span-6 mt-2">
+                            <label for="yeargraduated" class="block text-sm font-medium text-gray-700">
+                            Add Year Graduated </label>
+                            <div class="mt-1">
+                                <input type="number" id="yeargraduated" wire:model.lazy="yeargraduated" name="yeargraduated" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                            </div>
+                            @error('yeargraduated')
+                            <span class="text-red-400">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="sm:col-span-6 mt-2">
+                            <label for="collegename" class="block text-sm font-medium text-gray-700">
+                                Add College Name </label>
+                            <div class="mt-1">
+                                <input type="text" id="collegename" wire:model.lazy="collegename" name="collegename" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                            </div>
+                            @error('collegename')
+                            <span class="text-red-400">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="sm:col-span-6 mt-2">
+                            <label for="teachercollegecourse" class="block text-sm font-medium text-gray-700">
+                                Add College Course </label>
+                            <div class="mt-1">
+                                <input type="text" id="teachercollegecourse" wire:model.lazy="teachercollegecourse" name="teachercollegecourse" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                            </div>
+                            @error('teachercollegecourse')
                             <span class="text-red-400">{{ $message }}</span>
                             @enderror
                         </div>

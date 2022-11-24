@@ -27,6 +27,11 @@ return new class extends Migration
             $table->string('subjectexpertise')->default('Add Your Subject of Expertise Here.');
             $table->string('image')->default('public/portfolios/defaultpfp.png');
             
+            $table->string('yeargraduated')->default('Edit.');
+            $table->string('collegename')->default('Add Information Here.');
+            $table->string('teachercollegecourse')->default('Bachelor of Science in (edit.)');
+
+
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->rememberToken();

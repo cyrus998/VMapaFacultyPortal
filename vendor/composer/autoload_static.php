@@ -621,6 +621,7 @@ class ComposerStaticInit30b6d6e330285afb99cdf367fa3a9427
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\PDFController' => __DIR__ . '/../..' . '/app/Http/Controllers/PDFController.php',
+        'App\\Http\\Controllers\\PortfolioPDFController' => __DIR__ . '/../..' . '/app/Http/Controllers/PortfolioPDFController.php',
         'App\\Http\\Controllers\\SubmissionController' => __DIR__ . '/../..' . '/app/Http/Controllers/SubmissionController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Livewire\\Adminchat' => __DIR__ . '/../..' . '/app/Http/Livewire/Adminchat.php',

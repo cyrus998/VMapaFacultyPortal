@@ -112,9 +112,9 @@
                                 {{ __('Faculty Announcement') }}
                             </x-jet-responsive-nav-link>
 
-                            <x-jet-responsive-nav-link href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
+                            <!-- <x-jet-responsive-nav-link href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
                                 {{ __('My Portfolio.') }}
-                            </x-jet-responsive-nav-link>
+                            </x-jet-responsive-nav-link> -->
 
                             <x-jet-responsive-nav-link href="/selfinfos" :active="request()->routeIs('selfinfos')">
                                 {{ __('My Personal Details.') }}
@@ -192,9 +192,9 @@
                     {{ __('News and Announcement') }}
                 </x-jet-nav-link>
 
-                <x-jet-nav-link style="color: white;" href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
+                <!-- <x-jet-nav-link style="color: white;" href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
                     {{ __('My Portfolio.') }}
-                </x-jet-nav-link>
+                </x-jet-nav-link> -->
 
                 <x-jet-nav-link style="color: white;" href="/selfinfos" :active="request()->routeIs('selfinfos')">
                     {{ __('My Personal Details.') }}

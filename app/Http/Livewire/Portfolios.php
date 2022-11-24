@@ -17,13 +17,14 @@ class Portfolios extends Component
 
     public $showingPostModal = false;
 
-    public $contactnumber, $address, $name, $email, $aboutme, $subjectexpertise;
+    public $contactnumber, $address, $name, $email, $aboutme, $subjectexpertise, $yeargraduated, $collegename, $teachercollegecourse;
 
     public $newImage;
     public $oldImage;
 
     public $isEditMode = false;
     public $portfolio;
+
 
     public function render()
     {
@@ -38,12 +39,16 @@ class Portfolios extends Component
                 ->orWhere('aboutme', 'LIKE', "%$term%")
                 ->orWhere('address', 'LIKE', "%$term%")
                 ->orWhere('contactnumber', 'LIKE', "%$term%")
-                ->orWhere('subjectexpertise', 'LIKE', "%$term%");
+                ->orWhere('subjectexpertise', 'LIKE', "%$term%")
+                ->orWhere('yeargraduated', 'LIKE', "%$term%")
+                ->orWhere('collegename', 'LIKE', "%$term%")
+                ->orWhere('teachercollegecourse', 'LIKE', "%$term%");
+
             })->where('position','teacher')->paginate(6)
         ]);
 
     }
-
+ 
     public function showPostModal()
     {
         $this->reset();
@@ -53,7 +58,6 @@ class Portfolios extends Component
 
     public function storePost()
     {
-
         $this->validate([
             'newImage' => 'image|mimes:jpeg,png,jpg,svg|max:1024', // 1MB Max
             'contactnumber' => 'required',
@@ -61,10 +65,14 @@ class Portfolios extends Component
             'name' => 'required',
             'email' => 'required',
             'aboutme' => 'required',
-            'subjectexpertise' => 'required'
+            'subjectexpertise' => 'required',
+            'yeargraduated' => 'required',
+            'collegename' => 'required',
+            'teachercollegecourse' => 'required'
         ]);
 
         $image = $this->newImage->store('public/portfolios');
+
 
         User::create([
             'image' => $image,
@@ -73,7 +81,10 @@ class Portfolios extends Component
             'name' => $this->name,
             'email' => $this->email,
             'aboutme' => $this->aboutme,
-            'subjectexpertise' => $this->body,
+            'subjectexpertise' => $this->subjectexpertise,
+            'yeargraduated' => $this->yeargraduated,
+            'collegename' => $this->collegename,
+            'teachercollegecourse' => $this->teachercollegecourse,
         ]);
         $this->reset();
     }
@@ -88,6 +99,9 @@ class Portfolios extends Component
         $this->email = $this->portfolio->email;
         $this->aboutme = $this->portfolio->aboutme;
         $this->subjectexpertise = $this->portfolio->subjectexpertise;
+        $this->yeargraduated = $this->portfolio->yeargraduated;
+        $this->collegename = $this->portfolio->collegename;
+        $this->teachercollegecourse = $this->portfolio->teachercollegecourse;
 
         $this->oldImage = $this->portfolio->image;
         $this->isEditMode = true;
@@ -103,7 +117,10 @@ class Portfolios extends Component
             'name' => 'required',
             'email' => 'required',
             'aboutme' => 'required',
-            'subjectexpertise' => 'required'
+            'subjectexpertise' => 'required',
+            'yeargraduated' => 'required',
+            'collegename' => 'required',
+            'teachercollegecourse' => 'required'
         ]);
         $image = $this->portfolio->image;
         if ($this->newImage) {
@@ -117,7 +134,10 @@ class Portfolios extends Component
             'name' => $this->name,
             'email' => $this->email,
             'aboutme' => $this->aboutme,
-            'subjectexpertise' => $this->subjectexpertise
+            'subjectexpertise' => $this->subjectexpertise,
+            'yeargraduated' => $this->yeargraduated,
+            'collegename' => $this->collegename,
+            'teachercollegecourse' => $this->teachercollegecourse
         ]);
         $this->reset();
 
