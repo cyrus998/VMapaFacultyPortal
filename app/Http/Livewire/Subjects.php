@@ -4,7 +4,11 @@ namespace App\Http\Livewire;
   
 use Livewire\Component;
 use App\Models\Subject;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Livewire\WithPagination;
+
 class Subjects extends Component
 {
 
@@ -37,6 +41,21 @@ class Subjects extends Component
         $subject->delete();
 
         $this->dispatchBrowserEvent('subjectDeleted');
+
+        $dt = Carbon::now();
+        $datetime= $dt->toDayDateTimeString();
+        $activitylog = [
+
+            'action' => 'Deleted A Subject',
+            'name' => Auth::user()->name,
+            'email' => Auth::user()->email,
+            'facultyNumber' => Auth::user()->facultyNumber,
+            'position' => Auth::user()->position,
+            'role' => Auth::user()->role,
+            'date_time' => $datetime,
+        ];
+        DB::table('logs')->insert($activitylog);
+        
     }
 
     public function render()
@@ -141,6 +160,23 @@ class Subjects extends Component
         $this->resetInputFields();
 
         $this->dispatchBrowserEvent('subjectAdded');
+
+        
+        $dt = Carbon::now();
+        $datetime= $dt->toDayDateTimeString();
+        $activitylog = [
+
+            'action' => 'Managed A Subject',
+            'name' => Auth::user()->name,
+            'email' => Auth::user()->email,
+            'facultyNumber' => Auth::user()->facultyNumber,
+            'position' => Auth::user()->position,
+            'role' => Auth::user()->role,
+            'date_time' => $datetime,
+        ];
+        DB::table('logs')->insert($activitylog);
+
+
     }
   
     /**
@@ -174,5 +210,6 @@ class Subjects extends Component
     {
         Subject::find($id)->delete();
         session()->flash('message', 'Subject Deleted Successfully.');
+
     }
 }

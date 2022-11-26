@@ -3,6 +3,9 @@
 namespace App\Http\Livewire;
 
 use App\Models\PublicAnnouncement;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -50,6 +53,23 @@ class Publicannouncements extends Component
         ]);
         $this->reset();
         $this->dispatchBrowserEvent('announcementSaved');
+
+        $dt = Carbon::now();
+        $datetime= $dt->toDayDateTimeString();
+        $activitylog = [
+
+            'action' => 'Posted a Public Announcement',
+            'name' => Auth::user()->name,
+            'email' => Auth::user()->email,
+            'facultyNumber' => Auth::user()->facultyNumber,
+            'position' => Auth::user()->position,
+            'role' => Auth::user()->role,
+            'date_time' => $datetime,
+        ];
+        DB::table('logs')->insert($activitylog);
+
+
+
     }
 
     public function showEditPostModal($id)
@@ -86,6 +106,22 @@ class Publicannouncements extends Component
         ]);
         $this->reset();
         $this->dispatchBrowserEvent('announcementSaved');
+
+        $dt = Carbon::now();
+        $datetime= $dt->toDayDateTimeString();
+        $activitylog = [
+
+            'action' => 'Edited a Public Announcement',
+            'name' => Auth::user()->name,
+            'email' => Auth::user()->email,
+            'facultyNumber' => Auth::user()->facultyNumber,
+            'position' => Auth::user()->position,
+            'role' => Auth::user()->role,
+            'date_time' => $datetime,
+        ];
+        DB::table('logs')->insert($activitylog);
+
+
     }
 
 
@@ -107,6 +143,21 @@ class Publicannouncements extends Component
         $publicannouncement->delete();
         $this->reset();
         $this->dispatchBrowserEvent('infoDeleted');
+
+        $dt = Carbon::now();
+        $datetime= $dt->toDayDateTimeString();
+        $activitylog = [
+
+            'action' => 'Deleted a Public Announcement',
+            'name' => Auth::user()->name,
+            'email' => Auth::user()->email,
+            'facultyNumber' => Auth::user()->facultyNumber,
+            'position' => Auth::user()->position,
+            'role' => Auth::user()->role,
+            'date_time' => $datetime,
+        ];
+        DB::table('logs')->insert($activitylog);
+
     }
 
     public function render()

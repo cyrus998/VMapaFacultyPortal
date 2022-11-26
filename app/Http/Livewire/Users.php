@@ -5,7 +5,10 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\User;
-  
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 class Users extends Component
 {
 
@@ -116,6 +119,22 @@ class Users extends Component
 
         $this->dispatchBrowserEvent('userAdded');
 
+        $dt = Carbon::now();
+        $datetime= $dt->toDayDateTimeString();
+        $activitylog = [
+
+            'action' => 'Configured a User',
+            'name' => Auth::user()->name,
+            'email' => Auth::user()->email,
+            'facultyNumber' => Auth::user()->facultyNumber,
+            'position' => Auth::user()->position,
+            'role' => Auth::user()->role,
+            'date_time' => $datetime,
+        ];
+        DB::table('logs')->insert($activitylog);
+
+        
+
     }
   
     /**
@@ -162,5 +181,22 @@ class Users extends Component
         $user->delete();
         $this->dispatchBrowserEvent('userDeleted');
         session()->flash('message', 'User Deleted Successfully.');
+
+        
+        $dt = Carbon::now();
+        $datetime= $dt->toDayDateTimeString();
+        $activitylog = [
+
+            'action' => 'Deleted a User',
+            'name' => Auth::user()->name,
+            'email' => Auth::user()->email,
+            'facultyNumber' => Auth::user()->facultyNumber,
+            'position' => Auth::user()->position,
+            'role' => Auth::user()->role,
+            'date_time' => $datetime,
+        ];
+        DB::table('logs')->insert($activitylog);
+
+
     }
 }

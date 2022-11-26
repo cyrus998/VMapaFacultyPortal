@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
   
 use Illuminate\Http\Request;
 use App\Models\User;
+use Carbon\Carbon;
 use PDF;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PortfolioPDFController extends Controller
 {
@@ -14,10 +16,26 @@ class PortfolioPDFController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    
     public function generatePDF()
     {
         $users = User::get();
-  
+
+        $dt = Carbon::now();
+        $datetime= $dt->toDayDateTimeString();
+        $activitylog = [
+
+            'action' => 'Downloaded Portfolio',
+            'name' => Auth::user()->name,
+            'email' => Auth::user()->email,
+            'facultyNumber' => Auth::user()->facultyNumber,
+            'position' => Auth::user()->position,
+            'role' => Auth::user()->role,
+            'date_time' => $datetime,
+        ];
+        DB::table('activitylogs')->insert($activitylog);
+        
         $data = [
             'title' => 'User Portfolio',
             'name' => Auth::user()->name,

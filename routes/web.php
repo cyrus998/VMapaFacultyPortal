@@ -8,6 +8,7 @@ use App\Http\Controllers\SchedulePDFController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ChartJSController;
 use App\Http\Controllers\ContactController;
+use App\Http\Livewire\Logs;
 use App\Http\Livewire\Subjects;
 use App\Http\Livewire\Users;
 use App\Http\Livewire\Portfolios;
@@ -16,6 +17,7 @@ use App\Http\Livewire\Adminchat;
 use App\Http\Livewire\Facultyannouncements;
 use App\Http\Livewire\Publicannouncements;
 use App\Http\Livewire\Replies;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +29,8 @@ use App\Http\Livewire\Replies;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('logs', Logs::class)->middleware('auth');
+
 Route::get('sched', [SchedulePDFController::class, 'generatePDF']);
 
 Route::get('gg', [PortfolioPDFController::class, 'generatePDF']);
@@ -106,3 +110,15 @@ Route::middleware([
         return view('myhandledsections');
     })->name('myhandledsections');
 });
+
+// call storagelink during live production
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+});
+
+// seed during production
+Route::get('/seed', function () {
+    Artisan::call('db:seed');
+});
+
+

@@ -101,6 +101,10 @@
                                 {{ __('Inquiries Forms') }}
                             </x-jet-responsive-nav-link>
 
+                            <x-jet-responsive-nav-link href="/logs" :active="request()->routeIs('allcontactusmessages')">
+                                {{ __('Logs') }}
+                            </x-jet-responsive-nav-link>
+
                             
                         </div>
                         @endif
@@ -181,6 +185,9 @@
                     {{ __('Inquiries Forms') }}
                 </x-jet-nav-link>
 
+                <x-jet-nav-link style="color: white;" href="/logs" :active="request()->routeIs('/allcontactusmessages')">
+                    {{ __('Logs') }}
+                </x-jet-nav-link>
               
 
                 @endif

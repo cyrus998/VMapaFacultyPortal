@@ -4,6 +4,9 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Livewire\WithFileUploads;
 use Livewire\WithPagination;
@@ -82,6 +85,22 @@ class Selfinfos extends Component
             'teachercollegecourse' => $this->teachercollegecourse,
         ]);
         $this->reset();
+
+        $dt = Carbon::now();
+        $datetime= $dt->toDayDateTimeString();
+        $activitylog = [
+
+            'action' => 'Created a new Portfolio',
+            'name' => Auth::user()->name,
+            'email' => Auth::user()->email,
+            'facultyNumber' => Auth::user()->facultyNumber,
+            'position' => Auth::user()->position,
+            'role' => Auth::user()->role,
+            'date_time' => $datetime,
+        ];
+        DB::table('logs')->insert($activitylog);
+
+        
     }
 
     public function showEditPostModal($id)
@@ -137,6 +156,21 @@ class Selfinfos extends Component
         $this->reset();
 
         $this->dispatchBrowserEvent('infoSaved');
+
+        $dt = Carbon::now();
+        $datetime= $dt->toDayDateTimeString();
+        $activitylog = [
+
+            'action' => 'Updated their Portfolio',
+            'name' => Auth::user()->name,
+            'email' => Auth::user()->email,
+            'facultyNumber' => Auth::user()->facultyNumber,
+            'position' => Auth::user()->position,
+            'role' => Auth::user()->role,
+            'date_time' => $datetime,
+        ];
+        DB::table('logs')->insert($activitylog);
+
     }
         //    public $contactnumber, $address, $name, $email, $aboutme, $subjectexpertise;
     public function deletePost($id)

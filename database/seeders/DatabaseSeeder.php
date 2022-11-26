@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,6 +22,7 @@ class DatabaseSeeder extends Seeder
             FacultyAnnouncementsSeeder::class,
             ContactSeeder::class,
             SubmissionsSeeder::class,
+            LogSeeder::class,
         ]);
 
         \App\Models\User::factory(200)->create();

@@ -4,7 +4,10 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Contact;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class Replies extends Component
@@ -38,11 +41,35 @@ class Replies extends Component
                 ->subject($mail_data['subject']);
             });
 
+            $dt = Carbon::now();
+            $datetime= $dt->toDayDateTimeString();
+            $activitylog = [
+    
+                'action' => 'Replied to a Concern',
+                'name' => Auth::user()->name,
+                'email' => Auth::user()->email,
+                'facultyNumber' => Auth::user()->facultyNumber,
+                'position' => Auth::user()->position,
+                'role' => Auth::user()->role,
+                'date_time' => $datetime,
+            ];
+            DB::table('logs')->insert($activitylog);
+            
+
             return redirect()->back()->with('success', 'Email Sent');
+
+
+    
+
 
         } else {
          return redirect()->back()->withInput()->with('error', 'Check your internet connection.');
         }
+
+        
+     
+
+        
     }
 
     public function isOnline($site = "https://youtube.com")
@@ -133,6 +160,22 @@ class Replies extends Component
 
         $this->closeModal();
         $this->resetInputFields();
+
+        $dt = Carbon::now();
+        $datetime= $dt->toDayDateTimeString();
+        $activitylog = [
+
+            'action' => 'Created A Test Message.',
+            'name' => Auth::user()->name,
+            'email' => Auth::user()->email,
+            'facultyNumber' => Auth::user()->facultyNumber,
+            'position' => Auth::user()->position,
+            'role' => Auth::user()->role,
+            'date_time' => $datetime,
+        ];
+        DB::table('logs')->insert($activitylog);
+
+
     }
 
     /**
@@ -159,5 +202,21 @@ class Replies extends Component
     {
         Contact::find($id)->delete();
         $this->dispatchBrowserEvent('contactReplied');
+
+        $dt = Carbon::now();
+        $datetime= $dt->toDayDateTimeString();
+        $activitylog = [
+
+            'action' => 'Deleted a Concern',
+            'name' => Auth::user()->name,
+            'email' => Auth::user()->email,
+            'facultyNumber' => Auth::user()->facultyNumber,
+            'position' => Auth::user()->position,
+            'role' => Auth::user()->role,
+            'date_time' => $datetime,
+        ];
+        DB::table('logs')->insert($activitylog);
+
+
     }
 }

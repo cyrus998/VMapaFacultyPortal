@@ -38,6 +38,8 @@
                                 <p class="text-lg font-normal text-gray-500">{{ $facultyannouncement->description }}</p>
 
                             </div>
+                    </a>
+
                             @if (Auth::user()->role == '1')
                             <div class="mt-2" style="text-align: right">
                                 <x-jet-button wire:click="showEditPostModal({{ $facultyannouncement->id }})">Edit
@@ -48,7 +50,6 @@
                             </div>
                             @endif
                         </div>
-                    </a>
                 </div>
                 @endforeach
             </div>
