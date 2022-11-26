@@ -28,7 +28,7 @@ class SchedulePDFController extends Controller
             'role' => Auth::user()->role,
             'date_time' => $datetime,
         ];
-        DB::table('activitylogs')->insert($activitylog);
+        DB::table('logs')->insert($activitylog);
         
         $data = [
             // 'title' => 'Welcome to ItSolutionStuff.com',
