@@ -10,7 +10,7 @@
         <!-- This element is to trick the browser into centering the modal contents. -->
         <span class="hidden sm:inline-block sm:align-middle sm:h-screen"></span>​
 
-        <div class="mt-24 inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+        <div class="mt-2 inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
             <form>
                 <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <div class="">
@@ -26,6 +26,22 @@
                             <label for="exampleFormControlInput1" class="block text-gray-700 text-sm font-bold mb-2">Course Code:</label>
                             <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput1" placeholder="Course Code" wire:model="coursecode">
                             @error('coursecode')
+                            <span class="text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+                     
+                        <div class="mb-4">
+                            <label for="exampleFormControlInput1" class="block text-gray-700 text-sm font-bold mb-2">Section:</label>
+                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput1" placeholder="Section" wire:model="section">
+                            @error('section')
+                            <span class="text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="exampleFormControlInput1" class="block text-gray-700 text-sm font-bold mb-2">Room No:</label>
+                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput1" placeholder="Room Number" wire:model="roomno">
+                            @error('roomno')
                             <span class="text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
@@ -64,7 +80,7 @@
                             @enderror
 
                         </div>
-
+               
                         <div class="mb-4">
                             <label for="exampleFormControlInput1" class="block text-gray-700 text-sm font-bold mb-2">Start time:</label>
                             <input type="time" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput1" placeholder="Start Time" wire:model="starttime">

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->text('coursecode');
             $table->text('instructor');
             $table->string('subjectday');
+            $table->string('section');
+            $table->string('roomno');
             $table->text('starttime');
             $table->text('endtime');
             $table->timestamps();

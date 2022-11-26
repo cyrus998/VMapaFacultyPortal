@@ -12,6 +12,8 @@
     <table class="table table-bordered">
         <tr style="background-color: #1e293b;">
             <th style="color: #ffffff;">Subject Name</th>
+            <th style="color: #ffffff;">Section</th>
+            <th style="color: #ffffff;">Room No.</th>
             <th style="color: #ffffff;">Course Code</th>
             <th style="color: #ffffff;">Instructor</th>
             <th style="color: #ffffff;">Subject Day</th>
@@ -21,6 +23,8 @@
         @foreach (App\Models\Subject::where('instructor', '=', auth()->user()->name)->get() as $subject)
         <tr>
             <td>{{ $subject->subjectname }}</td>
+            <td>{{ $subject->section }}</td>
+            <td>{{ $subject->roomno }}</td>
             <td>{{ $subject->coursecode }}</td>
             <td>{{ $subject->instructor }}</td>
             <td>{{ $subject->subjectday }}</td>
@@ -82,37 +86,37 @@
                                         <!-- <td class="border px-4 py-2"></td> -->
 
                                         <td class="border">@foreach (App\Models\Subject::get()->where('subjectday', 'Monday')->where('instructor', '=', auth()->user()->name) as $subject)
-                                            <br> {{ $subject->subjectname }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
+                                            <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
                                             <hr>
                                             @endforeach
                                         </td>
 
                                         <td class="border">@foreach (App\Models\Subject::get()->where('subjectday', 'Tuesday')->where('instructor', '=', auth()->user()->name) as $subject)
-                                            <br> {{ $subject->subjectname }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
+                                            <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
                                             <hr>
                                             @endforeach
                                         </td>
 
                                         <td class="border">@foreach (App\Models\Subject::get()->where('subjectday', 'Wednesday')->where('instructor', '=', auth()->user()->name) as $subject)
-                                            <br> {{ $subject->subjectname }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
+                                            <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
                                             <hr>
                                             @endforeach
                                         </td>
 
                                         <td class="border">@foreach (App\Models\Subject::get()->where('subjectday', 'Thursday')->where('instructor', '=', auth()->user()->name) as $subject)
-                                            <br> {{ $subject->subjectname }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
+                                            <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
                                             <hr>
                                             @endforeach
                                         </td>
 
                                         <td class="border">@foreach (App\Models\Subject::get()->where('subjectday', 'Friday')->where('instructor', '=', auth()->user()->name) as $subject)
-                                            <br> {{ $subject->subjectname }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
+                                            <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
                                             <hr>
                                             @endforeach
                                         </td>
 
                                         <td class="border">@foreach (App\Models\Subject::get()->where('subjectday', 'Saturday')->where('instructor', '=', auth()->user()->name) as $subject)
-                                            <br> {{ $subject->subjectname }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
+                                            <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
                                             <hr>
                                             @endforeach
                                         </td>

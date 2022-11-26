@@ -12,7 +12,7 @@ class Subjects extends Component
 
     public $term;
 
-    public $subjectname, $coursecode, $instructor, $subject_id, $subjectday, $starttime, $endtime;
+    public $subjectname, $coursecode, $instructor, $subject_id, $subjectday, $section, $roomno, $starttime, $endtime;
     public $isOpen = 0;
   
     /**
@@ -20,7 +20,7 @@ class Subjects extends Component
      *
      * @var array
      */
-
+  
     public $delete_id;
 
     protected $listeners = ['deleteConfirmed'=>'deleteSubject'];
@@ -47,7 +47,9 @@ class Subjects extends Component
                 return $query->where('subjectname', 'LIKE', "%$term%")
                 ->orWhere('coursecode', 'LIKE', "%$term%")
                 ->orWhere('instructor', 'LIKE', "%$term%")
-                ->orWhere('subjectday', 'LIKE', "%$term%");
+                ->orWhere('subjectday', 'LIKE', "%$term%")
+                ->orWhere('section', 'LIKE', "%$term%")
+                ->orWhere('roomno', 'LIKE', "%$term%");
             })->paginate(5)
         ]);
     }
@@ -95,6 +97,8 @@ class Subjects extends Component
         $this->instructor = '';
         $this->subject_id = '';
         $this->subjectday = '';
+        $this->section = '';
+        $this->roomno = '';
         $this->starttime = '';
         $this->endtime = '';
     }
@@ -113,6 +117,8 @@ class Subjects extends Component
             'coursecode' => 'required',
             'instructor' => 'required',
             'subjectday' => 'required',
+            'section' => 'required',
+            'roomno' => 'required',
             'starttime' => 'required',
             'endtime' => 'required',
         ]);
@@ -122,6 +128,8 @@ class Subjects extends Component
             'coursecode' => $this->coursecode,
             'instructor' => $this->instructor,
             'subjectday' => $this->subjectday,
+            'section' => $this->section,
+            'roomno' => $this->roomno,
             'starttime' => $this->starttime,
             'endtime' => $this->endtime,
         ]);
@@ -149,6 +157,8 @@ class Subjects extends Component
         $this->coursecode = $subject->coursecode;
         $this->instructor = $subject->instructor;
         $this->subjectday = $subject->subjectday;
+        $this->section = $subject->section;
+        $this->roomno = $subject->roomno;
         $this->starttime = $subject->starttime;
         $this->endtime = $subject->endtime;
     

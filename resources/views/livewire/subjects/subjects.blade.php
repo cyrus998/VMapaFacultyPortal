@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-
+          
             <table class="table-fixed w-full rounded-lg shadow mt-5 ">
                 <thead class="rounded-xl">
                     <tr class="bg-gray-100 rounded-xl ">
@@ -51,6 +51,10 @@
                         <th class="px-4 py-2 bg-slate-800 border-b border-gray-200 text-white text-left text-sm uppercase font-normal">
                             Day of the Subject</th>
                         <th class="px-4 py-2 bg-slate-800 border-b border-gray-200 text-white text-left text-sm uppercase font-normal">
+                            Section</th>
+                        <th class="px-4 py-2 bg-slate-800 border-b border-gray-200 text-white text-left text-sm uppercase font-normal">
+                            Room Number</th>
+                        <th class="px-4 py-2 bg-slate-800 border-b border-gray-200 text-white text-left text-sm uppercase font-normal">
                             Start Time</th>
                         <th class="px-4 py-2 bg-slate-800 border-b border-gray-200 text-white text-left text-sm uppercase font-normal">
                             End Time</th>
@@ -58,6 +62,7 @@
                             Action</th>
                     </tr>
                 </thead>
+   
                 <tbody>
                     @foreach ($subjects as $subject)
                     <tr>
@@ -66,6 +71,8 @@
                         <td class="border px-4 py-2">{{ $subject->coursecode }}</td>
                         <td class="border px-4 py-2">{{ $subject->instructor }}</td>
                         <td class="border px-4 py-2">{{ $subject->subjectday }}</td>
+                        <td class="border px-4 py-2">{{ $subject->section }}</td>
+                        <td class="border px-4 py-2">{{ $subject->roomno }}</td>
                         <td class="border px-4 py-2">{{ $subject->starttime }}</td>
                         <td class="border px-4 py-2">{{ $subject->endtime }}</td>
                         <td class="border px-4 py-2">
@@ -134,42 +141,42 @@
                                     </tr>
                                 </thead class="border-b">
                                 <tbody>
-
+                         
                                     <tr class="bg-white border-b">
                                         <td class="border px-4 py-2"></td>
 
-                                        <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Monday')  as $subject)
-                                            {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
+                                        <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Monday') as $subject)
+                                            {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
                                             <hr>
                                             @endforeach
                                         </td>
 
-                                        <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Tuesday')  as $subject)
-                                            {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
+                                        <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Tuesday') as $subject)
+                                            {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
                                             <hr>
                                             @endforeach
                                         </td>
 
-                                        <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Wednesday')  as $subject)
-                                            {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
+                                        <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Wednesday') as $subject)
+                                            {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
                                             <hr>
                                             @endforeach
                                         </td>
 
-                                        <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Thursday')  as $subject)
-                                            {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
+                                        <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Thursday') as $subject)
+                                            {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
                                             <hr>
                                             @endforeach
                                         </td>
 
-                                        <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Friday')  as $subject)
-                                            {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
+                                        <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Friday') as $subject)
+                                            {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
                                             <hr>
                                             @endforeach
                                         </td>
 
-                                        <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Saturday')  as $subject)
-                                            {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
+                                        <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Saturday') as $subject)
+                                            {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
                                             <hr>
                                             @endforeach
                                         </td>
