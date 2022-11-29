@@ -1,8 +1,17 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
-<section class="relative bg-white">
-    <img class="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full opacity-25 sm:opacity-100"
-        src="https://lh3.ggpht.com/p/AF1QipP1fqzTD2YSBmpeM6H4Q7WzU4t4RBvUF6veQCiY=s1024" alt="Couple on a bed with a dog" />
+
+<style>
+    html {
+        background-image: url('https://images.unsplash.com/photo-1593588332695-cd49488a8ec8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<section class="relative">
+
 
     <div class="hidden sm:block sm:inset-0 sm:absolute sm:bg-gradient-to-r sm:from-white sm:to-transparent"></div>
 
