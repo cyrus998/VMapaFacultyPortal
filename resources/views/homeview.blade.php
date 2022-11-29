@@ -297,11 +297,11 @@ content starts here -->
                     </p>
 
                     <div class="flex items-center mt-8 -mx-2">
-                        <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 " src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="">
+                        <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 " src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t1.6435-9/33060388_636582630006475_6440931242836754432_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=2Ws5H1V8EC8AX9idkoa&_nc_ht=scontent.fmnl2-2.fna&oh=00_AT9orkoccL0kGPnPV6UMLOxONB8kjJPipUPoE4BfJlzl1g&oe=636C663A" alt="">
 
                         <div class="mx-2">
-                            <h1 class="font-semibold text-white">Jeny Doe</h1>
-                            <span class="text-sm text-white">Edit ko patong part nato bare with me :)</span>
+                            <h1 class="font-semibold text-white">Robert Velasquez</h1>
+                            <span class="text-sm text-white">School Principal of the Victorino Mapa High School</span>
                         </div>
                     </div>
                 </div>
@@ -312,11 +312,11 @@ content starts here -->
                     </p>
 
                     <div class="flex items-center mt-8 -mx-2">
-                        <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 " src="https://images.unsplash.com/photo-1488508872907-592763824245?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
+                        <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 " src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t1.6435-9/33060388_636582630006475_6440931242836754432_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=2Ws5H1V8EC8AX9idkoa&_nc_ht=scontent.fmnl2-2.fna&oh=00_AT9orkoccL0kGPnPV6UMLOxONB8kjJPipUPoE4BfJlzl1g&oe=636C663A"     alt="">
 
                         <div class="mx-2">
-                            <h1 class="font-semibold text-White">Ema Watson </h1>
-                            <span class="text-sm text-white">Edit ko patong part nato bare with me :)</span>
+                            <h1 class="font-semibold text-White">Robert Velasquez</h1>
+                            <span class="text-sm text-white">School Principal of the Victorino Mapa High School</span>
                         </div>
                     </div>
                 </div>
