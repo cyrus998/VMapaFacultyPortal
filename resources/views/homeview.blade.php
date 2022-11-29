@@ -3,77 +3,123 @@
 
 <body id="main" class="text-gray-700 " style="font-family: 'Source Sans Pro', sans-serif">
     <!--Nav-->
-    <nav class="bg-gray-900 border-gray-200 px-2 sm:px-4 py-2.5">
-        <div class="container flex flex-wrap justify-between items-center mx-auto">
+    <nav x-data="{ isOpen: false }" class="relative bg-white shadow dark:bg-gray-800">
+        <div class="container px-6 py-4 mx-auto">
+            <div class="lg:flex lg:items-center lg:justify-between">
+                <div class="flex items-center justify-between">
+                    <div class="text-xl font-semibold text-gray-700">
+                        <a href="{{ route('homeview') }}" class="flex items-center">
 
-            <div class="shrink-0 flex items-center">
-                <a href="/">
-                    <x-jet-application-mark class="block h-9 w-auto" />
-                </a>
-                <h1 class="text-white text-2xl ml-5">Victorino Mapa HighSchool</h1>
-            </div>
+                            <x-jet-application-mark class="block h-9 w-auto" />
 
-            <div class="flex items-center md:order-2">
+                            <span class=" ml-5 self-center text-xl font-semibold whitespace-nowrap text-white">Victorino Mapa HighSchool</span>
+                        </a>
+                    </div>
 
-                <!-- Dropdown menu -->
-                <div class="ml-3 relative">
+                    <!-- Mobile menu button -->
+                    <div class="flex lg:hidden">
+                        <button x-cloak @click="isOpen = !isOpen" type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
+                            <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                            </svg>
+
+                            <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+                <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
+                    <ul class="flex flex-col p-4 mt-4 rounded-lg border md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-gray-700 border-gray-400 ">
+                        <li>
+                            <a href="/" class="block py-2 pl-3 pr-4 text-white  rounded md:p-0 md:text-white md:bg-transparent" aria-current="page">Home</a>
+                        </li>
+
+
+                        <li>
+                            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium border-b md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto text-white hover:text-cyan focus:text-white border-gray-700 hover:bg-gray-700 md:hover:bg-transparent">About <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+
+                            <div id="dropdownNavbar" class="z-10 hidden font-normal divide-y rounded shadow w-44 bg-white divide-gray-600">
+                                <ul class="py-1 text-sm text-gray-400" aria-labelledby="dropdownLargeButton">
+                                    <li>
+                                        <a href="/aboutview" class="block px-4 py-2  hover:bg-gray-600 hover:text-white">About Victorino Mapa.</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/missionandvision" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">Mission & Vision.</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/awardees" class="block px-4 py-2 hover:bg-gray-600 hover:text-white">Excellence Hall.</a>
+                                    </li>
+
+
+                                    <li aria-labelledby="dropdownNavbarLink">
+                                        <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2  hover:bg-gray-600 hover:text-white">Dropdown<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                            </svg></button>
+                                        <div id="doubleDropdown" class="z-10 hidden divide-y divide-gray-100 rounded shadow w-44 bg-white">
+                                            <ul class="py-1 text-sm text-gray-200" aria-labelledby="doubleDropdownButton">
+                                                <li>
+                                                    <a href="#" class="block px-4 py-2 hover:bg-gray-600 text-gray-400 hover:text-white">Overview</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block px-4 py-2 hover:bg-gray-600 text-gray-400 hover:text-white">My downloads</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block px-4 py-2 hover:bg-gray-600 text-gray-400 hover:text-white">Billing</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block px-4 py-2 hover:bg-gray-600 text-gray-400 hover:text-white">Rewards</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Announcements -->
+                        <li>
+                            <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium border-b md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto text-white hover:text-cyan focus:text-white border-gray-700 hover:bg-gray-700 md:hover:bg-transparent">Admission and Submission of Requirements <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+
+                            <div id="dropdownNavbar2" class="z-10 hidden font-normal divide-y rounded shadow w-44 bg-white divide-gray-600">
+                                <ul class="py-1 text-sm text-gray-400" aria-labelledby="dropdownLargeButton">
+                                    <li>
+                                        <a href="/submissions/create" class="block px-4 py-2  hover:bg-gray-600 hover:text-white">Submit an Enrollment.</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="/publicnews" class="block py-2 pl-3 pr-4 text-white  rounded md:p-0 md:text-white md:bg-transparent" aria-current="page">News and Announcements</a>
+                        </li>
+
+
+
+
+                    </ul>
+                    <button class="ml-5 bg-transparent hover:bg-blue-500 text-blue-700 hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                    <a href="/portal" style="color: white;" href="" :active="request() - > routeIs('/')">
+                        {{ __('Faculty Portal') }}
+                    </a>
+                </button>
 
 
 
                 </div>
             </div>
-
-            {{-- Main Nav Bar Non responsive --}}
-            <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
-                <ul class="flex flex-col p-4 mt-4 rounded-lg border md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-gray-800 border-gray-700">
-
-                    <a href="/" style="color: white;" href="" :active="request() - > routeIs('/')">
-                        {{ __('Home') }}
-                    </a>
-
-                    <div class="justify-center">
-                        <div x-data="{ open: false }" @mouseleave="open = false" class="relative">
-
-                            <!-- Dropdown toggle button -->
-                            <button @mouseover="open = true">
-                                <span class="text-white">About</span>
-                            </button>
-
-
-                            <!-- Dropdown menu -->
-                            <div x-show="open" @mouseover="open = true" @mouseleave="open = false" x-transition:enter.duration.500ms x-transition:leave.duration.800ms class="absolute right-0 w-48 py-2 mt-2 bg-white bg-gray-100 rounded-md shadow-xl">
-                                <a href="/missionandvision" class="block px-4 py-2 text-sm text-black-300 text-gray-700 hover:bg-gray-900 hover:text-white">
-                                    {{ __('Vision and Mission') }}
-                                </a>
-                                <a href="/aboutview" class="block px-4 py-2 text-sm text-black-300 text-gray-700 hover:bg-gray-900 hover:text-white">
-                                    {{ __('About') }}
-                                </a>
-                                <a href="/awardees" class="block px-4 py-2 text-sm text-black-300 text-gray-700 hover:bg-gray-900 hover:text-white">
-                                    {{ __('Excellence Hall.') }}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="/submissions/create" style="color: white;" href="" :active="request() - > routeIs('/')">
-                        {{ __('Admission / Submission of Requirements') }}
-                    </a>
-
-
-
-                    <a href="/publicnews" style="color: white;" href="" :active="request() - > routeIs('/')">
-                        {{ __('News and Announcements') }}
-                    </a>
-
-                </ul>
-                <button class="ml-5 bg-transparent hover:bg-blue-500 text-blue-700 hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                    <a href="/portal" style="color: white;" href="" :active="request() - > routeIs('/')">
-                        {{ __('Faculty Portal') }}
-                    </a>
-                </button>
-            </div>
         </div>
-
     </nav>
 
     <!--Hero-->
@@ -342,5 +388,5 @@ content starts here -->
         </div>
     </footer>
 
-
+    <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
 </body>

@@ -241,6 +241,7 @@ return array(
     'Database\\Seeders\\ContactSeeder' => $baseDir . '/database/seeders/ContactSeeder.php',
     'Database\\Seeders\\DatabaseSeeder' => $baseDir . '/database/seeders/DatabaseSeeder.php',
     'Database\\Seeders\\FacultyAnnouncementsSeeder' => $baseDir . '/database/seeders/FacultyAnnouncementsSeeder.php',
+    'Database\\Seeders\\LogSeeder' => $baseDir . '/database/seeders/LogSeeder.php',
     'Database\\Seeders\\PublicNewsSeeder' => $baseDir . '/database/seeders/PublicNewsSeeder.php',
     'Database\\Seeders\\SubjectsSeeder' => $baseDir . '/database/seeders/SubjectsSeeder.php',
     'Database\\Seeders\\SubmissionsSeeder' => $baseDir . '/database/seeders/SubmissionsSeeder.php',

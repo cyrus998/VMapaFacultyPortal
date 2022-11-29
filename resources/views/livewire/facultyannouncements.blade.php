@@ -1,7 +1,7 @@
 @if (Auth::check())
 @if (Auth::user()->position == 'teacher')
 
-<div class="max-w-6xl mx-auto">
+<div class="max-w-full mx-auto">
 
     <div class="m-4 p-4">
 

@@ -79,7 +79,7 @@
                                         <dd class="font-medium"></dd>
                                     </div>
                                 </div>
-                         
+
                                 <div class="flex flex-col-reverse">
                                     <svg class="h-4 w-4 text-indigo-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
@@ -141,7 +141,7 @@
                     </div>
                     </div> -->
 
-          
+
                 <div class="grid grid-cols-1 gap-8 mt-5 md:grid-cols-2 lg:grid-cols-3">
 
                     @foreach ($portfolios as $portfolio)
@@ -258,181 +258,182 @@
                     {{ $portfolios->links() }}
                 </div>
 
-                <div class="bg-white mt-5 shadow-xl sm:rounded-lg px-4 py-4 overflow-hidden overflow-x-auto">
+                <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+                <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
+                    <table class="min-w-full leading-normal">
+                            <thead>
+                                <tr class="bg-gray-800 text-white rounded">
+                                    {{-- <th class="px-4 py-2 w-20">No.</th> --}}
+                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Faculty Number</th>
+                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Image</th>
+                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Name</th>
+                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Contact Number</th>
+                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Address</th>
+                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">About Me</th>
+                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Subject Expertise</th>
+                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Batch</th>
+                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Name of College</th>
+                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">College Course</th>
+                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-                    <table class="table-fixed w-full">
-                        <thead>
-                            <tr class="bg-gray-800 text-white rounded">
-                                {{-- <th class="px-4 py-2 w-20">No.</th> --}}
-                                <th class="px-4 py-2">Faculty Number</th>
-                                <th class="px-4 py-2">Image</th>
-                                <th class="px-4 py-2">Name</th>
-                                <th class="px-4 py-2">Contact Number</th>
-                                <th class="px-4 py-2">Address</th>
-                                <th class="px-4 py-2">About Me</th>
-                                <th class="px-4 py-2">Subject Expertise</th>
-                                <th class="px-4 py-2">Batch</th>
-                                <th class="px-4 py-2">Name of College</th>
-                                <th class="px-4 py-2">College Course</th>
-                                <th class="px-4 py-2">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            @foreach ($portfolios as $portfolio)
-                            <tr>
-                                {{-- <td class="border px-4 py-2">{{ $portfolio->id }}</td> --}}
-                                <td class="border px-4 py-2">{{ $portfolio->facultyNumber }}</td>
-                                <td class="border px-4 py-2">
-                                    <img class="w-20" src="{{ Storage::url($portfolio->image) }}" />
-                                </td>
-                                <td class="border px-4 py-2">{{ $portfolio->name }}</td>
-                                <td class="border px-4 py-2">{{ $portfolio->contactnumber }}</td>
-                                <td class="border px-4 py-2">{{ $portfolio->address }}</td>
-                                <td class="border px-4 py-2">{{ $portfolio->aboutme }}</td>
-                                <td class="border px-4 py-2">{{ $portfolio->subjectexpertise }}</td>
-                                <td class="border px-4 py-2">{{ $portfolio->yeargraduated }}</td>
-                                <td class="border px-4 py-2">{{ $portfolio->collegename }}</td>
-                                <td class="border px-4 py-2">{{ $portfolio->teachercollegecourse }}</td>
-                                <td class="border px-4 py-2">
-                                    <x-jet-button wire:click="showEditPostModal({{ $portfolio->id }})">Edit
-                                    </x-jet-button>
-                                    {{-- <x-jet-button class="bg-red-400 hover:bg-red-600"
+                                @foreach ($portfolios as $portfolio)
+                                <tr>
+                                    {{-- <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $portfolio->id }}</td> --}}
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $portfolio->facultyNumber }}</td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <img class="w-20" src="{{ Storage::url($portfolio->image) }}" />
+                                    </td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $portfolio->name }}</td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $portfolio->contactnumber }}</td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $portfolio->address }}</td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $portfolio->aboutme }}</td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $portfolio->subjectexpertise }}</td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $portfolio->yeargraduated }}</td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $portfolio->collegename }}</td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">{{ $portfolio->teachercollegecourse }}</td>
+                                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                        <x-jet-button wire:click="showEditPostModal({{ $portfolio->id }})">Edit
+                                        </x-jet-button>
+                                        {{-- <x-jet-button class="bg-red-400 hover:bg-red-600"
                                             wire:click="deletePost({{ $portfolio->id }})">Delete
-                                    </x-jet-button> --}}
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                                        </x-jet-button> --}}
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                    
+
+                    @endif
+
                 </div>
-           
-                @endif
+
 
             </div>
 
-
         </div>
-
-    </div>
-    <div>
-        <x-jet-dialog-modal wire:model="showingPostModal">
-            @if ($isEditMode)
-            <x-slot name="title">Update Information</x-slot>
-            @else
-            <x-slot name="title">Add Info</x-slot>
-            @endif
-            <x-slot name="content">
-                <div class="space-y-8 divide-y divide-gray-200 w-full mt-10">
-                    <form enctype="multipart/form-data">
-                        <div class="sm:col-span-6 mt-2">
-                            <label for="title" class="block text-sm font-medium text-gray-700"> Enter An Image </label>
-                            @if ($oldImage)
-                            Old Image:
-                            <img style="height: 10rem;" src="{{ Storage::url($oldImage) }}">
-                            @endif
-                            @if ($newImage)
-                            Photo Preview:
-                            <img style="height: 10rem;" src="{{ $newImage->temporaryUrl() }}">
-                            @endif
-                            <div class="mt-1">
-                                <input type="file" id="image" wire:model="newImage" name="newImage" class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
-                            </div>
-                            @error('newImage')
-                            <span class="text-red-400">{{ $message }}</span>
-                            @enderror
-
-                        </div>
-
-                        <div class="sm:col-span-6 mt-2">
-                            <label for="contactnumber" class="block text-sm font-medium text-gray-700"> Add Contact Number
-                            </label>
-                            <div class="mt-1">
-                                <input type="number" id="contactnumber" wire:model.lazy="contactnumber" name="contactnumber" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
-                            </div>
-                            @error('contactnumber')
-                            <span class="text-red-400">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="sm:col-span-6 mt-2">
-                            <label for="address" class="block text-sm font-medium text-gray-700"> Add Address </label>
-                            <div class="mt-1">
-                                <input type="text" id="address" wire:model.lazy="address" name="address" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
-                            </div>
-                            @error('address')
-                            <span class="text-red-400">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="sm:col-span-6 mt-2">
-                            <label for="aboutme" class="block text-sm font-medium text-gray-700"> Add About Me </label>
-                            <div class="mt-1">
-
-                                <textarea type="text" id="aboutme" wire:model.lazy="aboutme" name="aboutme" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5"></textarea>
-
-                            </div>
-                            @error('aboutme')
-                            <span class="text-red-400">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="sm:col-span-6 mt-2">
-                            <label for="subjectexpertise" class="block text-sm font-medium text-gray-700">
-                                Add Subject Expertise </label>
-                            <div class="mt-1">
-                                <input type="text" id="subjectexpertise" wire:model.lazy="subjectexpertise" name="subjectexpertise" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
-                            </div>
-                            @error('subjectexpertise')
-                            <span class="text-red-400">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="sm:col-span-6 mt-2">
-                            <label for="yeargraduated" class="block text-sm font-medium text-gray-700">
-                            Add Year Graduated </label>
-                            <div class="mt-1">
-                                <input type="number" id="yeargraduated" wire:model.lazy="yeargraduated" name="yeargraduated" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
-                            </div>
-                            @error('yeargraduated')
-                            <span class="text-red-400">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="sm:col-span-6 mt-2">
-                            <label for="collegename" class="block text-sm font-medium text-gray-700">
-                                Add College Name </label>
-                            <div class="mt-1">
-                                <input type="text" id="collegename" wire:model.lazy="collegename" name="collegename" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
-                            </div>
-                            @error('collegename')
-                            <span class="text-red-400">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="sm:col-span-6 mt-2">
-                            <label for="teachercollegecourse" class="block text-sm font-medium text-gray-700">
-                                Add College Course </label>
-                            <div class="mt-1">
-                                <input type="text" id="teachercollegecourse" wire:model.lazy="teachercollegecourse" name="teachercollegecourse" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
-                            </div>
-                            @error('teachercollegecourse')
-                            <span class="text-red-400">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-
-                    </form>
-                </div>
-
-            </x-slot>
-            <x-slot name="footer">
+        <div>
+            <x-jet-dialog-modal wire:model="showingPostModal">
                 @if ($isEditMode)
-                <x-jet-button wire:click="updatePost">Update</x-jet-button>
+                <x-slot name="title">Update Information</x-slot>
                 @else
-                <x-jet-button wire:click="storePost">Create</x-jet-button>
+                <x-slot name="title">Add Info</x-slot>
                 @endif
-            </x-slot>
-        </x-jet-dialog-modal>
+                <x-slot name="content">
+                    <div class="space-y-8 divide-y divide-gray-200 w-full mt-10">
+                        <form enctype="multipart/form-data">
+                            <div class="sm:col-span-6 mt-2">
+                                <label for="title" class="block text-sm font-medium text-gray-700"> Enter An Image </label>
+                                @if ($oldImage)
+                                Old Image:
+                                <img style="height: 10rem;" src="{{ Storage::url($oldImage) }}">
+                                @endif
+                                @if ($newImage)
+                                Photo Preview:
+                                <img style="height: 10rem;" src="{{ $newImage->temporaryUrl() }}">
+                                @endif
+                                <div class="mt-1">
+                                    <input type="file" id="image" wire:model="newImage" name="newImage" class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                                </div>
+                                @error('newImage')
+                                <span class="text-red-400">{{ $message }}</span>
+                                @enderror
+
+                            </div>
+
+                            <div class="sm:col-span-6 mt-2">
+                                <label for="contactnumber" class="block text-sm font-medium text-gray-700"> Add Contact Number
+                                </label>
+                                <div class="mt-1">
+                                    <input type="number" id="contactnumber" wire:model.lazy="contactnumber" name="contactnumber" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                                </div>
+                                @error('contactnumber')
+                                <span class="text-red-400">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="sm:col-span-6 mt-2">
+                                <label for="address" class="block text-sm font-medium text-gray-700"> Add Address </label>
+                                <div class="mt-1">
+                                    <input type="text" id="address" wire:model.lazy="address" name="address" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                                </div>
+                                @error('address')
+                                <span class="text-red-400">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="sm:col-span-6 mt-2">
+                                <label for="aboutme" class="block text-sm font-medium text-gray-700"> Add About Me </label>
+                                <div class="mt-1">
+
+                                    <textarea type="text" id="aboutme" wire:model.lazy="aboutme" name="aboutme" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5"></textarea>
+
+                                </div>
+                                @error('aboutme')
+                                <span class="text-red-400">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="sm:col-span-6 mt-2">
+                                <label for="subjectexpertise" class="block text-sm font-medium text-gray-700">
+                                    Add Subject Expertise </label>
+                                <div class="mt-1">
+                                    <input type="text" id="subjectexpertise" wire:model.lazy="subjectexpertise" name="subjectexpertise" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                                </div>
+                                @error('subjectexpertise')
+                                <span class="text-red-400">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="sm:col-span-6 mt-2">
+                                <label for="yeargraduated" class="block text-sm font-medium text-gray-700">
+                                    Add Year Graduated </label>
+                                <div class="mt-1">
+                                    <input type="number" id="yeargraduated" wire:model.lazy="yeargraduated" name="yeargraduated" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                                </div>
+                                @error('yeargraduated')
+                                <span class="text-red-400">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="sm:col-span-6 mt-2">
+                                <label for="collegename" class="block text-sm font-medium text-gray-700">
+                                    Add College Name </label>
+                                <div class="mt-1">
+                                    <input type="text" id="collegename" wire:model.lazy="collegename" name="collegename" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                                </div>
+                                @error('collegename')
+                                <span class="text-red-400">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="sm:col-span-6 mt-2">
+                                <label for="teachercollegecourse" class="block text-sm font-medium text-gray-700">
+                                    Add College Course </label>
+                                <div class="mt-1">
+                                    <input type="text" id="teachercollegecourse" wire:model.lazy="teachercollegecourse" name="teachercollegecourse" class="block w-full  appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
+                                </div>
+                                @error('teachercollegecourse')
+                                <span class="text-red-400">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+
+                        </form>
+                    </div>
+
+                </x-slot>
+                <x-slot name="footer">
+                    @if ($isEditMode)
+                    <x-jet-button wire:click="updatePost">Update</x-jet-button>
+                    @else
+                    <x-jet-button wire:click="storePost">Create</x-jet-button>
+                    @endif
+                </x-slot>
+            </x-jet-dialog-modal>
+        </div>
     </div>
-</div>

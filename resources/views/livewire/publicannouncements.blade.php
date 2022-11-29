@@ -1,5 +1,5 @@
 @if (Auth::user()->role == '1')
-<div class="max-w-6xl mx-auto">
+<div class="max-w-full mx-auto">
     <div class="m-4 p-4">
         <div class="flex justify m-2 p-2">
             <x-jet-button wire:click="showPostModal">Create New Public Announcement</x-jet-button>
