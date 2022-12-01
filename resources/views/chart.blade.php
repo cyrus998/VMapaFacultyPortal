@@ -6,6 +6,9 @@
 
 @if (Auth::user()->role == '1')
 
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div id="allcharats">
     <div class="relative mx-auto max-w-7xl">
         <div class="grid max-w-lg gap-12 mx-auto mt-5 lg:grid-cols-3 lg:max-w-none p-5">
 
@@ -51,22 +54,32 @@
     <div class="grid place-items-center grid-cols-3 p-16">
         <div>
             <canvas  style="width: 350px;" id="Submission"></canvas>
+            <p class="mt-4" style="text-align: center;">Submitted Enrollent Requirements per Month</p>
         </div>
         <div>
             <canvas style="width: 350px;" id="YearLevel"></canvas>
+            <p class="mt-4" style="text-align: center;">Submitted Enrollent Requirements per Month</p>
         </div>
         <div>
             <canvas style="width: 350px;" id="City"></canvas>
+            <p class="mt-4" style="text-align: center;">Demographics of student's per city residence</p>
         </div>
     </div>
 
 <h1 class="text-black-600 text-5xl font-bold text-center">Data gathered through employee</h1> 
     <!-- removed place-items-center -->
-    <div class="grid p-16">
+
+    <div class="grid place-items-center grid-cols-2 p-16">
         <div>
-            <canvas style="padding: 0; margin: auto; display: block; width: 800px;" id="User"></canvas>
+            <canvas  style="width: 600px;" id="User"></canvas>
+            <p class="mt-4" style="text-align: center;">Accounts Created Per Month</p>
+        </div>
+        <div>
+            <canvas style="width: 600px;" id="Contact"></canvas>
+            <p class="mt-4" style="text-align: center;">Submitted Concerns Per Month</p>
         </div>
     </div>
+
 
     <div class="flex justify-center">
 
@@ -140,21 +153,7 @@
 
 </div>
 </div>
-
-<!-- <h1>
-Population Capacity
-</h1>
-<p>Total School Admissions {{$gradesevenpeople}}</p>
-<p>Total School Capacity</p>
-<p>{{$totalcapacitypercent}}% or {{$totaladmissions}}/3000</p>
-
-<h1>Room allocation per year level</h1>
-<p>Total Students Enrolled in 1st year: {{$gradesevenpeople}}</p>
-<p>Total Students Enrolled in 2st year: {{$gradeeightpeople}}</p>
-<p>Total Students Enrolled in 3st year: {{$gradeninepeople}}</p>
-<p>Total Students Enrolled in 4st year: {{$gradetenpeople}}</p> -->
-
-
+</div>
 
 <script>
 const numbers = document.querySelectorAll('.number');
@@ -279,7 +278,39 @@ svg {
     var yearlevel =  {{ Js::from($dataYearLevel) }};
     var labelsCity =  {{ Js::from($labelsCity) }};
     var city =  {{ Js::from($dataCity) }};
+    var labelsContact =  {{ Js::from($labelsContact) }};
+    var contact =  {{ Js::from($dataContact) }};
+
+      //Contact
+      const dataContact = {
+        labels: labelsContact,
+        datasets: [{
+            label: 'Contacts',
+            backgroundColor: ['rgb(255, 99, 132, 0.2)', 'rgb(54, 162, 235, 0.2)', 'rgb(255, 206, 86, 0.2)', 'rgb(75, 192, 192, 0.2)'],
+            borderColor: ['rgb(255, 99, 132, 1)', 'rgb(54, 162, 235, 1)', 'rgb(255, 206, 86, 1)', 'rgb(75, 192, 192, 1)'],
+            borderWidth: 1,
+            data: users,
+        }]
+    };
   
+    const configContact = {
+        type: 'bar',
+        data: dataContact,
+        options: {
+            aspectRatio: 2,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    };
+  
+    const Contact = new Chart(
+        document.getElementById('Contact'),
+        configContact
+    );
+
     //User
     const dataUser = {
         labels: labelsUser,

@@ -1,7 +1,8 @@
 <?php
   
 namespace App\Http\Controllers;
-    
+
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Submission;
@@ -74,8 +75,18 @@ class ChartJSController extends Controller
  
         $labelsCity = $city->keys();
         $dataCity = $city->values();
+
+        
+        $contacts = Contact::select(DB::raw("COUNT(*) as count"), DB::raw("MONTHNAME(created_at) as month_name"))
+                    ->groupBy(DB::raw("month_name"))
+                    ->orderBy('id','ASC')
+                    ->pluck('count', 'month_name');
+ 
+        $labelsContact = $contacts->keys();
+        $dataContact = $contacts->values();
+
               
         $role = Auth::user()->role;
-        return view('chart', compact ('totalusers','totalteachers', 'totaladmins', 'activesubjects', 'labelsUser', 'dataUser', 'labelsSubmission', 'dataSubmission', 'labelsYearLevel', 'dataYearLevel', 'labelsCity', 'dataCity', 'totaladmissions','totalcapacitypercent','totalcapacitypercentnumeral','gradesevenpeople' , 'gradeeightpeople', 'gradeninepeople', 'gradetenpeople','gradesevenpercent','gradeeightpercent','totalcapacityleft','fivepercentmarginaccommodation'));
+        return view('chart', compact ('totalusers','totalteachers', 'labelsContact', 'dataContact',  'totaladmins', 'activesubjects', 'labelsUser', 'dataUser', 'labelsSubmission', 'dataSubmission', 'labelsYearLevel', 'dataYearLevel', 'labelsCity', 'dataCity', 'totaladmissions','totalcapacitypercent','totalcapacitypercentnumeral','gradesevenpeople' , 'gradeeightpeople', 'gradeninepeople', 'gradetenpeople','gradesevenpercent','gradeeightpercent','totalcapacityleft','fivepercentmarginaccommodation'));
     }
 }
