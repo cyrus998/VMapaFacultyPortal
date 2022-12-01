@@ -49,7 +49,7 @@
     <section class="bg-gray-900 text-white">
 
         <div class="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3 px-32">
-            <div class="flex items-start">
+            <div class="flex items-start sm:max-w-full">
                 <span class="flex-shrink-0 rounded-lg bg-gray-800 p-4">
                     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 14l9-5-9-5-9 5 9 5z"></path>

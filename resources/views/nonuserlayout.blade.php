@@ -1,13 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victorino Mapa.</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"></script>
+    
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <!-- Styles -->
+    @livewireStyles
+
 </head>
 
 <body>
-<nav x-data="{ isOpen: false }" class="relative shadow bg-gray-800">
+    <nav x-data="{ isOpen: false }" class="relative shadow bg-gray-800">
         <div class="container px-6 py-4 mx-auto">
             <div class="lg:flex lg:items-center lg:justify-between">
                 <div class="flex items-center justify-between">
@@ -91,7 +106,7 @@
 
                         <!-- Announcements -->
                         <li>
-                            <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium border-b md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto text-white hover:text-cyan focus:text-white border-gray-700 hover:bg-gray-700 md:hover:bg-transparent">Admission and Submission of Requirements <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium border-b md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto text-white hover:text-cyan focus:text-white border-gray-700 hover:bg-gray-700 md:hover:bg-transparent">Submission of Requirements <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                                 </svg>
                             </button>
@@ -114,10 +129,10 @@
 
                     </ul>
                     <button class="ml-5 bg-transparent hover:bg-blue-500 text-blue-700 hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                    <a href="/portal" style="color: white;" href="" :active="request() - > routeIs('/')">
-                        {{ __('Faculty Portal') }}
-                    </a>
-                </button>
+                        <a href="/portal" style="color: white;" href="" :active="request() - > routeIs('/')">
+                            {{ __('Faculty Portal') }}
+                        </a>
+                    </button>
 
 
 
@@ -127,20 +142,17 @@
     </nav>
 
 
-        @yield('content')
+    @yield('content')
 
-    
+
     <footer class="bg-gray-900">
         <div class="relative max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8 lg:pt-24">
             <div class="absolute top-4 sm:top-6 lg:top-8 right-4 sm:right-6 lg:right-8">
-                <a class="inline-block p-2 text-teal-300 transition bg-gray-700 rounded-full sm:p-3 lg:p-4 hover:bg-gray-600"
-                    href="#main">
+                <a class="inline-block p-2 text-teal-300 transition bg-gray-700 rounded-full sm:p-3 lg:p-4 hover:bg-gray-600" href="#main">
                     <span class="sr-only">Back to top</span>
 
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
-                            clip-rule="evenodd" />
+                        <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />
                     </svg>
                 </a>
             </div>
@@ -148,15 +160,13 @@
             <div class="lg:flex lg:items-end lg:justify-between">
                 <div>
                     <div class="flex justify-center text-teal-300 lg:justify-start">
-                        <img width="100"
-                            src="https://cdn.discordapp.com/attachments/971130306751000636/1013875835075317790/Mapahs-modified.png"
-                            alt="">
-                            <h1 class="text-white text-2xl text-center ml-5 mt-10">Victorino Mapa High School
-                            </h1>
+                        <img width="100" src="https://cdn.discordapp.com/attachments/971130306751000636/1013875835075317790/Mapahs-modified.png" alt="">
+                        <h1 class="text-white text-2xl text-center ml-5 mt-10">Victorino Mapa High School
+                        </h1>
                     </div>
-                   
+
                     <p class="max-w-md mx-auto mt-6 leading-relaxed text-center text-gray-400 lg:text-left">
-                      Address: HXXR+5V7, Concepcion Aguila St, San Miguel, Manila, 1008 Metro Manila
+                        Address: HXXR+5V7, Concepcion Aguila St, San Miguel, Manila, 1008 Metro Manila
                     </p>
                 </div>
 

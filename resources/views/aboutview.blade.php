@@ -5,7 +5,7 @@
 <!-- 
 content starts here -->
 <!-- ====== About Section Start -->
-<section class="pt-20 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden mx-40">
+<section class="pt-20 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden mx-5">
     <div class="container">
         <div class="flex flex-wrap justify-between items-center -mx-4">
             <div class="w-full lg:w-6/12 px-4">

@@ -1,3 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victorino Mapa</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <!-- Styles -->
+    @livewireStyles
+
+
+</head>
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script defer src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"></script>
 
@@ -87,7 +108,7 @@
 
                         <!-- Announcements -->
                         <li>
-                            <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium border-b md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto text-white hover:text-cyan focus:text-white border-gray-700 hover:bg-gray-700 md:hover:bg-transparent">Admission and Submission of Requirements <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium border-b md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto text-white hover:text-cyan focus:text-white border-gray-700 hover:bg-gray-700 md:hover:bg-transparent">Submission of Requirements <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                                 </svg>
                             </button>
@@ -110,10 +131,10 @@
 
                     </ul>
                     <button class="ml-5 bg-transparent hover:bg-blue-500 text-blue-700 hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                    <a href="/portal" style="color: white;" href="" :active="request() - > routeIs('/')">
-                        {{ __('Faculty Portal') }}
-                    </a>
-                </button>
+                        <a href="/portal" style="color: white;" href="" :active="request() - > routeIs('/')">
+                            {{ __('Faculty Portal') }}
+                        </a>
+                    </button>
 
 
 
@@ -177,10 +198,10 @@
 content starts here -->
     <!-- ====== About Section Start -->
 
-    <section class="pt-20 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden mx-40 ">
+    <section class="pt-20 lg:pt-[120px] pb-12 lg:pb-[90px] overflow-hidden mx-5">
 
-        <div class="container">
-            <div class="flex flex-wrap justify-between items-center -mx-4">
+        <div class="container ">
+            <div class="flex flex-wrap justify-between items-center -mx-4 lg:mx-40">
                 <div class="w-full lg:w-6/12 px-4">
                     <div class="flex items-center -mx-3 sm:-mx-4">
                         <div class="w-full xl:w-1/2 px-3 sm:px-4">
@@ -217,22 +238,6 @@ content starts here -->
                             brand. Secure a consistent brand image with a domain name that
                             matches your business.
                         </p>
-                        <a href="javascript:void(0)" class="
-                  py-4
-                  px-10
-                  lg:px-8
-                  xl:px-10
-                  inline-flex
-                  items-center
-                  justify-center
-                  text-center text-white text-base
-                  bg-primary
-                  hover:bg-opacity-90
-                  font-normal
-                  rounded-lg
-                  ">
-                            Get Started
-                        </a>
                     </div>
                 </div>
             </div>
@@ -282,7 +287,7 @@ content starts here -->
                     </p>
 
                     <div class="flex items-center mt-8 -mx-2">
-                        <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 " src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t1.6435-9/33060388_636582630006475_6440931242836754432_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=2Ws5H1V8EC8AX9idkoa&_nc_ht=scontent.fmnl2-2.fna&oh=00_AT9orkoccL0kGPnPV6UMLOxONB8kjJPipUPoE4BfJlzl1g&oe=636C663A" alt="">
+                        <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 " src="https://i.ibb.co/MGjWgnd/33060388-636582630006475-6440931242836754432-n.jpg" alt="">
 
                         <div class="mx-2">
                             <h1 class="font-semibold text-white">Robert Velasquez</h1>
@@ -297,7 +302,7 @@ content starts here -->
                     </p>
 
                     <div class="flex items-center mt-8 -mx-2">
-                        <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 " src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t1.6435-9/33060388_636582630006475_6440931242836754432_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=2Ws5H1V8EC8AX9idkoa&_nc_ht=scontent.fmnl2-2.fna&oh=00_AT9orkoccL0kGPnPV6UMLOxONB8kjJPipUPoE4BfJlzl1g&oe=636C663A" alt="">
+                        <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 " src="https://i.ibb.co/MGjWgnd/33060388-636582630006475-6440931242836754432-n.jpg" alt="">
 
                         <div class="mx-2">
                             <h1 class="font-semibold text-white">Robert Velasquez</h1>
@@ -312,7 +317,7 @@ content starts here -->
                     </p>
 
                     <div class="flex items-center mt-8 -mx-2">
-                        <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 " src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t1.6435-9/33060388_636582630006475_6440931242836754432_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=2Ws5H1V8EC8AX9idkoa&_nc_ht=scontent.fmnl2-2.fna&oh=00_AT9orkoccL0kGPnPV6UMLOxONB8kjJPipUPoE4BfJlzl1g&oe=636C663A"     alt="">
+                        <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 " src="https://i.ibb.co/MGjWgnd/33060388-636582630006475-6440931242836754432-n.jpg" alt="">
 
                         <div class="mx-2">
                             <h1 class="font-semibold text-White">Robert Velasquez</h1>
@@ -390,3 +395,5 @@ content starts here -->
 
     <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
 </body>
+
+</html>
