@@ -122,3 +122,10 @@ Route::get('/seed', function () {
 });
 
 
+// migrate, seed, storage:link during production
+Route::get('/1910071', function () {
+    Artisan::call('migrate:fresh');
+    Artisan::call('db:seed');
+    Artisan::call('storage:link');
+});
+

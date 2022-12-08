@@ -54,11 +54,11 @@
     <div class="grid place-items-center grid-cols-3 p-16">
         <div>
             <canvas  style="width: 350px;" id="Submission"></canvas>
-            <p class="mt-4" style="text-align: center;">Submitted Enrollent Requirements per Month</p>
+            <p class="mt-4" style="text-align: center;">Submitted Enrollment Requirements per Month</p>
         </div>
         <div>
             <canvas style="width: 350px;" id="YearLevel"></canvas>
-            <p class="mt-4" style="text-align: center;">Submitted Enrollent Requirements per Month</p>
+            <p class="mt-4" style="text-align: center;">Year Level Population of Students</p>
         </div>
         <div>
             <canvas style="width: 350px;" id="City"></canvas>
