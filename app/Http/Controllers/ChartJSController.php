@@ -8,7 +8,7 @@ use App\Models\User;
 use App\Models\Submission;
 use App\Models\Subject;
 use Illuminate\Support\Facades\Auth;
-
+use Carbon\Carbon;
 use DB;
     
 class ChartJSController extends Controller
@@ -20,8 +20,15 @@ class ChartJSController extends Controller
      */
     public function index()
     {
+        $admittedcurrentmonth = DB::table('submissions')->whereMonth('created_at', Carbon::now()->month)->count();
+        $admittedthesepastmonths = DB::table('submissions')->whereMonth('created_at', Carbon::now()->subMonths(3))->count();
+        $date = Carbon::now();
+        $lastMonth =  $date->subMonth()->format('F');
+        $lastlastmonth =  $date->subMonth(1)->format('F');
 
-        
+        $admissionaverage = ($admittedthesepastmonths / 3);
+
+
         $gradesevenpeople = Submission::where('yearlevel', 'Grade 7')->count();
         $gradeeightpeople = Submission::where('yearlevel', 'Grade 8')->count();
         $gradeninepeople = Submission::where('yearlevel', 'Grade 9')->count();
@@ -34,6 +41,9 @@ class ChartJSController extends Controller
         $everyyearlevelcapacity=750;
 
         $totalcapacityleft= $totalschoolcapacity-$totaladmissions;
+        $untilfull = $totalcapacityleft / $admissionaverage;
+
+
         $fivepercentmarginaccommodation=$totalcapacityleft-($totalschoolcapacity*.05);
         $gradesevenpercent= ($gradesevenpeople/$everyyearlevelcapacity)*100;
         $gradeeightpercent= ($gradeeightpeople/$everyyearlevelcapacity)*100;
@@ -87,6 +97,6 @@ class ChartJSController extends Controller
 
               
         $role = Auth::user()->role;
-        return view('chart', compact ('totalusers','totalteachers', 'labelsContact', 'dataContact',  'totaladmins', 'activesubjects', 'labelsUser', 'dataUser', 'labelsSubmission', 'dataSubmission', 'labelsYearLevel', 'dataYearLevel', 'labelsCity', 'dataCity', 'totaladmissions','totalcapacitypercent','totalcapacitypercentnumeral','gradesevenpeople' , 'gradeeightpeople', 'gradeninepeople', 'gradetenpeople','gradesevenpercent','gradeeightpercent','totalcapacityleft','fivepercentmarginaccommodation'));
+        return view('chart', compact ('untilfull','admittedthesepastmonths', 'admittedcurrentmonth', 'admissionaverage', 'lastlastmonth', 'lastMonth', 'totalusers','totalteachers', 'labelsContact', 'dataContact',  'totaladmins', 'activesubjects', 'labelsUser', 'dataUser', 'labelsSubmission', 'dataSubmission', 'labelsYearLevel', 'dataYearLevel', 'labelsCity', 'dataCity', 'totaladmissions','totalcapacitypercent','totalcapacitypercentnumeral','gradesevenpeople' , 'gradeeightpeople', 'gradeninepeople', 'gradetenpeople','gradesevenpercent','gradeeightpercent','totalcapacityleft','fivepercentmarginaccommodation'));
     }
 }
