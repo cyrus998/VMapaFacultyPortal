@@ -8,6 +8,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 
 class Users extends Component
 {
@@ -94,10 +95,23 @@ class Users extends Component
     public function store()
     {
         $this->validate([
-            'name' => 'required|string',
-            'email' => 'required|email',
+            'name' => [
+                'required', 
+                Rule::unique('users')
+                       ->ignore($this->user_id)
+                ],
+            'email' => [
+                'required', 
+                Rule::unique('users')
+                       ->ignore($this->user_id)
+                ],
             // 'password' => 'required',
-            'facultyNumber' => 'required|integer',
+            'facultyNumber' => [
+                'required', 
+                'integer',
+                Rule::unique('users')
+                       ->ignore($this->user_id)
+                ],
             'role' => 'required|string',
             'position' => 'required|string',
         ]);

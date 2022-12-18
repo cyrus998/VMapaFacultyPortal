@@ -137,11 +137,13 @@ class Subjects extends Component
                 'required', 
                 Rule::unique('subjects')
                        ->where('instructor', $this->instructor)
+                       ->ignore($this->subject_id)
                 ],
             'coursecode' => [
                 'required', 
                 Rule::unique('subjects')
                        ->where('instructor', $this->instructor)
+                       ->ignore($this->subject_id)
                 ],
             'instructor' => 'required|string',
             'subjectday' => 'required|string',
@@ -149,6 +151,7 @@ class Subjects extends Component
                 'required', 
                 Rule::unique('subjects')
                        ->where('instructor', $this->instructor)
+                       ->ignore($this->subject_id)
                 ],
             'roomno' => 'required|string',
             'starttime' => [
@@ -157,6 +160,7 @@ class Subjects extends Component
                 Rule::unique('subjects')
                        ->where('instructor', $this->instructor)
                        ->where('subjectday', $this->subjectday)
+                       ->ignore($this->subject_id)
                 ],
             'endtime' => [
                 'required',
@@ -165,6 +169,7 @@ class Subjects extends Component
                 Rule::unique('subjects')
                        ->where('instructor', $this->instructor)
                        ->where('subjectday', $this->subjectday)
+                       ->ignore($this->subject_id)
                 ],
         ]);
 
