@@ -156,19 +156,19 @@ class Subjects extends Component
             'roomno' => 'required|string',
             'starttime' => [
                 'required',
-                'date_format:H:i',
                 Rule::unique('subjects')
                        ->where('instructor', $this->instructor)
                        ->where('subjectday', $this->subjectday)
+                       ->where('starttime', $this->starttime)
                        ->ignore($this->subject_id)
                 ],
             'endtime' => [
                 'required',
-                'date_format:H:i',
                 'after:starttime',
                 Rule::unique('subjects')
                        ->where('instructor', $this->instructor)
-                       ->where('subjectday', $this->subjectday)
+                       ->where('subjectday', $this->subjectday) 
+                       ->where('endtime', $this->endtime)
                        ->ignore($this->subject_id)
                 ],
         ]);
