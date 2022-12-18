@@ -94,12 +94,12 @@ class Users extends Component
     public function store()
     {
         $this->validate([
-            'name' => 'required',
-            'email' => 'required',
+            'name' => 'required|string',
+            'email' => 'required|email',
             // 'password' => 'required',
-            'facultyNumber' => 'required',
-            'role' => 'required',
-            'position' => 'required',
+            'facultyNumber' => 'required|integer',
+            'role' => 'required|string',
+            'position' => 'required|string',
         ]);
    
         User::updateOrCreate(['id' => $this->user_id], [

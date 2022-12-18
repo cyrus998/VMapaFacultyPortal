@@ -109,95 +109,11 @@
 
             </div>
 
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg mt-4 px-4 py-4 w-full overflow-x-auto">
-                <div class="flex flex-col">
-                    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
-                            <div class="overflow-hidden">
-                                <table class="min-w-full text-center">
-                                    <thead class="border-b bg-gray-800">
-                                        <tr>
-                                            <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                                Time
-                                            </th>
-                                            <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                                Monday
-                                            </th>
-                                            <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                                Tuesday
-                                            </th>
-                                            <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                                Wednesday
-                                            </th>
-                                            <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                                Thursday
-                                            </th>
-                                            <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                                Friday
-                                            </th>
-                                            <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                                Saturday
-                                            </th>
-                                            <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                                Sunday
-                                            </th>
-                                        </tr>
-                                    </thead class="border-b">
-                                    <tbody>
-
-                                        <tr class="bg-white border-b">
-                                            <td class="border px-4 py-2"></td>
-
-                                            <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Monday') as $subject)
-                                                {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
-                                                <hr>
-                                                @endforeach
-                                            </td>
-
-                                            <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Tuesday') as $subject)
-                                                {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
-                                                <hr>
-                                                @endforeach
-                                            </td>
-
-                                            <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Wednesday') as $subject)
-                                                {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
-                                                <hr>
-                                                @endforeach
-                                            </td>
-
-                                            <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Thursday') as $subject)
-                                                {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
-                                                <hr>
-                                                @endforeach
-                                            </td>
-
-                                            <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Friday') as $subject)
-                                                {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
-                                                <hr>
-                                                @endforeach
-                                            </td>
-
-                                            <td class="border px-4 py-2">@foreach ($subjects->where('subjectday', 'Saturday') as $subject)
-                                                {{ $subject->subjectday }} <br> {{ $subject->subjectname }} <br> {{ $subject->section }} <br> {{ $subject->roomno }} <br> {{ $subject->coursecode }} <br> {{ $subject->instructor }} <br> {{ $subject->starttime }} <br> {{ $subject->endtime }}
-                                                <hr>
-                                                @endforeach
-                                            </td>
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
 
 
         </div>
     </div>
-
-
 
     @endif
 

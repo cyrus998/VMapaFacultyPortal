@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\WithPagination;
+use Illuminate\Validation\Rule;
 
 class Subjects extends Component
 {
@@ -132,14 +133,39 @@ class Subjects extends Component
     public function store()
     {
         $this->validate([
-            'subjectname' => 'required',
-            'coursecode' => 'required',
-            'instructor' => 'required',
-            'subjectday' => 'required',
-            'section' => 'required',
-            'roomno' => 'required',
-            'starttime' => 'required',
-            'endtime' => 'required',
+            'subjectname' => [
+                'required', 
+                Rule::unique('subjects')
+                       ->where('instructor', $this->instructor)
+                ],
+            'coursecode' => [
+                'required', 
+                Rule::unique('subjects')
+                       ->where('instructor', $this->instructor)
+                ],
+            'instructor' => 'required|string',
+            'subjectday' => 'required|string',
+            'section' => [
+                'required', 
+                Rule::unique('subjects')
+                       ->where('instructor', $this->instructor)
+                ],
+            'roomno' => 'required|string',
+            'starttime' => [
+                'required',
+                'date_format:H:i',
+                Rule::unique('subjects')
+                       ->where('instructor', $this->instructor)
+                       ->where('subjectday', $this->subjectday)
+                ],
+            'endtime' => [
+                'required',
+                'date_format:H:i',
+                'after:starttime',
+                Rule::unique('subjects')
+                       ->where('instructor', $this->instructor)
+                       ->where('subjectday', $this->subjectday)
+                ],
         ]);
 
         Subject::updateOrCreate(['id' => $this->subject_id], [
